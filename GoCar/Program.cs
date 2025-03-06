@@ -1,2 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+namespace GoCar; 
+class program
+{
+    static void Main(strings [] args)
+    {
+        Console.WriteLine("My first edit, Melanie!");
+        Console.WriteLine("Hello, World!");
+    }
+}
