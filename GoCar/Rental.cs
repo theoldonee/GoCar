@@ -8,16 +8,16 @@ namespace GoCar
 {
     internal class Rental
     {
-        int RentalId { get; set; }
-        string CollectionDate { get; set; }
-        string ReturnDate { get; set; }
+        public int RentalId { get; set; }
+        public string CollectionDate { get; set; }
+        public string ReturnDate { get; set; }
 
         //Car relationship
-        string CarPlateNumber { get; set; }
+        public string CarPlateNumber { get; set; }
         public Car Car { get; set; }
 
         //Client relationship
-        int ClientId { get; set; }
-        Client Client { get; set; }
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
     }
 }
