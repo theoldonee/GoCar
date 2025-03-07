@@ -13,7 +13,7 @@ namespace GoCar
         public string ReturnDate { get; set; }
 
         //Car relationship
-        public string CarPlateNumber { get; set; }
+        public string CarId { get; set; }
         public Car Car { get; set; }
 
         //Client relationship
