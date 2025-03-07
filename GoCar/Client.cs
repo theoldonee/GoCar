@@ -8,13 +8,13 @@ namespace GoCar
 {
     internal class Client
     {
-        public string Id { get; set; }
+        public string ClientId { get; set; } // Primary key
         public string Name { get; set; }
         public int PhoneNumber { get; set; }
         public int Email { get; set; }
 
         // Rental relationship
-        List<Rental> Rental { get; set; }
+        public List<Rental> Rental { get; set; }
 
     }
 }
