@@ -9,16 +9,16 @@ namespace GoCar
 {
     internal class CarRentalContex : DbContext
     {
-        DbSet<Client> Client { get; set; }
-        DbSet<Car> Car { get; set; }
+        public DbSet<Client> Client { get; set; }
+        public DbSet<Car> Car { get; set; }
 
-        DbSet<Rental> Rental { get; set; }
+        public DbSet<Rental> Rental { get; set; }
 
 
         // Configure connection string and options
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "YOUR CONNECTION STRING";
+            string connectionString = "Data Source=DESKTOP-IGQ1LSK;Initial Catalog=GoCarDb;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
             optionsBuilder.UseSqlServer(connectionString);
         }
     }
