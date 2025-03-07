@@ -8,7 +8,7 @@ namespace GoCar
 {
     internal class Car
     {
-        public string RegPlate { get; set; }
+        public string PlateNumber { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
         public string FuelType { get; set; }
@@ -16,7 +16,8 @@ namespace GoCar
         public int Year { get; set; }
         public bool Available { get; set; }
 
-        public int ClientId { get; set; }
-        public Client Client { get; set; }
+        //Rental relationship
+        public int RentalId { get; set; }
+        public Rental Rental { get; set; }
     }
 }
