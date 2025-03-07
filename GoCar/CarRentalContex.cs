@@ -10,7 +10,10 @@ namespace GoCar
     internal class CarRentalContex : DbContext
     {
         DbSet<Client> Client { get; set; }
-        DbSet<Client> Car { get; set; }
+        DbSet<Car> Car { get; set; }
+
+        DbSet<Rental> Rental { get; set; }
+
 
         // Configure connection string and options
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
