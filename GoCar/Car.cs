@@ -8,7 +8,7 @@ namespace GoCar
 {
     internal class Car
     {
-        public string PlateNumber { get; set; }
+        public string CarId { get; set; } // Primary key
         public string Make { get; set; }
         public string Model { get; set; }
         public string FuelType { get; set; }
