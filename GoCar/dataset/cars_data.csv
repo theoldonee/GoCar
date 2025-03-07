@@ -1,0 +1,1001 @@
+carId,make,model,fueltype,type,year,Available
+Y798-OC31,BMW,3 Series,Diesel,Wagon,2023,true
+E760-WG47,Chevrolet,Silverado,Hybrid,SUV,2019,true
+L140-XU86,Honda,Accord,Hybrid,Truck,2008,true
+O850-AT75,Honda,Pilot,Diesel,Hatchback,2013,true
+E943-LH80,Chevrolet,Bolt EV,Hybrid,SUV,2021,true
+T207-HZ48,Tesla,Model Y,Petrol,Hatchback,2016,true
+B699-NW12,Mercedes,E-Class,Petrol,Minivan,2006,true
+J839-EL39,Hyundai,Sonata,Hybrid,Coupe,2012,true
+U473-HG18,Nissan,Sentra,Petrol,SUV,2014,true
+Z316-RG44,Tesla,Model X,Hybrid,Hatchback,2011,true
+D859-WL25,Nissan,Rogue,Diesel,Wagon,2002,true
+N680-ND95,Honda,CR-V,Electric,Coupe,2018,true
+Z175-OJ59,Nissan,Sentra,Electric,Truck,2008,true
+H988-XI77,Chevrolet,Bolt EV,Hybrid,Sedan,2008,true
+I864-BK83,Ford,Focus,Petrol,Wagon,2013,true
+V336-LQ43,Chevrolet,Silverado,Diesel,Minivan,2019,true
+H495-IT23,Nissan,Rogue,Hybrid,Minivan,2009,true
+N104-MO31,Honda,Fit,Diesel,SUV,2010,true
+T598-MQ36,Hyundai,Sonata,Hybrid,Truck,2004,true
+K792-IF91,Hyundai,Kona,Petrol,Hatchback,2019,true
+J393-PL46,Ford,Mustang,Diesel,Convertible,2022,true
+Y897-OQ83,Kia,Sorento,Electric,Convertible,2012,true
+X629-ZT59,Chevrolet,Tahoe,Hybrid,SUV,2020,true
+X431-JM85,Toyota,Highlander,Diesel,Convertible,2000,true
+B214-NE58,Honda,Accord,Petrol,Hatchback,2012,true
+I254-OS42,Tesla,Model X,Diesel,Minivan,2008,true
+U619-HL83,Tesla,Model 3,Hybrid,Convertible,2019,true
+O104-LO52,Hyundai,Santa Fe,Petrol,SUV,2019,true
+K262-GA94,Kia,Sorento,Diesel,Coupe,2003,true
+A188-WM51,BMW,7 Series,Hybrid,Truck,2013,true
+U687-AV86,Nissan,Altima,Diesel,Sedan,2014,true
+B419-ED85,Ford,F-150,Diesel,Convertible,2008,true
+T440-BC73,Nissan,Rogue,Hybrid,Hatchback,2000,true
+U278-DC89,Honda,CR-V,Electric,Coupe,2019,true
+W362-UR20,Ford,Explorer,Petrol,Coupe,2024,true
+V668-IR55,Toyota,Prius,Hybrid,Convertible,2013,true
+F787-DQ43,Hyundai,Kona,Diesel,Convertible,2011,true
+C226-EH62,Chevrolet,Tahoe,Petrol,Truck,2023,true
+U494-UX35,BMW,5 Series,Electric,Minivan,2000,true
+M369-AW13,Kia,Optima,Diesel,SUV,2018,true
+C863-GK74,Tesla,Model S,Electric,Minivan,2004,true
+U807-KU30,Mercedes,S-Class,Diesel,Sedan,2006,true
+N939-FP76,BMW,X5,Diesel,Coupe,2017,true
+H326-DQ63,Ford,Explorer,Hybrid,Sedan,2014,true
+L311-ML81,Honda,Pilot,Petrol,Hatchback,2018,true
+Y768-WP99,Tesla,Model Y,Electric,Wagon,2006,true
+Q742-RO84,Mercedes,S-Class,Hybrid,Sedan,2016,true
+E192-KD27,Ford,Fiesta,Petrol,Convertible,2004,true
+T470-YE15,Chevrolet,Bolt EV,Hybrid,Truck,2014,true
+B756-LZ81,Tesla,Roadster,Petrol,Minivan,2007,true
+W567-WU13,Kia,Telluride,Hybrid,Convertible,2015,true
+X608-IU31,Chevrolet,Bolt EV,Petrol,Convertible,2011,true
+A418-GS67,Honda,CR-V,Petrol,Coupe,2017,true
+C998-CE85,Ford,Explorer,Petrol,Sedan,2008,true
+M932-CE81,Hyundai,Santa Fe,Diesel,Convertible,2017,true
+Q248-CC79,Nissan,Murano,Petrol,Wagon,2022,true
+Q408-ZD56,Nissan,Sentra,Hybrid,Convertible,2006,true
+P188-JQ32,Chevrolet,Silverado,Hybrid,Coupe,2006,true
+Z683-CV19,Mercedes,GLC,Hybrid,Wagon,2017,true
+L417-JQ56,Chevrolet,Bolt EV,Diesel,Convertible,2024,true
+Y653-CM46,Toyota,Corolla,Diesel,SUV,2022,true
+O980-MM36,Hyundai,Sonata,Electric,Hatchback,2017,true
+P295-KE95,BMW,7 Series,Petrol,Minivan,2024,true
+G670-TP12,Chevrolet,Silverado,Diesel,Hatchback,2011,true
+V864-JU61,Tesla,Model 3,Petrol,Coupe,2023,true
+W813-FM30,Chevrolet,Silverado,Hybrid,Wagon,2022,true
+H234-WM10,Honda,Accord,Hybrid,Sedan,2022,true
+M778-PS51,Honda,Pilot,Diesel,Wagon,2001,true
+I517-YU65,Honda,Pilot,Petrol,Truck,2016,true
+X652-VV31,Nissan,Sentra,Petrol,Wagon,2002,true
+A947-EB21,Hyundai,Kona,Petrol,Convertible,2021,true
+T307-OI62,Mercedes,E-Class,Diesel,Coupe,2019,true
+N867-IA33,Nissan,Altima,Hybrid,Wagon,2004,true
+O989-KV90,Chevrolet,Equinox,Hybrid,Sedan,2020,true
+G850-UQ55,Mercedes,E-Class,Electric,Truck,2020,true
+T810-QW52,Nissan,Maxima,Petrol,Convertible,2003,true
+X972-KJ38,Hyundai,Sonata,Diesel,Hatchback,2015,true
+G222-KB71,Tesla,Model 3,Electric,Wagon,2004,true
+C969-KN86,Toyota,Highlander,Hybrid,Minivan,2003,true
+C871-CF95,Hyundai,Sonata,Diesel,Minivan,2011,true
+N483-QY43,Honda,Pilot,Petrol,Convertible,2013,true
+P223-OW32,Honda,CR-V,Hybrid,Coupe,2012,true
+N646-EG54,Mercedes,S-Class,Hybrid,Convertible,2024,true
+X870-FD97,Toyota,Corolla,Diesel,Coupe,2016,true
+L331-IA77,Kia,Forte,Diesel,Convertible,2009,true
+E360-XE85,Honda,Fit,Diesel,Wagon,2009,true
+E342-ZM33,Nissan,Maxima,Electric,SUV,2005,true
+W383-KR30,Chevrolet,Malibu,Diesel,SUV,2002,true
+Y141-FX99,Tesla,Model 3,Electric,Coupe,2022,true
+R343-SC89,Mercedes,GLC,Diesel,Truck,2012,true
+J679-OH26,Nissan,Murano,Petrol,Sedan,2009,true
+D593-OL62,Honda,Pilot,Diesel,Minivan,2016,true
+M162-AY50,Ford,Fiesta,Petrol,Sedan,2020,true
+W198-DV53,Hyundai,Sonata,Electric,Minivan,2004,true
+X300-ZB28,Toyota,Camry,Electric,Coupe,2009,true
+A505-MI17,Hyundai,Santa Fe,Electric,Coupe,2017,true
+Q888-MR49,Toyota,Camry,Petrol,Coupe,2007,true
+B638-EG56,Nissan,Murano,Hybrid,Minivan,2015,true
+Z160-WY38,Chevrolet,Equinox,Hybrid,Convertible,2020,true
+J303-HY99,Ford,Explorer,Diesel,Hatchback,2000,true
+A980-DN77,Mercedes,GLC,Diesel,Hatchback,2018,true
+D183-NM99,Mercedes,C-Class,Petrol,Convertible,2003,true
+K135-YK57,Toyota,Corolla,Hybrid,Sedan,2016,true
+M580-CI19,Nissan,Sentra,Electric,Sedan,2023,true
+D455-VI92,Tesla,Roadster,Electric,Hatchback,2019,true
+Q929-QJ66,Kia,Forte,Petrol,Truck,2017,true
+N368-US13,Hyundai,Sonata,Electric,Wagon,2002,true
+V204-GZ91,Ford,Mustang,Petrol,Hatchback,2018,true
+B191-HO59,Tesla,Model S,Electric,Coupe,2002,true
+M727-YK31,BMW,5 Series,Diesel,Wagon,2023,true
+X633-GY57,BMW,3 Series,Hybrid,Hatchback,2008,true
+V811-PI23,Hyundai,Santa Fe,Hybrid,Wagon,2012,true
+H621-CP68,Tesla,Model 3,Petrol,Hatchback,2020,true
+P657-ZG40,Nissan,Murano,Diesel,Wagon,2023,true
+Q729-UE30,BMW,3 Series,Petrol,Coupe,2013,true
+U837-GM20,BMW,7 Series,Petrol,Wagon,2019,true
+G391-XO49,Ford,Mustang,Diesel,Minivan,2000,true
+R174-IV24,Toyota,Corolla,Electric,Wagon,2014,true
+S588-HA79,Honda,Pilot,Hybrid,Wagon,2003,true
+S441-EK94,Kia,Sportage,Diesel,Minivan,2017,true
+O495-GM68,Nissan,Maxima,Electric,Truck,2005,true
+Y976-JL55,Toyota,Corolla,Hybrid,Minivan,2012,true
+X837-PA90,Toyota,Corolla,Electric,Minivan,2008,true
+U928-PJ65,Mercedes,GLC,Diesel,SUV,2018,true
+S898-PF22,Nissan,Altima,Diesel,Wagon,2009,true
+X980-EW16,Hyundai,Tucson,Petrol,Minivan,2023,true
+V684-ZC72,Honda,Fit,Electric,Minivan,2004,true
+B671-IS65,Nissan,Maxima,Diesel,Convertible,2017,true
+Q109-DU83,Ford,F-150,Diesel,Sedan,2005,true
+T732-NI20,Mercedes,GLE,Petrol,Truck,2008,true
+G319-RL81,BMW,3 Series,Hybrid,Convertible,2018,true
+B350-IF79,Toyota,Prius,Hybrid,Hatchback,2003,true
+Q349-FZ24,Hyundai,Sonata,Hybrid,SUV,2013,true
+O842-KG36,Tesla,Model S,Electric,Coupe,2012,true
+I992-MM48,Nissan,Murano,Electric,Convertible,2005,true
+F127-ZG93,Ford,Mustang,Petrol,Convertible,2011,true
+N252-NO35,Mercedes,GLC,Electric,Coupe,2023,true
+S898-VT15,Nissan,Murano,Electric,Wagon,2010,true
+P364-LE21,BMW,5 Series,Petrol,Coupe,2024,true
+V615-LO45,Hyundai,Sonata,Hybrid,SUV,2016,true
+G832-IW94,Ford,Mustang,Diesel,Hatchback,2006,true
+V681-SH56,Toyota,Camry,Diesel,Minivan,2024,true
+I618-BV81,Chevrolet,Bolt EV,Hybrid,SUV,2014,true
+T772-RF69,Nissan,Rogue,Petrol,Truck,2023,true
+B379-PU55,Ford,F-150,Diesel,Coupe,2018,true
+S160-PV19,Toyota,RAV4,Electric,Hatchback,2023,true
+M642-ZP72,Toyota,Prius,Diesel,Convertible,2010,true
+E771-NC69,Ford,Mustang,Electric,Minivan,2017,true
+G599-EI46,Ford,Mustang,Electric,Sedan,2006,true
+N784-BI19,Toyota,RAV4,Diesel,Wagon,2017,true
+T950-PS16,Kia,Sorento,Electric,SUV,2020,true
+Y534-HS67,Toyota,Corolla,Electric,Truck,2001,true
+P210-OM88,Honda,Civic,Electric,Wagon,2005,true
+J988-ZR92,Honda,Pilot,Electric,SUV,2013,true
+P944-SI62,Mercedes,E-Class,Hybrid,Coupe,2016,true
+K669-HR24,Chevrolet,Equinox,Petrol,Sedan,2014,true
+Y643-SK30,Chevrolet,Malibu,Electric,SUV,2002,true
+B280-ZY88,Mercedes,S-Class,Hybrid,Coupe,2000,true
+I959-OE35,Kia,Optima,Diesel,Coupe,2009,true
+O481-HG18,BMW,X5,Petrol,Truck,2006,true
+P646-HE11,Tesla,Roadster,Electric,Sedan,2013,true
+D379-VS20,Hyundai,Elantra,Diesel,SUV,2019,true
+P165-XA17,Kia,Forte,Diesel,Coupe,2018,true
+A794-YB63,Mercedes,GLE,Electric,SUV,2015,true
+E489-SB65,Tesla,Model S,Electric,Hatchback,2002,true
+I479-GM50,Nissan,Maxima,Electric,Truck,2014,true
+J590-YE74,Kia,Sorento,Petrol,Wagon,2002,true
+J590-AX63,Kia,Optima,Electric,Coupe,2019,true
+I719-HQ50,Nissan,Rogue,Petrol,Minivan,2016,true
+H625-RQ74,Hyundai,Kona,Electric,Hatchback,2022,true
+S443-QG26,Honda,Pilot,Petrol,Minivan,2005,true
+Z318-EC41,Kia,Telluride,Electric,Wagon,2000,true
+V562-YI23,Nissan,Sentra,Electric,Wagon,2002,true
+D314-HI93,Hyundai,Tucson,Diesel,Coupe,2003,true
+S809-LP23,Hyundai,Elantra,Hybrid,Sedan,2020,true
+X506-IC94,Hyundai,Kona,Petrol,Coupe,2024,true
+O647-GN31,Honda,Pilot,Diesel,Hatchback,2024,true
+K737-BU76,Nissan,Rogue,Diesel,Convertible,2003,true
+V764-QP78,Mercedes,GLE,Electric,Wagon,2000,true
+W775-EK78,BMW,7 Series,Diesel,SUV,2020,true
+S127-KW44,Ford,Mustang,Petrol,Wagon,2001,true
+H441-AM32,Chevrolet,Bolt EV,Hybrid,Truck,2012,true
+A399-RC16,BMW,X5,Petrol,Wagon,2022,true
+X917-NA46,Mercedes,GLC,Diesel,Wagon,2002,true
+E280-EO23,Toyota,Corolla,Hybrid,Wagon,2015,true
+U369-ZR89,Mercedes,S-Class,Diesel,Truck,2021,true
+P882-GJ74,Chevrolet,Silverado,Hybrid,Wagon,2003,true
+H994-PY60,Mercedes,S-Class,Petrol,Hatchback,2003,true
+S342-AU77,Toyota,Corolla,Diesel,Minivan,2001,true
+Z554-YW26,Tesla,Roadster,Hybrid,Sedan,2019,true
+F771-MN54,Hyundai,Elantra,Diesel,Truck,2016,true
+H844-TL10,Tesla,Model X,Hybrid,Sedan,2013,true
+I312-PW17,Nissan,Murano,Petrol,Wagon,2002,true
+Y180-HN64,Hyundai,Santa Fe,Electric,SUV,2023,true
+W665-OK59,BMW,7 Series,Diesel,Convertible,2017,true
+E124-NK65,Kia,Sorento,Hybrid,Sedan,2020,true
+I506-RV71,Nissan,Rogue,Diesel,Wagon,2009,true
+T894-SB20,Toyota,Camry,Hybrid,Minivan,2000,true
+U288-NL65,BMW,3 Series,Hybrid,Convertible,2001,true
+M876-CG67,Hyundai,Kona,Electric,Minivan,2007,true
+U419-GK19,Toyota,RAV4,Electric,Coupe,2013,true
+G635-TM71,Ford,Explorer,Petrol,Minivan,2020,true
+F953-JM24,Chevrolet,Equinox,Electric,Convertible,2005,true
+M901-QU11,Honda,Pilot,Electric,Hatchback,2006,true
+U349-MG44,Tesla,Model S,Petrol,Convertible,2014,true
+I304-IC91,Chevrolet,Tahoe,Hybrid,Coupe,2023,true
+W415-NE80,BMW,X3,Petrol,Truck,2013,true
+P722-EN95,Tesla,Roadster,Electric,Coupe,2020,true
+A834-NV36,BMW,X3,Electric,SUV,2014,true
+I758-CH28,BMW,7 Series,Diesel,Coupe,2012,true
+A658-TJ99,Honda,CR-V,Petrol,Coupe,2014,true
+M804-NF43,Chevrolet,Tahoe,Hybrid,Minivan,2020,true
+O294-PT74,Toyota,Camry,Diesel,Hatchback,2017,true
+B906-RS88,Nissan,Maxima,Hybrid,Convertible,2017,true
+V815-YQ75,BMW,7 Series,Petrol,Minivan,2022,true
+Q657-XM45,BMW,X3,Diesel,Minivan,2016,true
+T419-CU99,Chevrolet,Tahoe,Diesel,Convertible,2024,true
+U936-ZU32,BMW,X3,Hybrid,SUV,2000,true
+P343-ZV20,Toyota,Corolla,Electric,Minivan,2015,true
+U605-CV65,Chevrolet,Tahoe,Hybrid,Truck,2005,true
+H473-BY47,Mercedes,GLE,Diesel,Sedan,2008,true
+D818-HW26,BMW,7 Series,Diesel,Truck,2001,true
+O695-YD35,Toyota,Camry,Hybrid,Truck,2021,true
+J570-AZ39,Toyota,RAV4,Petrol,Coupe,2001,true
+A880-XW38,Chevrolet,Tahoe,Hybrid,Convertible,2008,true
+N467-YI33,Nissan,Murano,Electric,Coupe,2015,true
+Y271-QO61,Nissan,Altima,Diesel,Minivan,2006,true
+P336-TH47,Ford,Fiesta,Hybrid,Coupe,2000,true
+D771-NV93,Toyota,RAV4,Petrol,Convertible,2000,true
+X631-TI36,Nissan,Rogue,Hybrid,SUV,2016,true
+R152-WM89,Toyota,Corolla,Petrol,Hatchback,2013,true
+G365-TD67,Honda,Fit,Diesel,Truck,2021,true
+D572-ZU54,Kia,Sorento,Electric,Sedan,2000,true
+F456-QA85,Mercedes,GLE,Electric,Coupe,2017,true
+B523-KZ15,Mercedes,S-Class,Hybrid,Hatchback,2008,true
+A629-ZU40,Mercedes,C-Class,Petrol,SUV,2015,true
+N245-DJ55,Hyundai,Elantra,Petrol,Sedan,2020,true
+B895-OX34,Kia,Forte,Hybrid,Minivan,2013,true
+T192-HN75,Ford,Fiesta,Hybrid,Convertible,2009,true
+F763-JA19,Tesla,Roadster,Petrol,Truck,2008,true
+I363-DG74,BMW,X5,Hybrid,Minivan,2020,true
+K928-DE73,Ford,Explorer,Electric,Convertible,2004,true
+C738-AK24,Nissan,Sentra,Petrol,Minivan,2006,true
+M131-GF12,Honda,Pilot,Petrol,Hatchback,2023,true
+B999-SJ39,Ford,F-150,Diesel,Convertible,2022,true
+Z216-XY98,Honda,Civic,Hybrid,Hatchback,2000,true
+N227-XU92,Honda,CR-V,Electric,Coupe,2015,true
+J663-LV43,Tesla,Model 3,Diesel,SUV,2013,true
+W163-YZ16,Ford,Fiesta,Hybrid,Minivan,2023,true
+Z656-OR76,Ford,Fiesta,Diesel,Truck,2001,true
+Q371-XV23,Toyota,Camry,Petrol,Wagon,2021,true
+X262-CP50,Tesla,Model 3,Electric,Truck,2010,true
+K133-UH11,Mercedes,GLC,Hybrid,Truck,2012,true
+S491-XI20,Kia,Telluride,Diesel,Convertible,2009,true
+T669-FR27,Mercedes,E-Class,Hybrid,Hatchback,2011,true
+T236-LT60,Hyundai,Santa Fe,Diesel,Convertible,2000,true
+C172-XA18,Tesla,Roadster,Petrol,Coupe,2022,true
+Z187-BI67,Tesla,Roadster,Hybrid,Convertible,2015,true
+U811-FG95,Chevrolet,Silverado,Petrol,Coupe,2008,true
+L711-RD16,Toyota,Prius,Electric,Minivan,2012,true
+G199-HX83,Chevrolet,Malibu,Hybrid,Truck,2005,true
+M647-EL99,Honda,CR-V,Electric,Sedan,2020,true
+W181-SN50,Honda,Fit,Hybrid,Convertible,2010,true
+H466-KG34,Hyundai,Santa Fe,Petrol,Wagon,2019,true
+X250-LU98,Hyundai,Tucson,Hybrid,SUV,2015,true
+K791-TP12,Toyota,Camry,Diesel,Hatchback,2014,true
+D597-IT57,Kia,Sportage,Electric,Convertible,2021,true
+C160-PS41,Mercedes,GLE,Hybrid,Truck,2001,true
+P305-XK83,Kia,Forte,Diesel,Sedan,2009,true
+U182-NE98,Ford,Explorer,Petrol,Convertible,2016,true
+I962-DG38,Mercedes,C-Class,Diesel,Wagon,2022,true
+B520-BU38,Toyota,Highlander,Hybrid,Minivan,2014,true
+F358-ID70,Ford,Explorer,Electric,Truck,2012,true
+N488-AO14,Ford,Focus,Diesel,Wagon,2009,true
+O375-SZ10,Hyundai,Santa Fe,Petrol,SUV,2013,true
+J321-DQ64,BMW,3 Series,Petrol,Truck,2014,true
+C412-OB46,Nissan,Maxima,Diesel,Truck,2015,true
+O592-AI48,Hyundai,Elantra,Diesel,Convertible,2001,true
+O190-KM68,Ford,F-150,Hybrid,Minivan,2004,true
+F477-IP81,Chevrolet,Equinox,Petrol,Hatchback,2020,true
+B549-GB48,Hyundai,Tucson,Petrol,Minivan,2018,true
+P760-FQ35,Hyundai,Kona,Petrol,Wagon,2004,true
+I685-MJ36,Tesla,Roadster,Diesel,Truck,2012,true
+W804-ML89,Mercedes,S-Class,Hybrid,Sedan,2008,true
+V903-KQ78,Mercedes,S-Class,Hybrid,SUV,2000,true
+O535-HA94,Toyota,Prius,Petrol,Sedan,2006,true
+P499-UC75,BMW,5 Series,Electric,Minivan,2019,true
+B218-HI57,Kia,Optima,Petrol,Wagon,2013,true
+A980-QQ41,Mercedes,C-Class,Electric,Hatchback,2016,true
+M966-ZV47,Ford,F-150,Diesel,Wagon,2018,true
+V903-SA41,Kia,Forte,Electric,Wagon,2014,true
+O430-VU19,Chevrolet,Silverado,Petrol,Minivan,2000,true
+B136-GP84,Ford,Explorer,Hybrid,Sedan,2022,true
+H647-OZ45,Ford,F-150,Hybrid,Truck,2021,true
+N384-NV61,Ford,Mustang,Diesel,Truck,2019,true
+Q643-ZH25,Chevrolet,Equinox,Electric,Wagon,2014,true
+A314-OU93,Toyota,RAV4,Hybrid,SUV,2004,true
+Y773-FX83,Tesla,Roadster,Petrol,Wagon,2018,true
+G376-YB88,Kia,Forte,Hybrid,Convertible,2017,true
+S534-TQ54,Tesla,Model Y,Petrol,Hatchback,2017,true
+V166-KL90,Honda,Fit,Diesel,Coupe,2016,true
+A658-ZO26,BMW,7 Series,Petrol,Convertible,2022,true
+A216-LJ74,Tesla,Model X,Electric,Coupe,2019,true
+P998-NT26,Toyota,RAV4,Petrol,Convertible,2009,true
+H387-EE62,Honda,Fit,Electric,Coupe,2006,true
+W453-YL27,BMW,X5,Hybrid,Truck,2016,true
+F116-JT91,BMW,X5,Petrol,Sedan,2012,true
+M964-VA70,Ford,Explorer,Petrol,Coupe,2005,true
+B829-QJ79,Nissan,Maxima,Petrol,SUV,2009,true
+B556-JT24,Toyota,Prius,Electric,Truck,2015,true
+U807-UO53,Chevrolet,Silverado,Petrol,Truck,2014,true
+A384-XC61,Tesla,Model X,Diesel,SUV,2017,true
+V759-LA93,Toyota,Highlander,Hybrid,SUV,2021,true
+Y283-MP28,Honda,Pilot,Electric,Minivan,2003,true
+C908-LB14,Hyundai,Kona,Diesel,SUV,2018,true
+F388-JZ32,Kia,Telluride,Diesel,Wagon,2015,true
+B426-KR95,Toyota,Highlander,Diesel,Truck,2003,true
+I402-XN51,Kia,Sorento,Hybrid,Minivan,2021,true
+I596-YW28,Toyota,Prius,Diesel,Hatchback,2017,true
+H940-YH58,Honda,Pilot,Electric,Wagon,2024,true
+F951-OP41,Tesla,Model Y,Petrol,Hatchback,2011,true
+J198-YE98,Toyota,RAV4,Electric,Sedan,2008,true
+V196-HO13,Ford,Explorer,Diesel,Truck,2012,true
+E666-JD12,Hyundai,Tucson,Diesel,Sedan,2014,true
+S705-YX18,Toyota,Highlander,Diesel,Coupe,2002,true
+J178-PI51,Mercedes,S-Class,Diesel,Convertible,2003,true
+E417-YG91,Nissan,Sentra,Petrol,Sedan,2010,true
+C724-AJ78,Chevrolet,Malibu,Electric,Hatchback,2018,true
+J646-YZ41,BMW,7 Series,Petrol,Sedan,2009,true
+V479-XA92,Hyundai,Elantra,Hybrid,Sedan,2016,true
+R545-PV23,Kia,Sorento,Diesel,Truck,2011,true
+T866-EP70,Honda,Accord,Electric,Minivan,2004,true
+V972-GM50,Mercedes,GLE,Diesel,Truck,2009,true
+V879-BZ48,Ford,Focus,Electric,Convertible,2002,true
+X771-CO57,Honda,Accord,Petrol,Truck,2017,true
+E566-LX67,Nissan,Maxima,Petrol,Hatchback,2009,true
+P571-SQ36,Ford,F-150,Diesel,Sedan,2017,true
+O954-JH14,Toyota,Highlander,Hybrid,Coupe,2002,true
+C581-PB68,Nissan,Murano,Petrol,Minivan,2003,true
+A872-ZZ28,Chevrolet,Silverado,Petrol,Wagon,2010,true
+M791-NF22,Mercedes,S-Class,Hybrid,Minivan,2024,true
+L863-SA50,Ford,Focus,Electric,Convertible,2001,true
+L897-AF99,Hyundai,Kona,Diesel,Coupe,2003,true
+K573-RH80,Hyundai,Santa Fe,Electric,Coupe,2018,true
+R510-KI55,Ford,Explorer,Petrol,Coupe,2009,true
+C628-TK86,Chevrolet,Bolt EV,Electric,Minivan,2003,true
+G514-PX74,Tesla,Model Y,Petrol,Coupe,2016,true
+N951-ZU32,Honda,Accord,Petrol,Sedan,2011,true
+F423-KR57,Nissan,Murano,Electric,Minivan,2017,true
+K199-RT63,Hyundai,Tucson,Diesel,Coupe,2009,true
+X125-ET53,Nissan,Sentra,Diesel,Truck,2002,true
+T632-DI63,Chevrolet,Tahoe,Petrol,Minivan,2006,true
+Y749-TN53,Nissan,Rogue,Diesel,Truck,2007,true
+K105-NM67,Mercedes,GLE,Electric,Sedan,2015,true
+D230-EW81,Honda,CR-V,Diesel,Wagon,2014,true
+K301-HX88,BMW,X5,Petrol,Minivan,2018,true
+K319-CB90,Honda,Fit,Electric,Sedan,2012,true
+P330-FY15,Hyundai,Sonata,Hybrid,Sedan,2013,true
+U452-QM73,Mercedes,C-Class,Hybrid,Convertible,2004,true
+W875-OT47,Honda,Civic,Hybrid,Wagon,2017,true
+D682-PN11,Hyundai,Elantra,Hybrid,Convertible,2003,true
+C987-RT18,Honda,Fit,Diesel,Convertible,2022,true
+B308-RZ93,Tesla,Model X,Petrol,Hatchback,2016,true
+S573-TH32,Kia,Sportage,Hybrid,Truck,2011,true
+I493-TE14,Nissan,Sentra,Hybrid,Minivan,2022,true
+Q716-HQ81,Tesla,Model 3,Diesel,Truck,2012,true
+R506-EI35,Ford,Focus,Diesel,Coupe,2017,true
+T490-MJ79,Chevrolet,Silverado,Electric,SUV,2015,true
+Z761-BN10,Honda,Accord,Electric,SUV,2007,true
+T853-FX34,Chevrolet,Malibu,Electric,Truck,2020,true
+C203-HH79,Kia,Sportage,Electric,Sedan,2014,true
+G848-DB19,Nissan,Rogue,Hybrid,Coupe,2009,true
+J495-EN37,Chevrolet,Malibu,Electric,Convertible,2020,true
+T751-GV21,Toyota,Prius,Petrol,Hatchback,2010,true
+V513-ED75,Kia,Optima,Hybrid,SUV,2009,true
+R764-VV81,Ford,Mustang,Electric,Convertible,2018,true
+C477-OQ82,Toyota,Prius,Diesel,Hatchback,2023,true
+N159-UV20,Toyota,Corolla,Petrol,SUV,2015,true
+C338-XV63,Nissan,Rogue,Diesel,Sedan,2015,true
+J431-XS18,Mercedes,E-Class,Electric,Sedan,2023,true
+V580-PJ47,Chevrolet,Bolt EV,Diesel,Hatchback,2008,true
+X887-YQ75,Hyundai,Tucson,Petrol,Minivan,2015,true
+O278-IC53,Kia,Forte,Diesel,Sedan,2020,true
+J552-UH52,BMW,7 Series,Hybrid,Minivan,2021,true
+Z592-IG11,BMW,X3,Diesel,Truck,2007,true
+Q906-YX10,Toyota,RAV4,Diesel,SUV,2024,true
+X851-AK34,Honda,Civic,Petrol,Convertible,2007,true
+R152-VG40,Kia,Sportage,Electric,Convertible,2003,true
+H493-KN45,Tesla,Roadster,Hybrid,Convertible,2008,true
+Q364-EH86,Ford,Focus,Diesel,Wagon,2008,true
+Q183-AM30,Honda,Accord,Diesel,Convertible,2018,true
+K153-OD34,Ford,Fiesta,Diesel,Minivan,2011,true
+F145-LP77,Mercedes,GLE,Hybrid,Convertible,2004,true
+R855-UH73,Honda,Civic,Petrol,Wagon,2002,true
+A571-MJ47,Kia,Sportage,Petrol,Coupe,2001,true
+T130-JA60,BMW,X5,Petrol,Hatchback,2018,true
+C682-EK88,Tesla,Model Y,Hybrid,SUV,2011,true
+F248-ZR56,Mercedes,S-Class,Electric,Convertible,2003,true
+C612-QB27,BMW,X5,Diesel,Wagon,2015,true
+N725-DF11,BMW,3 Series,Petrol,Hatchback,2012,true
+T257-UB71,Ford,F-150,Diesel,Minivan,2018,true
+Q103-WJ85,Ford,Explorer,Electric,Coupe,2011,true
+C702-BV22,Hyundai,Elantra,Hybrid,SUV,2000,true
+Q734-LF36,Chevrolet,Bolt EV,Diesel,Hatchback,2005,true
+L894-UO82,Hyundai,Sonata,Diesel,Convertible,2020,true
+B377-GB17,BMW,7 Series,Petrol,Minivan,2002,true
+S888-PN11,Tesla,Model S,Electric,Coupe,2006,true
+V909-FN93,Kia,Optima,Petrol,SUV,2001,true
+Y416-FI90,Mercedes,GLC,Petrol,Minivan,2017,true
+O273-DA88,Mercedes,GLC,Electric,Coupe,2023,true
+V728-HS96,Toyota,Corolla,Hybrid,Truck,2009,true
+P372-AM17,BMW,X5,Diesel,Truck,2004,true
+U820-JV38,Honda,CR-V,Diesel,Convertible,2007,true
+H638-QK85,Nissan,Sentra,Petrol,SUV,2014,true
+M820-JB49,Toyota,Corolla,Hybrid,Hatchback,2020,true
+A343-VE14,Hyundai,Santa Fe,Petrol,Minivan,2004,true
+R370-WX41,Hyundai,Tucson,Petrol,Sedan,2001,true
+R389-GM34,Honda,Accord,Petrol,Sedan,2008,true
+D534-VR78,BMW,X5,Diesel,Wagon,2006,true
+S886-KJ17,Tesla,Roadster,Petrol,Convertible,2013,true
+Z993-CP44,Nissan,Altima,Electric,Minivan,2004,true
+K723-AJ77,BMW,5 Series,Diesel,Sedan,2009,true
+O179-RH96,Nissan,Maxima,Diesel,Sedan,2024,true
+G294-NK14,Nissan,Maxima,Hybrid,Truck,2016,true
+U610-RA18,Tesla,Model X,Electric,Wagon,2017,true
+A562-SV53,Ford,Mustang,Hybrid,SUV,2019,true
+N957-TG41,Mercedes,S-Class,Hybrid,Coupe,2021,true
+U923-QK64,BMW,X5,Electric,Wagon,2006,true
+H685-HJ74,BMW,5 Series,Hybrid,Coupe,2008,true
+E304-HJ20,Chevrolet,Silverado,Hybrid,Minivan,2010,true
+W553-LC16,Toyota,Highlander,Hybrid,SUV,2022,true
+T867-TG42,Honda,Fit,Petrol,Wagon,2012,true
+W107-PV38,Hyundai,Tucson,Electric,SUV,2021,true
+E697-OB45,Mercedes,GLC,Hybrid,Sedan,2016,true
+A825-ZM83,Chevrolet,Malibu,Petrol,Wagon,2021,true
+C684-ZD99,BMW,5 Series,Petrol,Truck,2020,true
+A696-AS10,Chevrolet,Bolt EV,Petrol,Coupe,2023,true
+X254-KP68,Nissan,Sentra,Petrol,SUV,2001,true
+C967-OH80,Nissan,Rogue,Electric,Truck,2004,true
+R384-ON94,Chevrolet,Equinox,Diesel,Sedan,2016,true
+B115-LJ30,Kia,Forte,Petrol,Wagon,2019,true
+Y329-LK52,Ford,Explorer,Electric,Hatchback,2002,true
+O370-RJ12,Honda,Fit,Diesel,SUV,2003,true
+L944-WL74,Toyota,Camry,Petrol,Hatchback,2024,true
+D797-ZO18,Chevrolet,Equinox,Hybrid,Truck,2021,true
+W464-MP80,BMW,5 Series,Electric,Convertible,2021,true
+A200-JC25,Hyundai,Santa Fe,Electric,Sedan,2023,true
+J343-JX25,Hyundai,Sonata,Petrol,Hatchback,2013,true
+X700-YJ30,Mercedes,S-Class,Diesel,Wagon,2005,true
+T204-NU53,Nissan,Murano,Electric,Wagon,2000,true
+F122-EQ74,Chevrolet,Malibu,Diesel,Minivan,2006,true
+H535-BN51,Kia,Optima,Electric,Wagon,2015,true
+N552-NC45,Chevrolet,Silverado,Petrol,Coupe,2017,true
+L641-TC98,Kia,Sorento,Electric,Coupe,2007,true
+M950-IT33,Honda,Pilot,Hybrid,Convertible,2017,true
+R985-PE87,Honda,CR-V,Hybrid,Truck,2018,true
+Y939-GT49,Mercedes,S-Class,Hybrid,Sedan,2010,true
+R154-JA84,Honda,Civic,Diesel,Convertible,2021,true
+E286-PZ79,Honda,Fit,Electric,Convertible,2013,true
+A119-PX29,Mercedes,E-Class,Hybrid,Truck,2001,true
+G622-YP25,Nissan,Murano,Petrol,Coupe,2023,true
+M392-RJ37,Tesla,Model S,Petrol,SUV,2009,true
+L708-GG38,Tesla,Model X,Diesel,Convertible,2017,true
+L915-TL61,Chevrolet,Equinox,Diesel,Coupe,2021,true
+P615-GT46,Kia,Sportage,Diesel,Hatchback,2010,true
+A809-WL12,Mercedes,GLC,Electric,Convertible,2017,true
+I276-UF25,Kia,Sorento,Diesel,Convertible,2009,true
+J786-XA45,Honda,Fit,Petrol,Coupe,2013,true
+J443-KH27,BMW,7 Series,Petrol,Hatchback,2008,true
+C971-LG96,Toyota,Highlander,Hybrid,Minivan,2018,true
+D818-DV64,Ford,F-150,Hybrid,Hatchback,2021,true
+N515-DQ85,Honda,CR-V,Hybrid,Coupe,2016,true
+Z409-PV87,Hyundai,Sonata,Diesel,Convertible,2023,true
+J423-KX21,Mercedes,E-Class,Diesel,Convertible,2024,true
+L799-BS93,Tesla,Model S,Electric,Hatchback,2022,true
+S217-LC30,Chevrolet,Silverado,Diesel,Wagon,2019,true
+A434-CI72,Nissan,Maxima,Petrol,Wagon,2003,true
+O520-BI77,Nissan,Sentra,Petrol,Sedan,2011,true
+I243-DS30,Tesla,Model X,Petrol,Truck,2002,true
+G382-CR48,Honda,Pilot,Electric,Coupe,2019,true
+A675-XU20,Mercedes,GLE,Diesel,Truck,2005,true
+U829-XY79,Chevrolet,Silverado,Hybrid,SUV,2003,true
+H806-DD70,Chevrolet,Equinox,Petrol,Convertible,2005,true
+G962-RI85,Nissan,Maxima,Hybrid,Minivan,2007,true
+B897-ME30,Hyundai,Kona,Hybrid,Coupe,2000,true
+V314-QO29,Nissan,Rogue,Diesel,Minivan,2006,true
+X317-MJ51,Kia,Sportage,Diesel,Coupe,2016,true
+C427-KH63,Chevrolet,Malibu,Petrol,Convertible,2004,true
+F290-JJ96,Honda,Fit,Petrol,SUV,2023,true
+G108-OT21,Mercedes,S-Class,Diesel,Truck,2003,true
+Q216-YM88,Mercedes,GLE,Electric,SUV,2015,true
+G110-GG97,Mercedes,GLC,Petrol,Sedan,2018,true
+F809-OY15,Toyota,Highlander,Petrol,Truck,2005,true
+G566-TI13,Nissan,Rogue,Petrol,Hatchback,2008,true
+N853-DJ97,Chevrolet,Tahoe,Hybrid,Wagon,2003,true
+B190-KO26,Ford,Focus,Hybrid,Truck,2020,true
+E402-JO31,Hyundai,Elantra,Diesel,Convertible,2012,true
+U647-ZT18,Toyota,Camry,Diesel,Coupe,2024,true
+O665-LL70,Chevrolet,Silverado,Electric,Hatchback,2017,true
+O948-OR61,Toyota,RAV4,Diesel,SUV,2013,true
+G190-OA68,Hyundai,Tucson,Petrol,SUV,2016,true
+I691-ZB82,Kia,Optima,Petrol,Wagon,2023,true
+G219-QV95,Hyundai,Santa Fe,Petrol,Minivan,2014,true
+D581-LE50,Chevrolet,Equinox,Diesel,Minivan,2014,true
+L212-JM57,BMW,3 Series,Electric,Convertible,2022,true
+A308-TU39,Hyundai,Santa Fe,Hybrid,SUV,2018,true
+K842-BQ83,Ford,Focus,Hybrid,Sedan,2005,true
+N725-FL75,Tesla,Roadster,Petrol,SUV,2009,true
+V970-OE24,Nissan,Murano,Diesel,SUV,2000,true
+X166-LS81,Ford,Focus,Hybrid,Hatchback,2002,true
+U508-PU16,Ford,Explorer,Petrol,Convertible,2024,true
+Q883-WI62,Hyundai,Santa Fe,Electric,Hatchback,2004,true
+U536-RF39,BMW,X3,Diesel,Hatchback,2017,true
+W524-PP19,Toyota,Corolla,Electric,Minivan,2006,true
+T687-YP20,Ford,Explorer,Petrol,Hatchback,2005,true
+V909-ZE97,Honda,Civic,Petrol,Truck,2000,true
+J119-ZE16,Chevrolet,Tahoe,Petrol,Wagon,2011,true
+T473-QY56,Kia,Telluride,Electric,Wagon,2008,true
+A395-LV50,Ford,Mustang,Petrol,Minivan,2018,true
+Y639-FP62,Hyundai,Elantra,Petrol,Wagon,2023,true
+L798-PT85,BMW,3 Series,Electric,Coupe,2005,true
+P924-ON18,Tesla,Model Y,Electric,Hatchback,2024,true
+Z635-IG45,Nissan,Maxima,Hybrid,Truck,2024,true
+V708-LE79,BMW,3 Series,Electric,Minivan,2018,true
+P770-YH67,Toyota,Prius,Hybrid,Truck,2006,true
+D735-PT23,Toyota,Highlander,Diesel,Convertible,2019,true
+M791-FH38,Chevrolet,Malibu,Petrol,Wagon,2015,true
+I124-YQ77,Nissan,Maxima,Electric,Hatchback,2010,true
+I691-DL22,Ford,Fiesta,Diesel,Truck,2023,true
+X182-XS33,Kia,Sportage,Electric,Minivan,2018,true
+Y345-CA92,BMW,X3,Hybrid,Hatchback,2020,true
+G337-EU24,Chevrolet,Tahoe,Electric,Wagon,2014,true
+C185-GS31,Tesla,Model Y,Electric,Minivan,2000,true
+U383-UW39,Tesla,Model S,Diesel,SUV,2013,true
+V766-GC46,Ford,F-150,Hybrid,Hatchback,2003,true
+U922-SM75,Kia,Forte,Petrol,Sedan,2021,true
+A918-XE79,BMW,7 Series,Diesel,SUV,2023,true
+C818-TZ59,Chevrolet,Equinox,Petrol,Truck,2001,true
+V596-OA64,Toyota,Camry,Hybrid,Wagon,2016,true
+D276-VM21,Tesla,Model Y,Electric,Minivan,2023,true
+R790-KM91,Kia,Forte,Hybrid,Minivan,2004,true
+C616-JE17,Honda,Civic,Electric,Minivan,2008,true
+H644-UK10,Hyundai,Tucson,Diesel,Wagon,2019,true
+Z962-QD30,Ford,F-150,Hybrid,Truck,2008,true
+O443-IO70,Toyota,Prius,Hybrid,Sedan,2005,true
+S837-MS53,Ford,Focus,Petrol,Coupe,2010,true
+R993-TM10,Hyundai,Sonata,Hybrid,Convertible,2000,true
+E637-DC10,Tesla,Roadster,Electric,Truck,2000,true
+X229-JM52,Ford,Focus,Hybrid,Hatchback,2012,true
+Z290-RX36,Chevrolet,Tahoe,Hybrid,Truck,2021,true
+Z447-SC22,Kia,Sorento,Electric,Truck,2008,true
+W806-BA16,Kia,Sportage,Diesel,Hatchback,2010,true
+Y685-IB70,Chevrolet,Equinox,Diesel,Truck,2003,true
+Z582-BP31,BMW,7 Series,Hybrid,Hatchback,2022,true
+P721-MW19,Chevrolet,Equinox,Hybrid,Hatchback,2008,true
+X306-NH30,Honda,Fit,Electric,Sedan,2014,true
+T713-OJ90,Ford,Mustang,Diesel,Wagon,2017,true
+P828-SX61,BMW,3 Series,Hybrid,Hatchback,2000,true
+L423-KE91,Ford,Explorer,Electric,Hatchback,2000,true
+S535-MO59,Tesla,Roadster,Diesel,Wagon,2021,true
+Z738-LF46,Hyundai,Tucson,Electric,Convertible,2019,true
+Z124-AG32,Kia,Optima,Electric,Hatchback,2009,true
+F831-PZ23,Toyota,Prius,Petrol,Sedan,2020,true
+T946-GK56,Tesla,Model Y,Hybrid,Minivan,2007,true
+Y534-FB71,Ford,Explorer,Petrol,Convertible,2004,true
+Y846-BV55,Hyundai,Santa Fe,Hybrid,Coupe,2017,true
+N485-SO15,Toyota,Camry,Electric,Coupe,2001,true
+Q476-XW88,Hyundai,Santa Fe,Diesel,Minivan,2016,true
+S483-LW69,Honda,Accord,Petrol,Coupe,2023,true
+W846-BM71,Ford,F-150,Electric,Convertible,2015,true
+E857-IY94,Ford,Mustang,Electric,Truck,2023,true
+B906-OO92,Kia,Forte,Petrol,Coupe,2010,true
+C110-RG63,Ford,Fiesta,Petrol,Wagon,2005,true
+S650-DE97,Hyundai,Santa Fe,Electric,SUV,2020,true
+P832-WP50,Chevrolet,Bolt EV,Diesel,Sedan,2009,true
+C602-IU95,Kia,Sorento,Diesel,Hatchback,2005,true
+C529-RA73,BMW,7 Series,Diesel,Wagon,2009,true
+B224-DZ74,Chevrolet,Bolt EV,Petrol,Hatchback,2008,true
+R536-DC14,BMW,X3,Hybrid,Wagon,2002,true
+W886-TF99,Nissan,Murano,Petrol,Hatchback,2008,true
+S691-LB71,Nissan,Murano,Electric,Minivan,2004,true
+S150-YT84,Toyota,Prius,Electric,Sedan,2018,true
+Q933-VP27,BMW,X5,Petrol,Wagon,2020,true
+K416-MI10,Hyundai,Sonata,Electric,Sedan,2007,true
+P828-AL25,Kia,Forte,Electric,Wagon,2016,true
+R793-GP71,Nissan,Maxima,Petrol,Truck,2016,true
+B991-LL31,Honda,Fit,Electric,Coupe,2017,true
+P670-HZ89,Mercedes,GLE,Electric,Sedan,2003,true
+M652-LI71,Honda,Civic,Electric,Hatchback,2009,true
+K146-MR99,Chevrolet,Malibu,Electric,Wagon,2009,true
+E667-DG11,BMW,X3,Diesel,Minivan,2009,true
+Y663-RR47,Kia,Sportage,Diesel,Minivan,2024,true
+O386-OD96,Honda,CR-V,Petrol,Wagon,2003,true
+L440-DE54,Chevrolet,Malibu,Petrol,Truck,2021,true
+P390-CM39,BMW,5 Series,Hybrid,SUV,2009,true
+C429-HN94,Toyota,Corolla,Hybrid,Minivan,2024,true
+N410-OS58,Ford,Focus,Diesel,Truck,2010,true
+S237-UW45,Honda,Pilot,Hybrid,Wagon,2006,true
+J920-BP79,Ford,Fiesta,Diesel,SUV,2009,true
+A561-JF81,Kia,Telluride,Petrol,Convertible,2008,true
+T916-EB99,Nissan,Sentra,Electric,Minivan,2003,true
+I953-OV65,Mercedes,E-Class,Electric,SUV,2010,true
+M126-VS10,Nissan,Maxima,Petrol,Convertible,2002,true
+Z713-ZA25,Kia,Forte,Hybrid,Hatchback,2006,true
+U199-SX78,Hyundai,Tucson,Petrol,Truck,2021,true
+M310-IH13,Honda,Civic,Petrol,Wagon,2005,true
+K338-VE59,BMW,7 Series,Electric,Coupe,2007,true
+N732-LJ91,Tesla,Model S,Petrol,Minivan,2007,true
+C171-VR42,Ford,Mustang,Diesel,Truck,2003,true
+T455-AY35,Nissan,Sentra,Diesel,Truck,2005,true
+M142-HO87,BMW,3 Series,Petrol,Hatchback,2016,true
+M917-QI58,Mercedes,GLC,Diesel,Coupe,2006,true
+N340-WT28,BMW,7 Series,Hybrid,Coupe,2008,true
+C615-NF15,Tesla,Model S,Hybrid,Minivan,2018,true
+P495-BO75,Mercedes,E-Class,Diesel,Wagon,2021,true
+U172-AQ62,Mercedes,GLE,Hybrid,Convertible,2001,true
+D334-PG93,Kia,Forte,Electric,Convertible,2013,true
+R811-KI22,Nissan,Rogue,Electric,Coupe,2005,true
+T768-RX78,Toyota,RAV4,Petrol,SUV,2012,true
+R323-XK53,Kia,Forte,Electric,Wagon,2020,true
+H188-QE62,Honda,Pilot,Petrol,Minivan,2007,true
+Y728-SG66,Toyota,Highlander,Hybrid,Coupe,2006,true
+T326-VD53,Toyota,RAV4,Electric,Sedan,2015,true
+A662-JZ69,Nissan,Altima,Petrol,Truck,2004,true
+A569-BY49,Tesla,Model Y,Hybrid,Hatchback,2000,true
+S389-PQ39,Honda,Pilot,Petrol,Hatchback,2016,true
+P915-KL60,Ford,Focus,Electric,Minivan,2012,true
+D564-CY17,BMW,7 Series,Electric,Wagon,2016,true
+Y452-PU49,BMW,5 Series,Diesel,Coupe,2012,true
+Z333-JE62,Chevrolet,Bolt EV,Petrol,Minivan,2021,true
+P595-XQ63,Hyundai,Sonata,Petrol,Convertible,2022,true
+V841-MJ68,Toyota,RAV4,Diesel,Sedan,2022,true
+Y991-NX76,Nissan,Maxima,Diesel,Minivan,2001,true
+M987-AD75,Ford,Fiesta,Diesel,Truck,2011,true
+E391-QK97,Chevrolet,Bolt EV,Hybrid,Convertible,2013,true
+X354-BR18,Kia,Sportage,Petrol,SUV,2012,true
+N901-CP40,Tesla,Roadster,Petrol,Sedan,2011,true
+S735-EZ70,BMW,3 Series,Electric,SUV,2012,true
+H413-SH47,BMW,3 Series,Diesel,Convertible,2013,true
+K889-VE70,Ford,Focus,Electric,SUV,2005,true
+Y921-IF38,Honda,Pilot,Diesel,Truck,2007,true
+G664-TG37,Mercedes,E-Class,Petrol,Convertible,2018,true
+W929-KH36,Toyota,Camry,Diesel,Hatchback,2023,true
+D503-JB94,Chevrolet,Equinox,Diesel,Truck,2009,true
+R957-ZS51,Toyota,Highlander,Electric,Hatchback,2000,true
+M272-AU24,Chevrolet,Equinox,Petrol,Coupe,2001,true
+E797-MQ48,Tesla,Model 3,Hybrid,Truck,2001,true
+N397-MV66,Tesla,Model Y,Petrol,Minivan,2011,true
+I593-DD82,BMW,X5,Petrol,Wagon,2002,true
+U769-AU28,Chevrolet,Malibu,Petrol,SUV,2016,true
+X920-UT95,Tesla,Model S,Hybrid,Sedan,2014,true
+I323-FV43,Toyota,RAV4,Petrol,Hatchback,2020,true
+T111-HX53,Honda,Accord,Diesel,Convertible,2021,true
+K380-ZG21,Toyota,Highlander,Petrol,Truck,2013,true
+J758-JI23,Ford,F-150,Hybrid,Wagon,2000,true
+C989-RC42,Chevrolet,Equinox,Diesel,Sedan,2005,true
+S327-WV53,Mercedes,E-Class,Hybrid,Wagon,2022,true
+O172-WU66,Tesla,Model Y,Electric,Hatchback,2000,true
+H816-KY41,Hyundai,Santa Fe,Petrol,SUV,2017,true
+E462-AN82,Tesla,Model Y,Diesel,Convertible,2020,true
+D564-JG39,Honda,Fit,Diesel,Minivan,2023,true
+V367-TJ56,Honda,CR-V,Hybrid,Truck,2014,true
+G441-AA60,Toyota,Camry,Electric,Coupe,2005,true
+S406-HF74,Hyundai,Sonata,Hybrid,SUV,2004,true
+A936-VV45,Tesla,Model S,Electric,Coupe,2021,true
+M359-QE71,Ford,Mustang,Diesel,SUV,2020,true
+Z639-EH22,Honda,Civic,Diesel,Convertible,2015,true
+Y406-DQ35,Hyundai,Santa Fe,Hybrid,SUV,2013,true
+A679-AW17,Tesla,Model Y,Diesel,Minivan,2012,true
+A733-KG46,Hyundai,Sonata,Petrol,Wagon,2019,true
+K516-CE51,Hyundai,Santa Fe,Electric,Truck,2007,true
+A390-KL12,Kia,Sorento,Petrol,SUV,2002,true
+W320-ID32,Tesla,Model Y,Electric,Hatchback,2003,true
+C355-NY79,Tesla,Model X,Hybrid,Wagon,2011,true
+W710-HI21,Nissan,Rogue,Petrol,SUV,2010,true
+L252-CA49,Kia,Sportage,Petrol,Hatchback,2002,true
+K518-FU43,Honda,Fit,Hybrid,Convertible,2002,true
+A458-PU89,Ford,F-150,Electric,Convertible,2001,true
+H924-IV96,Honda,Accord,Petrol,Minivan,2017,true
+S913-NL28,Nissan,Altima,Electric,Wagon,2007,true
+J422-PK30,Nissan,Maxima,Petrol,SUV,2008,true
+C490-TC45,Tesla,Roadster,Petrol,Sedan,2014,true
+O943-EW33,Mercedes,C-Class,Hybrid,Wagon,2021,true
+B933-SB35,Nissan,Murano,Petrol,Convertible,2017,true
+L862-HC60,Tesla,Roadster,Petrol,SUV,2015,true
+L393-UP72,Ford,Focus,Diesel,Truck,2016,true
+U912-ZM34,Tesla,Model Y,Diesel,Coupe,2006,true
+Z272-TC77,Chevrolet,Bolt EV,Diesel,Truck,2017,true
+P397-CX18,Kia,Forte,Petrol,Sedan,2017,true
+F405-ON78,Chevrolet,Tahoe,Electric,SUV,2014,true
+N687-DF51,Honda,Pilot,Electric,Convertible,2017,true
+J745-GE13,Honda,Accord,Electric,Sedan,2020,true
+Q904-VH37,Toyota,Prius,Hybrid,Sedan,2008,true
+N300-YY17,BMW,7 Series,Hybrid,SUV,2007,true
+H495-FS29,Mercedes,GLE,Hybrid,Truck,2002,true
+S846-RO76,Chevrolet,Tahoe,Hybrid,Truck,2001,true
+W153-VX51,Hyundai,Santa Fe,Diesel,SUV,2009,true
+K243-LS91,BMW,5 Series,Petrol,Sedan,2016,true
+I864-OU50,Mercedes,GLC,Petrol,Coupe,2010,true
+L230-ZR65,Chevrolet,Equinox,Petrol,Minivan,2006,true
+A209-IX40,Nissan,Rogue,Diesel,SUV,2017,true
+X490-BG61,Hyundai,Santa Fe,Petrol,Coupe,2003,true
+F267-LY48,Mercedes,C-Class,Diesel,Sedan,2020,true
+M532-IV41,Nissan,Maxima,Diesel,Sedan,2011,true
+B707-XJ37,Tesla,Roadster,Petrol,Sedan,2018,true
+O643-FV55,Hyundai,Elantra,Petrol,SUV,2003,true
+X376-JI22,Hyundai,Santa Fe,Petrol,Hatchback,2008,true
+L876-CP23,Honda,Pilot,Hybrid,Hatchback,2020,true
+B583-HU52,Mercedes,C-Class,Diesel,Hatchback,2018,true
+G846-JV68,Tesla,Model S,Hybrid,Hatchback,2023,true
+B275-TH52,Chevrolet,Equinox,Hybrid,Truck,2011,true
+D758-OC80,Tesla,Model 3,Electric,Sedan,2019,true
+N311-EY99,Ford,Mustang,Hybrid,Sedan,2009,true
+Q861-RY11,Toyota,Corolla,Petrol,Coupe,2003,true
+D829-TI56,Tesla,Roadster,Diesel,Hatchback,2022,true
+C267-QI31,BMW,7 Series,Electric,Convertible,2020,true
+Z910-LS48,Chevrolet,Malibu,Petrol,Sedan,2006,true
+C780-BW46,Toyota,Highlander,Electric,Sedan,2012,true
+L173-VQ17,Toyota,RAV4,Petrol,Sedan,2008,true
+E401-BE77,Honda,CR-V,Petrol,Coupe,2018,true
+E956-GC85,Hyundai,Elantra,Petrol,Hatchback,2004,true
+K125-ZK85,Hyundai,Santa Fe,Petrol,Coupe,2017,true
+T258-OW62,Toyota,Camry,Electric,Truck,2010,true
+R295-XL84,Kia,Sorento,Diesel,SUV,2019,true
+H770-AQ59,Honda,CR-V,Petrol,Truck,2002,true
+F990-RB14,Tesla,Roadster,Electric,Convertible,2003,true
+Z258-TI95,Mercedes,E-Class,Electric,Sedan,2021,true
+Q326-LM14,BMW,5 Series,Hybrid,Sedan,2004,true
+T950-VF62,Mercedes,C-Class,Hybrid,Coupe,2002,true
+K528-CJ83,Mercedes,C-Class,Diesel,Coupe,2005,true
+V553-NZ17,Honda,CR-V,Diesel,Truck,2016,true
+F484-GG29,BMW,X5,Electric,Convertible,2000,true
+W431-KH54,Ford,Focus,Electric,Coupe,2014,true
+D572-HZ44,Ford,Mustang,Petrol,SUV,2014,true
+K346-VV90,Honda,Accord,Electric,Coupe,2014,true
+S472-CY47,Mercedes,S-Class,Petrol,Sedan,2019,true
+K247-JW36,Nissan,Altima,Electric,Coupe,2009,true
+Y297-CE31,Ford,Fiesta,Electric,SUV,2012,true
+T283-FH56,Toyota,Prius,Diesel,Wagon,2020,true
+L517-GJ10,Tesla,Model X,Hybrid,Hatchback,2002,true
+Y936-XK54,Kia,Telluride,Hybrid,Convertible,2024,true
+P577-OJ63,Honda,Accord,Petrol,Sedan,2015,true
+C407-BN27,Hyundai,Kona,Electric,Truck,2022,true
+M594-PE32,Tesla,Roadster,Diesel,Coupe,2014,true
+C260-XD49,Kia,Optima,Petrol,Wagon,2010,true
+X701-JO89,Kia,Sorento,Electric,Sedan,2014,true
+Z553-YM98,Mercedes,E-Class,Electric,Hatchback,2009,true
+S207-QQ34,BMW,5 Series,Electric,Coupe,2008,true
+G769-GG30,Mercedes,S-Class,Electric,Minivan,2023,true
+B622-PF71,Ford,F-150,Electric,Convertible,2009,true
+B142-NS93,Ford,Fiesta,Petrol,Hatchback,2020,true
+K732-FX30,Kia,Sorento,Diesel,Coupe,2013,true
+V709-JB22,Tesla,Model X,Diesel,Truck,2019,true
+O339-VA73,Hyundai,Elantra,Petrol,Hatchback,2006,true
+N322-NY50,Mercedes,E-Class,Electric,SUV,2001,true
+A380-CS79,Nissan,Altima,Diesel,SUV,2014,true
+Z191-AV48,Chevrolet,Equinox,Electric,Minivan,2018,true
+E126-FD70,Nissan,Sentra,Petrol,Sedan,2011,true
+F635-HO53,Mercedes,GLE,Diesel,Sedan,2009,true
+B549-OV98,Honda,Pilot,Diesel,Wagon,2021,true
+E396-CP25,BMW,X5,Electric,Coupe,2003,true
+O409-AS69,Mercedes,GLE,Diesel,Truck,2023,true
+Z788-OH51,Toyota,Corolla,Diesel,Truck,2024,true
+P234-TF72,BMW,3 Series,Diesel,Wagon,2017,true
+W362-YO23,Tesla,Model X,Petrol,Hatchback,2004,true
+C996-TS34,Nissan,Maxima,Petrol,Convertible,2004,true
+S857-FE87,Toyota,Camry,Electric,Coupe,2002,true
+H963-KX15,Nissan,Murano,Electric,Sedan,2006,true
+J856-SC64,Honda,Civic,Electric,Sedan,2007,true
+O177-XS25,Ford,Fiesta,Electric,Convertible,2019,true
+W872-DA97,Tesla,Roadster,Electric,Truck,2010,true
+S458-LW50,Tesla,Model 3,Diesel,SUV,2023,true
+J215-XY94,Ford,Explorer,Electric,SUV,2016,true
+V572-TJ40,Kia,Sorento,Diesel,Coupe,2005,true
+Z898-UG61,Toyota,Prius,Diesel,SUV,2024,true
+H396-ML18,Honda,Accord,Diesel,Wagon,2006,true
+A330-JU61,Mercedes,GLC,Diesel,SUV,2010,true
+M256-RX63,BMW,X3,Electric,Sedan,2008,true
+N695-TY81,Hyundai,Sonata,Hybrid,SUV,2018,true
+O990-KF38,Tesla,Model Y,Electric,Minivan,2003,true
+D912-TJ53,Kia,Forte,Electric,Minivan,2013,true
+F377-MS41,Ford,Focus,Petrol,Truck,2023,true
+I488-WD68,Tesla,Model X,Diesel,Hatchback,2020,true
+E691-VP29,BMW,X5,Diesel,Truck,2021,true
+R745-IC70,BMW,7 Series,Petrol,Hatchback,2019,true
+K456-DQ96,Tesla,Model X,Diesel,Coupe,2003,true
+Q166-AF36,Chevrolet,Tahoe,Electric,Hatchback,2008,true
+C982-AN35,Ford,Focus,Petrol,Wagon,2004,true
+C681-GL69,Tesla,Model X,Petrol,Truck,2017,true
+E573-KN16,Honda,Pilot,Electric,Coupe,2005,true
+P705-EN43,Ford,F-150,Hybrid,SUV,2002,true
+B890-ET53,Tesla,Model Y,Diesel,Convertible,2007,true
+C583-FG23,Nissan,Sentra,Electric,Sedan,2023,true
+S250-MV26,BMW,X5,Hybrid,Hatchback,2007,true
+H591-GH85,Tesla,Model S,Electric,Truck,2008,true
+C507-FH85,Nissan,Maxima,Hybrid,Sedan,2012,true
+O755-MU22,Toyota,Highlander,Hybrid,Convertible,2002,true
+T542-OM14,Kia,Forte,Petrol,Wagon,2014,true
+J936-HA73,Mercedes,GLE,Petrol,Convertible,2016,true
+W751-WM17,Kia,Sportage,Hybrid,Truck,2010,true
+R173-ZC18,Nissan,Maxima,Electric,Wagon,2009,true
+K601-AA35,Kia,Optima,Electric,Truck,2022,true
+V318-GG59,Mercedes,E-Class,Petrol,Coupe,2007,true
+H951-XI90,Hyundai,Sonata,Hybrid,Truck,2014,true
+E127-PA47,BMW,X5,Electric,Truck,2023,true
+Q496-ZH96,Ford,Fiesta,Electric,Truck,2020,true
+N411-JR78,BMW,7 Series,Petrol,Truck,2023,true
+S726-EU50,BMW,7 Series,Electric,Convertible,2001,true
+V750-PG62,Kia,Sorento,Petrol,Wagon,2015,true
+G857-ES52,Tesla,Model S,Diesel,Coupe,2002,true
+B945-BX59,Hyundai,Elantra,Electric,Minivan,2022,true
+U857-OR44,Toyota,Highlander,Electric,Sedan,2006,true
+S845-QJ96,Mercedes,C-Class,Hybrid,Convertible,2021,true
+N241-VY83,Chevrolet,Tahoe,Petrol,Sedan,2010,true
+I368-NQ86,Mercedes,C-Class,Petrol,Wagon,2005,true
+Y824-TG97,Mercedes,GLE,Petrol,Coupe,2016,true
+U949-RZ49,Honda,Pilot,Electric,Wagon,2003,true
+C122-IB11,Chevrolet,Equinox,Diesel,Wagon,2006,true
+R142-XW88,BMW,3 Series,Diesel,Hatchback,2024,true
+E145-QY15,Chevrolet,Bolt EV,Hybrid,Hatchback,2018,true
+Y579-QT15,Tesla,Roadster,Petrol,Coupe,2005,true
+R924-MJ59,Kia,Optima,Diesel,Minivan,2002,true
+Y615-IV71,Hyundai,Kona,Hybrid,Minivan,2012,true
+J154-AI99,Ford,Focus,Electric,Minivan,2018,true
+F699-QL28,Ford,Mustang,Hybrid,Convertible,2018,true
+X434-LT99,Hyundai,Kona,Electric,Truck,2008,true
+V639-JN98,Kia,Telluride,Hybrid,Minivan,2014,true
+G450-SX17,Tesla,Model Y,Hybrid,Hatchback,2022,true
+N780-TS92,Chevrolet,Tahoe,Electric,Convertible,2007,true
+W151-QY86,Ford,Explorer,Electric,Sedan,2002,true
+P967-RK82,BMW,5 Series,Hybrid,Wagon,2020,true
+O603-AJ49,Hyundai,Sonata,Electric,Sedan,2009,true
+A929-RW87,Ford,Mustang,Hybrid,Hatchback,2007,true
+W964-CC25,Kia,Forte,Diesel,Convertible,2017,true
+L606-ZF38,Mercedes,S-Class,Petrol,Coupe,2000,true
+L707-NW89,Toyota,RAV4,Electric,Coupe,2000,true
+S196-AG54,Toyota,Highlander,Hybrid,Truck,2014,true
+L409-CH92,Toyota,RAV4,Diesel,Convertible,2021,true
+W406-DT72,Toyota,Corolla,Petrol,Truck,2021,true
+C246-MT88,Tesla,Model S,Diesel,Hatchback,2003,true
+C754-KE45,Nissan,Sentra,Hybrid,Coupe,2022,true
+L701-TT99,Chevrolet,Silverado,Hybrid,Minivan,2022,true
+Y328-VZ48,Toyota,Corolla,Hybrid,Minivan,2011,true
+T884-KT31,Toyota,Highlander,Electric,Minivan,2000,true
+O756-AT16,Toyota,Corolla,Hybrid,Minivan,2000,true
+N214-UR73,Chevrolet,Malibu,Hybrid,Coupe,2020,true
+M182-CM70,Nissan,Altima,Electric,Sedan,2000,true
+Z472-OU37,Hyundai,Tucson,Petrol,Wagon,2022,true
+S973-RD62,Kia,Sorento,Electric,Minivan,2016,true
+I569-DW26,Hyundai,Elantra,Electric,Minivan,2017,true
+R592-MP22,Honda,Civic,Hybrid,Minivan,2005,true
+K960-DD85,Nissan,Maxima,Petrol,Truck,2020,true
+Q497-LI98,Nissan,Altima,Petrol,Hatchback,2009,true
+U808-BG60,Chevrolet,Silverado,Hybrid,Convertible,2010,true
+C432-IZ55,Toyota,Camry,Petrol,Coupe,2019,true
+D838-IJ37,Honda,Civic,Hybrid,Truck,2018,true
+J799-VK54,Chevrolet,Equinox,Electric,Minivan,2011,true
+W332-JI13,Nissan,Maxima,Petrol,Wagon,2002,true
+F260-WW48,Nissan,Maxima,Hybrid,Minivan,2007,true
+Q307-BO99,Honda,Fit,Hybrid,Truck,2023,true
+Q746-OE17,Hyundai,Santa Fe,Petrol,Convertible,2003,true
+V873-RQ29,Nissan,Maxima,Hybrid,Sedan,2018,true
+Z104-BH61,Ford,F-150,Electric,Truck,2009,true
+I284-CH94,Chevrolet,Malibu,Hybrid,Convertible,2021,true
+A305-ZV54,Nissan,Altima,Hybrid,Convertible,2015,true
+P274-AR58,Honda,Civic,Hybrid,Wagon,2011,true
+E366-DS33,Chevrolet,Tahoe,Petrol,Convertible,2013,true
+S932-BZ87,Hyundai,Kona,Electric,Hatchback,2001,true
+Z718-VA47,Mercedes,S-Class,Petrol,Hatchback,2021,true
+M552-JA90,Tesla,Roadster,Hybrid,Convertible,2004,true
+Q448-AV46,Nissan,Maxima,Diesel,Hatchback,2004,true
+B808-YX17,Ford,F-150,Diesel,Coupe,2022,true
+F297-HZ40,Tesla,Model 3,Hybrid,Sedan,2001,true
+B321-KA16,Ford,Fiesta,Petrol,Coupe,2023,true
+L412-BS73,Toyota,RAV4,Hybrid,Sedan,2004,true
+W504-ZJ23,Honda,Accord,Electric,Hatchback,2016,true
+C285-PP64,Ford,Fiesta,Electric,Wagon,2017,true
+F471-KX83,Mercedes,GLE,Electric,Truck,2014,true
+X446-VB58,Kia,Optima,Petrol,Coupe,2004,true
+Y618-DU61,Ford,Focus,Diesel,Wagon,2011,true
+S532-JW44,Chevrolet,Bolt EV,Electric,Truck,2017,true
+M498-MD83,Toyota,Camry,Petrol,Hatchback,2008,true
+Y441-FN76,Mercedes,C-Class,Petrol,Truck,2024,true
+X813-DK54,Kia,Sorento,Diesel,Minivan,2010,true
+X851-LD28,Mercedes,E-Class,Diesel,Truck,2003,true
+Y420-TI17,BMW,5 Series,Electric,Coupe,2006,true
+K762-DB17,Hyundai,Santa Fe,Petrol,Minivan,2020,true
+D580-SK28,Nissan,Murano,Hybrid,Wagon,2002,true
+L680-KJ86,Chevrolet,Bolt EV,Hybrid,Sedan,2023,true
+V445-PJ15,Mercedes,C-Class,Electric,Wagon,2001,true
+V435-JQ77,Chevrolet,Malibu,Petrol,Hatchback,2006,true
+W116-TW23,Hyundai,Tucson,Diesel,Truck,2002,true
+O427-CQ79,Ford,F-150,Hybrid,Sedan,2013,true
+Q931-UQ64,BMW,7 Series,Diesel,Minivan,2021,true
+Q235-OP81,Hyundai,Elantra,Hybrid,Truck,2006,true
+F858-MW69,Chevrolet,Tahoe,Petrol,SUV,2010,true
+G711-KK81,Chevrolet,Silverado,Hybrid,Hatchback,2005,true
+P763-XC60,Hyundai,Tucson,Diesel,Hatchback,2019,true
+S263-GC72,Chevrolet,Silverado,Hybrid,Coupe,2008,true
+Q782-CM31,Hyundai,Kona,Electric,Sedan,2000,true
+V711-ZP18,Nissan,Rogue,Petrol,Sedan,2000,true
+M932-FH28,Kia,Forte,Electric,Wagon,2020,true
+A844-NB49,Mercedes,GLE,Petrol,Coupe,2019,true
+U958-UX53,BMW,3 Series,Petrol,SUV,2012,true
+O321-GS30,Tesla,Model S,Hybrid,Truck,2022,true
+J426-NR32,Ford,Fiesta,Electric,Truck,2021,true
+Z156-GQ13,Toyota,Corolla,Petrol,Minivan,2003,true
+P727-GE30,Tesla,Model 3,Petrol,Sedan,2018,true
+Z570-CP52,Tesla,Roadster,Hybrid,Hatchback,2002,true
+X402-CP58,Mercedes,E-Class,Hybrid,Truck,2014,true
+A287-EV43,Chevrolet,Equinox,Diesel,Minivan,2013,true
+H561-GC60,BMW,5 Series,Diesel,Wagon,2019,true
+Y490-AG35,Toyota,Highlander,Diesel,Hatchback,2021,true
+L491-DO85,Nissan,Altima,Diesel,SUV,2017,true
+K568-XT28,BMW,5 Series,Diesel,Minivan,2000,true
+N697-TM12,Ford,Fiesta,Petrol,SUV,2007,true
+E610-NH50,Nissan,Rogue,Diesel,Truck,2022,true
+R822-DE38,Nissan,Rogue,Electric,Truck,2023,true
+K565-SJ34,Honda,Accord,Electric,Coupe,2002,true
+P194-TM91,Hyundai,Santa Fe,Hybrid,Wagon,2015,true
+D356-TU52,Toyota,Camry,Diesel,Truck,2013,true
+S657-YF75,Hyundai,Tucson,Electric,Convertible,2016,true
+P285-SJ50,Chevrolet,Silverado,Electric,SUV,2015,true
+A404-CL20,Tesla,Model X,Diesel,Coupe,2014,true
+Q951-HT64,BMW,7 Series,Diesel,Sedan,2015,true
+W102-OO51,Chevrolet,Malibu,Hybrid,Sedan,2020,true
+Q833-BW60,BMW,X5,Diesel,Minivan,2016,true
+F694-LP82,Nissan,Maxima,Diesel,Minivan,2001,true
+R532-LZ86,Honda,Fit,Petrol,Minivan,2004,true
+C871-AZ54,Kia,Sorento,Electric,Sedan,2004,true
+H913-VX26,Honda,Accord,Hybrid,Minivan,2004,true
+S523-YK76,Hyundai,Tucson,Petrol,Truck,2024,true
+Y839-KU23,Ford,F-150,Diesel,Minivan,2019,true
+J142-KM70,Ford,Explorer,Electric,SUV,2020,true
+G749-EI24,Hyundai,Sonata,Petrol,Wagon,2007,true
+B154-JF46,Honda,Pilot,Electric,Sedan,2012,true
+Y668-IE89,Hyundai,Kona,Electric,Truck,2014,true
+V570-DK70,Hyundai,Kona,Hybrid,SUV,2018,true
+S229-AG99,Tesla,Model X,Electric,Minivan,2021,true
+K546-WD54,Toyota,Prius,Electric,Coupe,2020,true
+E965-NL66,Nissan,Maxima,Hybrid,Wagon,2024,true
+U737-MA53,Nissan,Altima,Petrol,SUV,2023,true
+M265-OQ34,BMW,X5,Electric,Sedan,2000,true
+O981-PB72,Tesla,Model X,Petrol,Wagon,2014,true
+C532-RD41,Chevrolet,Silverado,Petrol,Hatchback,2003,true
+Y456-QN41,Mercedes,S-Class,Hybrid,Convertible,2009,true
+S307-XG93,Chevrolet,Malibu,Diesel,Coupe,2016,true
+L119-JP67,Mercedes,E-Class,Electric,SUV,2023,true
+T874-RS24,Tesla,Roadster,Electric,Wagon,2008,true
+H287-RC23,Mercedes,E-Class,Petrol,Sedan,2016,true
+X263-AM82,BMW,7 Series,Diesel,Minivan,2021,true
+O924-JW79,Chevrolet,Equinox,Electric,Wagon,2023,true
+J705-OZ40,Honda,CR-V,Diesel,Convertible,2020,true
+B295-OF98,Toyota,Highlander,Petrol,Truck,2011,true
+S252-BU82,BMW,5 Series,Diesel,Coupe,2023,true
+Y433-DT33,Kia,Optima,Electric,SUV,2005,true
+W568-XH59,Hyundai,Santa Fe,Petrol,Hatchback,2022,true
+C124-HF37,Kia,Sportage,Electric,SUV,2002,true
+F609-ZP46,Hyundai,Tucson,Petrol,Hatchback,2011,true
+N540-PO66,Chevrolet,Silverado,Diesel,Hatchback,2018,true
+O362-RJ96,Tesla,Model S,Hybrid,Hatchback,2005,true
+I381-CS55,BMW,5 Series,Electric,Coupe,2007,true
+E838-QG56,Mercedes,E-Class,Diesel,Minivan,2017,true
+H761-UA98,Chevrolet,Equinox,Diesel,SUV,2014,true
+X453-PS84,Honda,Fit,Hybrid,Wagon,2000,true
+L562-DD16,Honda,Accord,Hybrid,Hatchback,2010,true
+F188-AK44,Honda,Accord,Petrol,Truck,2018,true
+K276-OD63,Chevrolet,Bolt EV,Diesel,SUV,2010,true
+X618-ID76,Toyota,RAV4,Diesel,Wagon,2015,true
+M955-RT61,Ford,Fiesta,Petrol,Coupe,2009,true
+S121-OH98,Tesla,Roadster,Hybrid,Coupe,2015,true
+K804-BL15,Hyundai,Sonata,Electric,Wagon,2004,true
+H577-XR49,Chevrolet,Bolt EV,Electric,Sedan,2024,true
+D941-II36,BMW,3 Series,Petrol,Convertible,2011,true
+N869-CL30,Kia,Sportage,Hybrid,SUV,2000,true
+M530-KJ34,Tesla,Roadster,Hybrid,Sedan,2018,true
+N682-KJ72,Tesla,Model Y,Petrol,Hatchback,2007,true
+I523-DJ24,Nissan,Maxima,Petrol,Convertible,2009,true
+P885-YN88,Mercedes,S-Class,Diesel,Convertible,2007,true
+U359-IX42,Kia,Telluride,Petrol,SUV,2019,true
+P138-OC22,BMW,3 Series,Hybrid,Sedan,2013,true
+S881-XC22,Kia,Sportage,Hybrid,Convertible,2015,true
+G398-MC19,Ford,Mustang,Electric,Wagon,2012,true
+Q458-RG87,BMW,5 Series,Electric,Sedan,2015,true
+F695-SI25,Ford,Fiesta,Diesel,Hatchback,2012,true
+E214-WV72,Ford,Mustang,Hybrid,Coupe,2009,true
+C728-EZ68,Kia,Sportage,Diesel,Convertible,2006,true
+B618-ZS71,BMW,3 Series,Electric,Wagon,2003,true
+V295-QG77,Mercedes,S-Class,Electric,SUV,2005,true
+E679-FX11,Tesla,Model S,Electric,Minivan,2005,true
+Z184-OH20,Mercedes,GLE,Diesel,Sedan,2005,true
+L604-RJ12,Mercedes,GLE,Petrol,Coupe,2008,true
+J310-EF44,Hyundai,Elantra,Electric,Sedan,2015,true
+G317-ZK60,Honda,Fit,Diesel,SUV,2019,true
+F338-JH77,Kia,Sportage,Hybrid,Minivan,2023,true
+D718-BX71,Chevrolet,Equinox,Electric,Convertible,2013,true
+W814-KL99,Honda,Pilot,Hybrid,Sedan,2024,true
+T542-KQ98,Hyundai,Santa Fe,Electric,Hatchback,2014,true
+U266-TG34,Toyota,RAV4,Electric,Hatchback,2006,true
+U156-XW56,Hyundai,Sonata,Hybrid,Convertible,2010,true
