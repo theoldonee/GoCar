@@ -13,8 +13,8 @@ namespace GoCar
         public int PhoneNumber { get; set; }
         public int Email { get; set; }
 
-        //Define the relationship
-        public List<Car> Car { get; set; }
+        // Rental relationship
+        List<Rental> Rental { get; set; }
 
     }
 }
