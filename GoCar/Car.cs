@@ -17,7 +17,6 @@ namespace GoCar
         public bool Available { get; set; }
 
         //Rental relationship
-        public int RentalId { get; set; }
-        public Rental Rental { get; set; }
+        public List<Rental> Rental { get; set; }
     }
 }
