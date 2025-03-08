@@ -1,11 +1,13 @@
 namespace GoCar.xUnitTest
 {
-    public class UnitTest1
+    public class CarRentalTest()
     {
-        [Fact]
-        public void Test1()
-        {
 
+        [Fact]
+        public void RegisterUser_ShouldBeValid()
+        {
+            var user = new User {email = "zook@hotmail.com", password = "zook123"};
+            Assert.True(result);
         }
     }
 }
