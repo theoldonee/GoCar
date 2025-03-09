@@ -1,11 +1,13 @@
 namespace GoCar.xUnitTest
 {
-    public class UnitTest1
+    public class CarRentalTest()
     {
+        private readonly UserRepository _userRepo
         [Fact]
-        public void Test1()
+        public void RegisterUser_ShouldBeValid()
         {
-
+            var user = new User {email = "zook@hotmail.com", password = "zook123"};
+            TBD
         }
     }
 }
