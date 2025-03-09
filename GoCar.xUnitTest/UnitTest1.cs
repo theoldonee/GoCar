@@ -1,13 +1,30 @@
 namespace GoCar.xUnitTest
 {
-    public class CarRentalTest()
+    public class CarRentalTest
     {
-        private readonly UserRepository _userRepo
-        [Fact]
-        public void RegisterUser_ShouldBeValid()
+        // Declare field to store an instance of CarRepository 
+        private readonly CarRepository _carrEPO
+
+        public CarRentalTest()
         {
-            var user = new User {email = "zook@hotmail.com", password = "zook123"};
-            TBD
+        // create temp db for testing
+            var options = new DbContextOptionsBuilder<ProductContext>().UseInMemoryDatabase(databaseName: "test_database").Options;
+            var dbContext = new DatabaseContext(options);
+            _carRepo = new CarRepository(dbContext);
+            
+        [Fact]
+        public void AddCaar_IncreasesAmountofCars()
+        {
+            // Create new car object
+            var car = new Car { Model = "Zookmobile", Type = "Sport's Car", Year = "2021", Availability = "true" };
+            
+            // AddCar method to save car in db
+            _carRepo.AddCar(car);
+
+            //store cars in temp db
+            var carsInDB = _carRepo.GetCars();
+            Assert.Contains(car, carsInDB);
         }
+            
     }
 }
