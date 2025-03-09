@@ -35,7 +35,10 @@ else // IF no, Ask user if they would like to use default file or enter their ow
 
 
 
-// DATA IN DATA STRUCT
+// DATA IN DATA STRUCTS (car, rental, client);
+List<Car> CarList;
+List<Client> ClientList;
+List<Rental> RentalList;
 // User can select an operation, selects a table, enter information
 
 // Remove uses a unique ID
@@ -74,7 +77,60 @@ void LoadDatabase()
 void AddToDatabase()
 {
     //put added object into desired table
+    Console.WriteLine("Choose a table to add to\n1: Car\n2: Client\n3: Rental");
+    Console.WriteLine("Please enter a number:");
+    string choice = Console.ReadLine();
+    if (choice == "1")
+    {
+        Console.WriteLine("Car Id:");
+        string carId = Console.ReadLine();
+        // validate car Id
+        // Use validator class
 
+        Console.WriteLine("Make:");
+        string make = Console.ReadLine();
+
+        Console.WriteLine("Model:");
+        string model = Console.ReadLine();
+
+        Console.WriteLine("Fuel type:");
+        string fuelType = Console.ReadLine();
+        // validate fuel type
+
+        Console.WriteLine("Type:");
+        string type = Console.ReadLine();
+
+        Console.WriteLine("Year:");
+        int year = Int32.Parse(Console.ReadLine());
+
+        var newCar = new Car
+        {
+            CarId = carId,
+            Make = make,
+            Model = model,
+            FuelType = fuelType,
+            Type = type,
+            Year = year,
+            Available = true
+        };
+
+        // add to data struct
+
+        // update database
+        using(var context = new CarRentalContex())
+        {
+            context.Car.Add(newCar);
+
+            context.SaveChanges();
+
+        }
+    }else if(choice == "2"){
+
+    }
+    else
+    {
+
+    }
     //check if add is successfull
 
     // make same change and commit to database
@@ -97,4 +153,3 @@ void SearchDatabase()
 {
 
 }
-
