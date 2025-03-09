@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace GoCar
 {
-    internal class Validator
+    public class Validator
     {
+        // Validates car info
         public class CarValidator{
+            // Validates car id
             public static bool ValidateId(string id)
             {
                 string[] splitId = id.Split('-');
@@ -70,10 +72,14 @@ namespace GoCar
                 return result;
             }
         }
+
+        // Validates client info
         public class ClientValidator
         {
 
         }
+
+        // Validates rental entry
         public class RentalValidator
         {
 
