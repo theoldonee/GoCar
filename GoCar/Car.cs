@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoCar
 {
-    internal class Car
+    public class Car
     {
         public string CarId { get; set; } // Primary key
         public string Make { get; set; }

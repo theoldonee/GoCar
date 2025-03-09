@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoCar
 {
-    internal class Client
+    public class Client
     {
         public string ClientId { get; set; } // Primary key
         public string Name { get; set; }
