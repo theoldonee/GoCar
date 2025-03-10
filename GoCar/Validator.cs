@@ -71,6 +71,18 @@ namespace GoCar
 
                 return result;
             }
+
+            // Validate fuel type
+            public static bool ValidateFuelType(string fuelType)
+            {
+
+                if (fuelType == "Diesel" || fuelType == "Petrol" || fuelType == "Electric" || fuelType == "Hybrid")
+                {
+                    return true;
+                }
+
+                return false;
+            }
         }
 
         // Validates client info
