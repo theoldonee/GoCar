@@ -83,6 +83,21 @@ namespace GoCar
 
                 return false;
             }
+
+            // validate year
+            public static bool ValidateYear(int year)
+            {
+                bool result;
+                if(year <= DateTime.Now.Year)
+                {
+                    result = true;
+                }
+                else
+                {
+                    result = false;
+                }
+                return result;
+            }
         }
 
         // Validates client info
