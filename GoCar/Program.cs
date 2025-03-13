@@ -245,7 +245,10 @@ bool AddClient() {
 
     // First Name, Last Name
     Console.WriteLine("Enter client's name: ");
-    string name = Console.ReadLine();
+    string firstName = Console.ReadLine();
+
+    Console.WriteLine("Enter client's name: ");
+    string lastName = Console.ReadLine();
 
     Console.WriteLine("Enter client's phone number: ");
     int phoneNumber = Int32.Parse(Console.ReadLine());
@@ -260,7 +263,8 @@ bool AddClient() {
     Client newClient = new Client
     {
         ClientId = clientId,
-        Name = name,
+        FirstName = firstName,
+        LastName = lastName,
         PhoneNumber = phoneNumber,
         // email is int in class
         Email = email
@@ -268,4 +272,5 @@ bool AddClient() {
 
     //Add too data structure
     //Add to database
+    return true;
 }
