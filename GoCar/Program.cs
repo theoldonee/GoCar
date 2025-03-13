@@ -96,7 +96,15 @@ bool AddToDatabase()
         }
     }
     else if(choice == "2"){
-
+        bool result = AddClient();
+        if (result)
+        {
+            Console.WriteLine("Client Sucessfully Added");
+        }
+        else
+        {
+            return false;
+        }
     }
     else
     {
@@ -229,4 +237,35 @@ bool AddCar()
     //}
 
     return true;
+}
+
+// ADD CLIENT HAS ISSUES ROLL BACK MIGRATION
+// ADD FIRST NAME AND LAST NAME
+bool AddClient() { 
+
+    // First Name, Last Name
+    Console.WriteLine("Enter client's name: ");
+    string name = Console.ReadLine();
+
+    Console.WriteLine("Enter client's phone number: ");
+    int phoneNumber = Int32.Parse(Console.ReadLine());
+
+    Console.WriteLine("Enter client's email: ");
+    string email = Console.ReadLine();
+
+    //generate client Id
+    Console.WriteLine("Enter client's email: ");
+    string clientId = Console.ReadLine();
+
+    Client newClient = new Client
+    {
+        ClientId = clientId,
+        Name = name,
+        PhoneNumber = phoneNumber,
+        // email is int in class
+        Email = email
+    };
+
+    //Add too data structure
+    //Add to database
 }
