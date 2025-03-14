@@ -120,6 +120,7 @@ namespace GoCar
 
                 if (splitByAt.Length != 2)
                 {
+                    Console.WriteLine("Email invalid: no '@' sign");
                     return false;
                 }
                 else
@@ -127,6 +128,7 @@ namespace GoCar
                     string[] splitByDot = splitByAt[1].Split(".");
                     if (splitByDot.Length != 2)
                     {
+                        Console.WriteLine("Email invalid: no '.' symbol");
                         return false;
                     }
                 }
