@@ -19,7 +19,8 @@ string gocarAscii = @"
 Console.WriteLine(gocarAscii);
 
 // Check if there is data present in the car database
-bool databaseCheckResult = CheckCarDb();
+//bool databaseCheckResult = CheckCarDb();
+bool databaseCheckResult = true;
 
 // IF yes, ask user if they would like to load database  or use file
 if (databaseCheckResult)
@@ -41,12 +42,75 @@ List<Car> CarList;
 List<Client> ClientList;
 List<Rental> RentalList;
 // User can select an operation, selects a table, enter information
-AddToDatabase();
+string[] choiceArr = new string[2];
 
+Console.WriteLine("Choose an operation:\n1: Add to a database\n2: Remove from a database\n3: Search a database\n");
+Console.WriteLine("Please enter a number:");
+choiceArr[0] = Console.ReadLine();
+
+Console.WriteLine("Choose a table to perfom this operation\n1: Car\n2: Client\n3: Rental\n");
+Console.WriteLine("Please enter a number:");
+choiceArr[1] = Console.ReadLine();
 // Remove uses a unique ID
 // Add requires all information
 // Search can be don by the attributes of the class
+Execute(choiceArr);
 
+bool Execute(string[] arr)
+{
+    bool result = false;
+    // add to database
+    if (arr[0] == "1")
+    {
+        // car
+        if (arr[1] == "1") {
+            result = AddCar();
+        } else if (arr[1] == "2") // client
+        {
+            result = AddClient();
+        }
+        else if (arr[1] == "3") // rental
+        {
+            result = AddClient();
+        }
+
+    }
+    else if (arr[0] == "2") // remove to database
+    {
+        // car
+        if (arr[1] == "1")
+        {
+            result = AddCar();
+        }
+        else if (arr[1] == "2") // client
+        {
+            result = AddClient();
+        }
+        else if (arr[1] == "3") // rental
+        {
+            result = AddClient();
+        }
+
+    }
+    else if (arr[0] == "3") // search to database
+    {
+        // car
+        if (arr[1] == "1")
+        {
+            result = AddCar();
+        }
+        else if (arr[1] == "2") // client
+        {
+            result = AddClient();
+        }
+        else if (arr[1] == "3") // rental
+        {
+            result = AddClient();
+        }
+    }
+
+        return result;
+}
 
 bool CheckCarDb()
 {
@@ -76,65 +140,8 @@ void LoadDatabase()
     //var rentalStorage;
 }
 
-bool AddToDatabase()
-{
-    //put added object into desired table
-    Console.WriteLine("Choose a table to add to\n1: Car\n2: Client\n3: Rental\n");
-    Console.WriteLine("Please enter a number:");
-    string choice = Console.ReadLine();
 
-    if (choice == "1")
-    {
-        bool result = AddCar();
-        if (result)
-        {
-            Console.WriteLine("Car Sucessfully Added");
-        }
-        else
-        {
-            return false;
-        }
-    }
-    else if(choice == "2"){
-        bool result = AddClient();
-        if (result)
-        {
-            Console.WriteLine("Client Sucessfully Added");
-        }
-        else
-        {
-            return false;
-        }
-    }
-    else
-    {
-
-    }
-    //check if add is successfull
-
-    // make same change and commit to database
-
-    // check if input does not exist in db
-    return false;
-}
-
-void RemoveFromDatabase()
-{
-    // check if input exist in db
-
-    //check if removal is successfull
-
-    // make same change and commit to database
-
-
-}
-
-void SearchDatabase()
-{
-
-}
-
-// Add Car
+// add car
 bool AddCar()
 {
     TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
@@ -239,11 +246,10 @@ bool AddCar()
     return true;
 }
 
-// ADD CLIENT HAS ISSUES ROLL BACK MIGRATION
-// ADD FIRST NAME AND LAST NAME
+// add client 
 bool AddClient() { 
 
-    // First Name, Last Name
+    
     Console.WriteLine("Enter client's name: ");
     string firstName = Console.ReadLine();
 
@@ -266,7 +272,6 @@ bool AddClient() {
         FirstName = firstName,
         LastName = lastName,
         PhoneNumber = phoneNumber,
-        // email is int in class
         Email = email
     };
 
