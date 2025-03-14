@@ -103,7 +103,18 @@ namespace GoCar
         // Validates client info
         public class ClientValidator
         {
+            public static bool ValidatePhoneNumber(int phoneNumber)
+            {
+                string phoneNo = phoneNumber.ToString();
+                
+                if (phoneNo.Length != 8)
+                {
+                    return false;
+                }
 
+                return true;
+            }
+            
         }
 
         // Validates rental entry
