@@ -114,7 +114,25 @@ namespace GoCar
 
                 return true;
             }
-            
+            public static bool ValidateEmail(string email)
+            {
+                string[] splitByAt = email.Split("@");
+
+                if (splitByAt.Length != 2)
+                {
+                    return false;
+                }
+                else
+                {
+                    string[] splitByDot = splitByAt[1].Split(".");
+                    if (splitByDot.Length != 2)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
         }
 
         // Validates rental entry
