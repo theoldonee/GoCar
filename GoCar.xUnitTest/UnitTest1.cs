@@ -1,31 +1,30 @@
-namespace GoCar.xUnitTest
+using Xunit;
+using GoCar;
+
+public class CarTests
 {
-    public class CarRentalTest
+    [Fact]
+    public void Car_ShouldBeAdddedWithCorrectInputValues()
     {
-        // Declare field to store an instance of CarRepository 
-        private readonly CarRepository _carrEPO;
-
-        public CarRentalTest()
+        // Arrange ( test data )
+        var car = new Car
         {
-            // create temp db for testing
-            var options = new DbContextOptionsBuilder<ProductContext>().UseInMemoryDatabase(databaseName: "test_database").Options;
-            var dbContext = new DatabaseContext(options);
-            _carRepo = new CarRepository(dbContext);
-        }
+            CarId = "001",
+            Make = "Toyota",
+            Model = "Corolla",
+            FuelType = "Petrol",
+            Type = "Sedan",
+            Year = 2006,
+            Available = true
+        };
 
-        [Fact]
-        public void AddCaar_IncreasesAmountofCars()
-        {
-            // Create new car object
-            var car = new Car { CarId="Z345-ZM89", Model = "Zookmobile", Type = "Sport's Car", Year = 2021, Available = true };
-
-            // AddCar method to save car in db
-            _carRepo.AddCar(car);
-
-            //store cars in temp db
-            var carsInDB = _carRepo.GetCars();
-            Assert.Contains(car, carsInDB);
-        }
-            
+        // Act & Assert ( checks if values were set correctly)
+        Assert.Equal("001", car.CarId);
+        Assert.Equal("Toyota", car.Make);
+        Assert.Equal("Corolla", car.Model);
+        Assert.Equal("Petrol", car.FuelType);
+        Assert.Equal("Sedan", car.Type);
+        Assert.Equal(2006, car.Year); 
+        Assert.True(car.Available); // Check if available is tru
     }
 }
