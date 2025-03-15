@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using GoCar;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.FileIO;
 
 internal class Program
 {
@@ -258,17 +259,53 @@ internal class Program
         Console.WriteLine("Enter client's name: ");
         string firstName = Console.ReadLine();
 
+        Console.WriteLine("\n");
         Console.WriteLine("Enter client's name: ");
         string lastName = Console.ReadLine();
 
+        Console.WriteLine("\n");
         Console.WriteLine("Enter client's phone number: ");
-        int phoneNumber = int.Parse(Console.ReadLine());
+        bool invalidPhoneNumber= true;
+        int phoneNumber = 0;
+        while (invalidPhoneNumber)
+        {
+            try
+            {
+                //convert phone number to int
+                phoneNumber = int.Parse(Console.ReadLine());
+
+                // validate phone number
+                bool phoneNumberValidation = Validator.ClientValidator.ValidatePhoneNumber(phoneNumber);
+                if (phoneNumberValidation)
+                {
+                    invalidPhoneNumber = false;
+                }
+                else
+                {
+                    Console.WriteLine("Phone number entry invalid");
+                    Console.WriteLine("Please enter valid mauritian phone number:");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Phone number entry invalid. Phone numbers cannot contain letters");
+                Console.WriteLine("Please enter valid mauritian phone number:");
+            }
+            Console.WriteLine("\n");
+        }
 
         Console.WriteLine("Enter client's email: ");
-        string email = Console.ReadLine();
-
+        string email = "";
+        bool emailValidation = false;
+        while (!emailValidation)
+        {
+            email = Console.ReadLine();
+            // validate email
+            emailValidation = Validator.ClientValidator.ValidateEmail(email);
+            Console.WriteLine("\n");
+        }
         //generate client Id
-        Console.WriteLine("Enter client's email: ");
+        Console.WriteLine("Enter client's Id: ");
         string clientId = Console.ReadLine();
 
         Client newClient = new Client
