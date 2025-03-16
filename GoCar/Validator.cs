@@ -147,7 +147,8 @@ namespace GoCar
                 using(var context = new CarRentalContex())
                 {
                     // creates list of clients that have same initials
-                    var clientList = context.Client.Where(c  => $"{c.ClientId[0]}{c.ClientId[1]}" == initials)
+                    var clientList = context.Client.AsEnumerable()
+                        .Where(c  => $"{c.ClientId[0]}{c.ClientId[1]}" == initials)
                         .Select(c => c).ToList();
 
                     // checks if list is empty
