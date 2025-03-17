@@ -1,84 +1,121 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace GoCar
 {
-    public class HashTable
+    // Node class for linked list (used for collision handling)
+    public class Node<TKey, TValue>
     {
-        private const int Size = 100; // Size of the hash table
-        private List<Car>[] table;   // Array of linked lists to handle collisions
+        public TKey Key { get; set; }
+        public TValue Value { get; set; }
+        public Node<TKey, TValue> Next { get; set; }
+
+        public Node(TKey key, TValue value)
+        {
+            Key = key;
+            Value = value;
+            Next = null;
+        }
+    }
+
+    public class HashTable<TKey, TValue>
+    {
+        private const int Size = 100; // Hash table size
+        private Node<TKey, TValue>[] table; // Array of linked lists for collision handling
 
         public HashTable()
         {
-            table = new List<Car>[Size];
-            for (int i = 0; i < Size; i++)
-            {
-                table[i] = new List<Car>();
-            }
+            table = new Node<TKey, TValue>[Size];
         }
 
-        // HASH FUNCTION to convert CarId to an index in the array
-        private int Hash(string carId)
+        // Hash function to compute index based on key
+        private int Hash(TKey key)
         {
-            int hashValue = 0;
-            foreach (char c in carId)
-            {
-                hashValue = (hashValue * 31 + c) % Size;
-            }
-            return hashValue;
+            int hashValue = key.GetHashCode() % Size;
+            return Math.Abs(hashValue); // Ensure non-negative index
         }
 
-        // ADDING CAR OBJECT to the hash table
-        public void AddCar(Car car)
+        // ADD DATA OBJECT TO HASHTABLE
+        public void Add(TKey key, TValue value)
         {
-            int index = Hash(car.CarId);
-            // If the CarId already exists, replace the existing car
-            var existingCar = FindCar(car.CarId);
-            if (existingCar != null)
-            {
-                RemoveCar(car.CarId);  // Remove the old car before adding the new one
-            }
-            table[index].Add(car);
-        }
+            int index = Hash(key);
 
-        // SEARCH FOR CAR BY CarId
-        public Car FindCar(string carId)
-        {
-            int index = Hash(carId);
-            foreach (var car in table[index])
+            // Check if key already exists and update if found
+            Node<TKey, TValue> current = table[index];
+            while (current != null)
             {
-                if (car.CarId == carId)
+                if (current.Key.Equals(key))
                 {
-                    return car;
+                    current.Value = value; // Update existing key-value pair
+                    return;
                 }
+                current = current.Next;
             }
-            return null;  // Car not found
+
+            // Insert new node at the start of the linked list
+            Node<TKey, TValue> newNode = new Node<TKey, TValue>(key, value);
+            newNode.Next = table[index];
+            table[index] = newNode;
         }
 
-        // REMOVE FOR CAR BY CarId
-        public bool RemoveCar(string carId)
+        // SEARCH FOR OBJECT BY KEY
+        public TValue Find(TKey key)
         {
-            int index = Hash(carId);
-            var car = FindCar(carId);
-            if (car != null)
+            int index = Hash(key);
+            Node<TKey, TValue> current = table[index];
+
+            while (current != null)
             {
-                table[index].Remove(car); // Remove the car from the list
-                return true;
+                if (current.Key.Equals(key))
+                {
+                    return current.Value;
+                }
+                current = current.Next;
             }
-            return false;  // Car not found
+            return default; // Return default value if key is not found
         }
 
-        // DISPLAY CARS STORED IN HASHTABLE (for debugging purposes)
-        public void DisplayAllCars()
+        // REMOVE OBJECT BY KEY
+        public bool Remove(TKey key)
+        {
+            int index = Hash(key);
+            Node<TKey, TValue> current = table[index];
+            Node<TKey, TValue> previous = null;
+
+            while (current != null)
+            {
+                if (current.Key.Equals(key))
+                {
+                    if (previous == null) // If it's the first node
+                    {
+                        table[index] = current.Next;
+                    }
+                    else
+                    {
+                        previous.Next = current.Next;
+                    }
+                    return true;
+                }
+                previous = current;
+                current = current.Next;
+            }
+            return false; // Key not found
+        }
+
+        // DISPLAY ALL OBJECTS IN HASHTABLE
+        public void DisplayAll()
         {
             for (int i = 0; i < Size; i++)
             {
-                if (table[i].Count > 0)
+                Node<TKey, TValue> current = table[i];
+                if (current != null)
                 {
-                    foreach (var car in table[i])
+                    Console.Write($"Bucket {i}: ");
+                    while (current != null)
                     {
-                        Console.WriteLine($"CarId: {car.CarId}, Make: {car.Make}, Model: {car.Model}");
+                        Console.Write($"[{current.Key} -> {current.Value}] -> ");
+                        current = current.Next;
                     }
+                    Console.WriteLine("NULL");
                 }
             }
         }
