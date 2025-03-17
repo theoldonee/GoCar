@@ -24,6 +24,7 @@ internal class Program
         bool databaseCheckResult = CheckCarDb();
 
         // IF yes, ask user if they would like to load database  or use file
+        // check's database  check result
         if (databaseCheckResult)
         {
             Console.WriteLine("Database is not empty.\n1: Load from database.\n2: Load file.\n");
@@ -45,10 +46,13 @@ internal class Program
         // User can select an operation, selects a table, enter information
         string[] choiceArr = new string[2];
 
+        // get user's choice of database
         Console.WriteLine("Choose an operation:\n1: Add to a database\n2: Remove from a database\n3: Search a database\n");
         Console.WriteLine("Please enter a number:");
         choiceArr[0] = Console.ReadLine();
 
+        // get user's choice of database
+        Console.WriteLine("\n");
         Console.WriteLine("Choose a table to perfom this operation\n1: Car\n2: Client\n3: Rental\n");
         Console.WriteLine("Please enter a number:");
         choiceArr[1] = Console.ReadLine();
@@ -60,6 +64,7 @@ internal class Program
         
     }
 
+    // executes commands based on choices
     public static bool Execute(string[] arr)
     {
         bool result = false;
@@ -118,20 +123,26 @@ internal class Program
         return result;
     }
 
+    // checks if database contains data
     public static bool CheckCarDb()
     {
         Console.WriteLine("Checking Database...");
         bool databaseNotEmpty = false;
+
+        // open connection to database
         using (var contex = new CarRentalContex())
         {
+            // get's all cars in database
             var cars = contex.Car.ToList();
 
+            // checks if car list is empty
             if (cars.Count > 0)
             {
                 databaseNotEmpty = true;
             }
         }
 
+        // checks if car database is empty
         if (databaseNotEmpty)
         {
             return true;
@@ -139,6 +150,7 @@ internal class Program
         return false;
     }
 
+    // loads data from database
     public static void LoadDatabase()
     {
         //var carStorage;
@@ -152,13 +164,15 @@ internal class Program
     {
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
 
-        Console.WriteLine("\n");
         // get plate number of car
+        Console.WriteLine("\n");
         Console.WriteLine("Plate number:");
         string carId = Console.ReadLine().ToUpper();
 
         // validate car Id
         bool idValidation = Validator.CarValidator.ValidateId(carId);
+
+        // id entry validation check
         while (!idValidation)
         {
             Console.WriteLine("Car plate number invalid, enter valid Car plate number.");
@@ -167,19 +181,22 @@ internal class Program
             Console.WriteLine("\n");
         }
 
-        Console.WriteLine("\n");
         // get make of car
+        Console.WriteLine("\n");
         Console.WriteLine("Make:");
         string make = Console.ReadLine();
 
-        Console.WriteLine("\n");
         // get model of car
+        Console.WriteLine("\n");
         Console.WriteLine("Model:");
         string model = Console.ReadLine();
 
+        // get car's fuel type
         Console.WriteLine("\n");
         Console.WriteLine("Fuel type:");
         string fuelType = Console.ReadLine();
+
+        // convert fuel type to title case
         fuelType = textInfo.ToTitleCase(fuelType.ToLower());
 
         Console.WriteLine("\n");
@@ -189,27 +206,36 @@ internal class Program
         {
             Console.WriteLine("Fuel type invalid, enter valid fuel type");
             fuelType = Console.ReadLine();
+
             // validate fuel type
             fuelType = textInfo.ToTitleCase(fuelType.ToLower());
             fuelValidation = Validator.CarValidator.ValidateFuelType(fuelType);
             Console.WriteLine("\n");
         }
 
+        // gets the car type
         Console.WriteLine("\n");
         Console.WriteLine("Type:");
         string type = Console.ReadLine();
 
+        // get year the car was made
         Console.WriteLine("\n");
         Console.WriteLine("Year:");
-        //Type check
         bool invalidYear = true;
         int year;
+
+        //year check
         while (invalidYear)
         {
             try
             {
+                //get year
                 year = int.Parse(Console.ReadLine());
+
+                // year validation
                 bool yearValidation = Validator.CarValidator.ValidateYear(year);
+
+                // check if year is valid
                 if (yearValidation)
                 {
                     invalidYear = false;
@@ -227,7 +253,8 @@ internal class Program
             Console.WriteLine("\n");
         }
 
-        //var newCar = new Car
+        // create new car
+        //Car newCar = new Car
         //{
         //    CarId = carId,
         //    Make = make,
@@ -255,18 +282,22 @@ internal class Program
     // add client 
     public static bool AddClient()
     {
-
-        Console.WriteLine("Enter client's name: ");
+        // get client's first name of client
+        Console.WriteLine("Enter client's first name: ");
         string firstName = Console.ReadLine();
 
+        // get client's last name of client
         Console.WriteLine("\n");
-        Console.WriteLine("Enter client's name: ");
+        Console.WriteLine("Enter client's last name: ");
         string lastName = Console.ReadLine();
 
+        // get client's phone number
         Console.WriteLine("\n");
         Console.WriteLine("Enter client's phone number: ");
         bool invalidPhoneNumber= true;
         int phoneNumber = 0;
+
+        // phone number check
         while (invalidPhoneNumber)
         {
             try
@@ -276,6 +307,8 @@ internal class Program
 
                 // validate phone number
                 bool phoneNumberValidation = Validator.ClientValidator.ValidatePhoneNumber(phoneNumber);
+
+                // check if phone number is valid
                 if (phoneNumberValidation)
                 {
                     invalidPhoneNumber = false;
@@ -294,20 +327,26 @@ internal class Program
             Console.WriteLine("\n");
         }
 
+        // get client's email
         Console.WriteLine("Enter client's email: ");
         string email = "";
         bool emailValidation = false;
         while (!emailValidation)
         {
+            // get email
             email = Console.ReadLine();
+
             // validate email
             emailValidation = Validator.ClientValidator.ValidateEmail(email);
             Console.WriteLine("\n");
         }
+
         //generate client Id
         Console.WriteLine("Enter client's Id: ");
-        string clientId = Console.ReadLine();
+        string clientId = Validator.ClientValidator.GenerateId(firstName, lastName);
+        Console.WriteLine($"Client id is: {clientId}");
 
+        // create new client
         Client newClient = new Client
         {
             ClientId = clientId,
@@ -319,6 +358,7 @@ internal class Program
 
         //Add too data structure
         //Add to database
+        Console.WriteLine("\n");
         return true;
     }
 }
