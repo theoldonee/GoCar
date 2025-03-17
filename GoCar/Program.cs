@@ -361,4 +361,32 @@ internal class Program
         Console.WriteLine("\n");
         return true;
     }
+
+    // add rental information
+    public static bool AddRental()
+    {
+        // rental id
+        // generated
+        Console.WriteLine("Generating rental Id....");
+        string rentalId = Console.ReadLine();
+
+        // collection date
+        // generated
+        Console.WriteLine("Enter client's first name: ");
+        string CollectionDate = Console.ReadLine();
+
+        // return date
+        Console.WriteLine("Enter client's first name: ");
+        string ReturnDate = Console.ReadLine();
+
+        // carId
+        Console.WriteLine("Enter client's first name: ");
+        string CarId = Console.ReadLine();
+
+        // client ID
+        Console.WriteLine("Enter client's first name: ");
+        string ClientId = Console.ReadLine();
+
+        return true;
+    }
 }
