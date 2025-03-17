@@ -368,7 +368,7 @@ internal class Program
         // rental id
         // generated
         Console.WriteLine("Generating rental Id....");
-        string rentalId = Console.ReadLine();
+        int rentalId = Validator.RentalValidator.GenerateId();
 
         // collection date
         // generated
