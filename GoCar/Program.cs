@@ -222,7 +222,7 @@ internal class Program
         Console.WriteLine("\n");
         Console.WriteLine("Year:");
         bool invalidYear = true;
-        int year;
+        int year = 0;
 
         //year check
         while (invalidYear)
@@ -254,16 +254,16 @@ internal class Program
         }
 
         // create new car
-        //Car newCar = new Car
-        //{
-        //    CarId = carId,
-        //    Make = make,
-        //    Model = model,
-        //    FuelType = fuelType,
-        //    Type = type,
-        //    Year = year,
-        //    Available = true
-        //};
+        Car newCar = new Car
+        {
+            CarId = carId,
+            Make = make,
+            Model = model,
+            FuelType = fuelType,
+            Type = type,
+            Year = year,
+            Available = true
+        };
 
         //// add to data struct
 
