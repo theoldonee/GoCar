@@ -172,7 +172,26 @@ namespace GoCar
         // Validates rental entry
         public class RentalValidator
         {
+            public static int GenerateId()
+            {
+                int Id = 0;
 
+                using (var context = new CarRentalContex())
+                {
+                    var rentalList = context.Rental
+                        .Select(r => r).ToList();
+
+                    if (rentalList.Count > 0)
+                    {
+                        Rental lastRental = rentalList.Last();
+
+                        Id = lastRental.RentalId++; 
+
+                    }      
+
+                }
+                return Id;
+            }
         }
     }
 }
