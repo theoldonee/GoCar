@@ -201,6 +201,11 @@ namespace GoCar
                 }
                 return Id;
             }
+
+            public static string GetDate()
+            {
+                return DateTime.Now.ToString("dd-MM-yyyy");
+            }
         }
     }
 }
