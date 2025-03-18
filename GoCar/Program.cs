@@ -242,13 +242,13 @@ internal class Program
                 }
                 else
                 {
-                    Console.WriteLine("Year entry invalid:Year cannot exceed current year");
+                    Console.WriteLine("Year entry invalid");
                     Console.WriteLine("Please enter valid year:");
                 }
             }
             catch
             {
-                Console.WriteLine("Year entry invalid. Please enter valid year");
+                Console.WriteLine("Year entry invalid: Year cannot be a string.\nPlease enter valid year");
             }
             Console.WriteLine("\n");
         }
