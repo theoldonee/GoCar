@@ -66,5 +66,52 @@ public class CarTests
         bool result = Validator.CarValidator.ValidateYear(year);
         Assert.False(result);
     }
+
+    //Positive test case for phone number
+    [Theory]
+    [InlineData(12345678)]  // Valid phone number (8 digits exactly)
+    [InlineData(87654321)]  // Another valid phone number (8 digits exactly)
+    public void ValidatePhoneNumber_ShouldReturnTrue(int phoneNumber)
+    {
+        bool result = Validator.ClientValidator.ValidatePhoneNumber(phoneNumber);
+        Assert.True(result);
+    }
+
+    // Negative test case for phone number
+    [Theory]
+    [InlineData(12345)]  // Too short for a phone number (<8 digits)
+    [InlineData(0123456789)] // Too long for a phone number (>8 digits)
+    public void ValidatePhoneNumber_ShouldReturnFalse(int phoneNumber)
+    {
+        bool result = Validator.ClientValidator.ValidatePhoneNumber(phoneNumber);
+        Assert.False(result);
+    }
+
+    // Positive test case for client email
+    [Theory]
+    [InlineData("zook@gmail.com")] // Correct email format
+    [InlineData("zook.cat@gmail.mu")]  // Correct email format
+    [InlineData("hello@world.co.uk")]  //COrrect email format
+    public void ValidateEmail_ShouldReturnTrue_ForValidEmails (string email)
+    {
+        bool result = Validator.ClientValidator.ValidateEmail(email);
+        Assert.True(result);
+    }
+
+
+    // Negative test case forclient email
+    [Theory]
+    [InlineData("flookfailcat.com")]  // No @
+    [InlineData("flook@com")]  // No "."
+    [InlineData("flook@@gmail.com")]  // Multiple "@"s
+    [InlineData("@gmail.com")]  // No text before "@"
+    [InlineData("flook@.com")]  // No email domain before "."
+    [InlineData("flook@gmailcom")]  // No "." in email domain
+    public void ValidateEmail_ShouldReturnFalse_ForInvalidEmails(string email)
+    {
+        bool result = Validator.ClientValidator.ValidateEmail(email);
+        Assert.False(result);
+    }
+
 }
 
