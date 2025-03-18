@@ -88,12 +88,21 @@ namespace GoCar
             public static bool ValidateYear(int year)
             {
                 bool result;
-                if(year <= DateTime.Now.Year)
+                int currentYear = DateTime.Now.Year;
+                if (year > 1999 && year <= currentYear)
                 {
                     result = true;
                 }
                 else
                 {
+                    if(year > currentYear)
+                    {
+                        Console.WriteLine("Year caannot be greater than current year");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Year caannot be less than 2000");
+                    }
                     result = false;
                 }
                 return result;
