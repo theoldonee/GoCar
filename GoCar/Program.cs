@@ -372,8 +372,7 @@ internal class Program
 
         // collection date
         // generated
-        Console.WriteLine("Enter client's first name: ");
-        string CollectionDate = Console.ReadLine();
+        string CollectionDate = Validator.RentalValidator.GetDate();
 
         // return date
         Console.WriteLine("Enter client's first name: ");
