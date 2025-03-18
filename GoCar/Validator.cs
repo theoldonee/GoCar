@@ -123,21 +123,36 @@ namespace GoCar
 
                 return true;
             }
+
+            // validates email
             public static bool ValidateEmail(string email)
             {
                 string[] splitByAt = email.Split("@");
 
+                // check if email contains "@"
                 if (splitByAt.Length != 2)
                 {
                     Console.WriteLine("Email invalid: no '@' sign");
+                    return false;
+
+                }else if (splitByAt[0] == "") // check if email starts with "@"
+                {
+                    Console.WriteLine("Email invalid: Email cannot atart with '@' sign");
                     return false;
                 }
                 else
                 {
                     string[] splitByDot = splitByAt[1].Split(".");
-                    if (splitByDot.Length != 2)
+
+                    // check if email contains "."
+                    if (splitByDot.Length < 2)
                     {
                         Console.WriteLine("Email invalid: no '.' symbol");
+                        return false;
+
+                    }else if (splitByDot[0] == "") // check if email has no domain
+                    {
+                        Console.WriteLine("Email invalid: Email must have domain before '.' symbol");
                         return false;
                     }
                 }
