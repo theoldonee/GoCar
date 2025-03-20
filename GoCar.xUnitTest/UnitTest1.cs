@@ -1,5 +1,6 @@
 using Xunit;
 using GoCar;
+using static GoCar.Validator;
 
 public class CarTests
 {
@@ -113,5 +114,32 @@ public class CarTests
         Assert.False(result);
     }
 
+    // Positive test case for current date
+    [Fact]
+    public void GetDate_ShouldReturn_TrueCurrentDate()
+    {
+        string expectedDate = DateTime.Now.ToString("dd-MM-yyyy");
+        string actualDate = RentalValidator.GetDate();
+        Assert.Equal(expectedDate, actualDate);
+    }
+
+    // Negative test case for current date
+    [Fact]
+    public void GetDate_ShouldFailForPastDate()
+    {
+        string pastDate = DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy"); // previous date
+        string actualDate = RentalValidator.GetDate();
+        Assert.NotEqual(pastDate, actualDate);
+    }
+
+    // Negative test case for current date
+    [Fact]
+    public void GetDate_ShouldFailForFutureDate()
+    {
+        string futureDate = DateTime.Now.AddDays(1).ToString("dd-MM-yyyy"); // next date
+        string actualDate = RentalValidator.GetDate();
+        Assert.NotEqual(futureDate, actualDate);
+    }
 }
+
 
