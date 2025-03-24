@@ -283,6 +283,7 @@ internal class Program
     public static bool AddClient()
     {
         // get client's first name of client
+        Console.WriteLine("\n");
         Console.WriteLine("Enter client's first name: ");
         string firstName = Console.ReadLine();
 
@@ -367,14 +368,17 @@ internal class Program
     {
         // rental id
         // generated
+        Console.WriteLine("\n");
         Console.WriteLine("Generating rental Id....");
         int rentalId = Validator.RentalValidator.GenerateId();
+        Console.WriteLine($"Rental Id is {rentalId}");
 
         // collection date
         // generated
         string CollectionDate = Validator.RentalValidator.GetDate();
 
         // return date
+        Console.WriteLine("\n");
         Console.WriteLine("Enter the return date in the format 'dd-MM-yyyy': ");
         string ReturnDate = Console.ReadLine();
         bool invalidDate = true;
@@ -390,6 +394,7 @@ internal class Program
                 Console.WriteLine("Date invalid: Please enter a valid return date in the format 'dd-MM-yyyy': ");
                 ReturnDate = Console.ReadLine();
             }
+            Console.WriteLine("\n");
         }
 
         // carId
