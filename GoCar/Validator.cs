@@ -221,6 +221,60 @@ namespace GoCar
             {
                 return DateTime.Now.ToString("dd-MM-yyyy");
             }
+
+            public static bool ValidateDate(string date)
+            {
+                bool result = false;
+                Dictionary<string, int> dateEntered = new Dictionary<string, int>();
+                Dictionary<string, int> currentDate = SplitDate(DateTime.Now.ToString("dd-MM-yyyy"));
+                try
+                {
+                    dateEntered = SplitDate(date);
+
+                    // Year check
+                    if (dateEntered["year"] >= currentDate["year"])
+                    {
+                        // month check
+                        if (
+                            (dateEntered["month"] >= currentDate["month"]) ||
+                            ((dateEntered["month"] <= currentDate["month"]) && (dateEntered["year"] > currentDate["year"]))
+                            )
+                        {
+                            // day check
+                            if (
+                            (dateEntered["day"] > currentDate["day"]) ||
+                            ((dateEntered["day"] <= currentDate["day"]) && (dateEntered["month"] > currentDate["month"]))
+                            )
+                            {
+                                result = true;
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Date must follow the format 'dd-MM-yyyy' and cannot contain other symbols or letters");
+                }
+                
+
+
+
+                return result;
+            }
+
+            private static Dictionary<string, int> SplitDate(string date)
+            {
+                string[] splitDate = date.Split('-');
+
+                Dictionary<string, int> dateDictionary = new Dictionary<string, int>
+                {
+                    {"day", Int32.Parse(splitDate[0])},
+                    {"month", Int32.Parse(splitDate[1])},
+                    {"year", Int32.Parse(splitDate[2])}
+                };
+
+                return dateDictionary;
+            }
         }
     }
 }
