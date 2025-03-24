@@ -375,16 +375,30 @@ internal class Program
         string CollectionDate = Validator.RentalValidator.GetDate();
 
         // return date
-        Console.WriteLine("Enter client's first name: ");
+        Console.WriteLine("Enter the return date in the format 'dd-MM-yyyy': ");
         string ReturnDate = Console.ReadLine();
+        bool invalidDate = true;
+        while (invalidDate)
+        {
+            // return date validation
+            if (Validator.RentalValidator.ValidateDate(ReturnDate))
+            {
+                invalidDate = false;
+            }
+            else
+            {
+                Console.WriteLine("Date invalid: Please enter a valid return date in the format 'dd-MM-yyyy': ");
+                ReturnDate = Console.ReadLine();
+            }
+        }
 
         // carId
-        Console.WriteLine("Enter client's first name: ");
-        string CarId = Console.ReadLine();
+        //Console.WriteLine("Enter client's first name: ");
+        //string CarId = Console.ReadLine();
 
-        // client ID
-        Console.WriteLine("Enter client's first name: ");
-        string ClientId = Console.ReadLine();
+        //// client ID
+        //Console.WriteLine("Enter client's first name: ");
+        //string ClientId = Console.ReadLine();
 
         return true;
     }
