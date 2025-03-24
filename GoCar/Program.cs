@@ -82,7 +82,7 @@ internal class Program
             }
             else if (arr[1] == "3") // rental
             {
-                result = AddClient();
+                result = AddRental();
             }
 
         }
