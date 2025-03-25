@@ -114,32 +114,76 @@ public class CarTests
         Assert.False(result);
     }
 
-    // Positive test case for current date
-    [Fact]
-    public void GetDate_ShouldReturn_TrueCurrentDate()
+    //  Positive test for future dates 
+    [Theory]
+    [InlineData("25-12-2030")]  // Future holiday
+    [InlineData("01-01-2100")]  // Distant future
+    [InlineData("29-02-2028")]  // Future leap year
+    [InlineData("31-12-2025")]  // End of current year
+    public void ValidateDate_ShouldReturnTrueForValidFutureDates(string date)
     {
-        string expectedDate = DateTime.Now.ToString("dd-MM-yyyy");
-        string actualDate = RentalValidator.GetDate();
-        Assert.Equal(expectedDate, actualDate);
+        bool result = Validator.RentalValidator.ValidateDate(date);
+        Assert.True(result);
     }
 
-    // Negative test case for current date
-    [Fact]
-    public void GetDate_ShouldFailForPastDate()
+    // Negative test for past dates 
+    [Theory]
+    [InlineData("01-01-2000")]  // Past century
+    [InlineData("15-03-2015")]  // Random past date
+    [InlineData("31-12-1999")]  // End of past century
+    [InlineData("28-02-2025")]  // Last day of February 2025
+    public void ValidateDate_ShouldReturnFalseForPastDates(string date)
     {
-        string pastDate = DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy"); // previous date
-        string actualDate = RentalValidator.GetDate();
-        Assert.NotEqual(pastDate, actualDate);
+        bool result = Validator.RentalValidator.ValidateDate(date);
+        Assert.False(result);
     }
 
-    // Negative test case for current date
-    [Fact]
-    public void GetDate_ShouldFailForFutureDate()
+    // Invalid day 
+    [Theory]
+    [InlineData("32-12-2025")]  // Day > 31
+    [InlineData("00-12-2025")]  // Day = 0
+    [InlineData("31-04-2026")]  // April has only 30 days
+    [InlineData("29-02-2025")]  // Non-leap year, so it should have only 28 days
+    public void ValidateDate_ShouldReturnFalseForInvalidDays(string date)
     {
-        string futureDate = DateTime.Now.AddDays(1).ToString("dd-MM-yyyy"); // next date
-        string actualDate = RentalValidator.GetDate();
-        Assert.NotEqual(futureDate, actualDate);
+        bool result = Validator.RentalValidator.ValidateDate(date);
+        Assert.False(result);
+    }
+
+    // Invalid month
+    [Theory]
+    [InlineData("12-13-2025")] // Month > 12
+    [InlineData("12-00-2025")] // Month = 0
+    public void ValidateDate_ShouldReturnFalseForInvalidMonths(string date)
+    {
+        bool result = Validator.RentalValidator.ValidateDate(date);
+        Assert.False(result);
+    }
+
+    // Incorrect date format 
+    [Theory]
+    [InlineData("2025-01-01")] // yyyy-MM-dd instead of dd-MM-yyyy
+    [InlineData("01/01/2025")] // Uses "/" instead of "-"
+    [InlineData("1-1-2025")] // Missing zeros
+    [InlineData("January 1, 2025")] // Pure text format
+    public void ValidateDate_ShouldReturnFalseForIncorrectFormat(string date)
+    {
+        bool result = Validator.RentalValidator.ValidateDate(date);
+        Assert.False(result);
+    }
+
+    // Completely invalid input 
+    [Theory]
+    [InlineData("abcd-ef-ghij")] // Nonsense string
+    [InlineData("12345678")] // Numbers without separators
+    [InlineData("")] // Empty string
+    public void ValidateDate_ShouldReturnFalseForInvalidInputs(string date)
+    {
+        bool result = Validator.RentalValidator.ValidateDate(date);
+        Assert.False(result);
     }
 }
+
+
 
 
