@@ -198,7 +198,7 @@ namespace GoCar
         {
             public static int GenerateId()
             {
-                int Id = 0;
+                int id = 0;
 
                 using (var context = new CarRentalContex())
                 {
@@ -209,12 +209,12 @@ namespace GoCar
                     {
                         Rental lastRental = rentalList.Last();
 
-                        Id = lastRental.RentalId++; 
+                        id = lastRental.RentalId++; 
 
                     }      
 
                 }
-                return Id;
+                return id;
             }
 
             public static string GetDate()
