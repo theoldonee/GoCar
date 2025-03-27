@@ -250,6 +250,19 @@ namespace GoCar
                             }
                         }
                     }
+
+
+                    // checks if month is below 1 or greater than 12
+                    if (dateEntered["month"] < 1 || dateEntered["month"] > 12)
+                    {
+                        result = false;
+                    }
+
+                    // checks if day is below 1 or greater than 31
+                    if (dateEntered["day"] == 0 || dateEntered["day"] > 31)
+                    {
+                        result = false;
+                    }
                 }
                 catch
                 {
