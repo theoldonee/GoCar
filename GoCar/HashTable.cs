@@ -6,12 +6,16 @@ namespace GoCar
     public class HashTable<TKey, TValue>
     {
 
-
         // Internal storage using array of linked lists (separate chaining)
         private LinkedList<KeyValuePair<TKey, TValue>>[] _buckets;
 
+        // Prime numbers for bucket sizing to reduce collisions
+        private static readonly int[] PrimeSizes = new int[]
+        {
+            11, 23, 47, 97, 197, 401, 809, 1627, 3251, 6521, 13049, 26099, 52213
+        };
+
         //REMOVE
-        private const int Size = 100; // Hash table size
         private Node<TKey, TValue>[] table; // Array of linked lists for collision handling
 
         //REMOVE
