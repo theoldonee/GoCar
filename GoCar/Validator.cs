@@ -250,18 +250,29 @@ namespace GoCar
                             }
                         }
                     }
+
+                    // checks if month is not a real month
+                    if (dateEntered["month"] < 1 || dateEntered["month"] > 12)
+                    {
+                        result = false;
+                    }
+
+                    // checks if day is zero
+                    if (dateEntered["day"] == 0)
+                    {
+                        result = false;
+                    }
                 }
                 catch
                 {
                     Console.WriteLine("Date must follow the format 'dd-MM-yyyy' and cannot contain other symbols or letters");
                 }
-                
-
-
+               
 
                 return result;
             }
 
+            // splits date into day month and year
             private static Dictionary<string, int> SplitDate(string date)
             {
                 string[] splitDate = date.Split('-');
