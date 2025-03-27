@@ -15,8 +15,10 @@ namespace GoCar
             11, 23, 47, 97, 197, 401, 809, 1627, 3251, 6521, 13049, 26099, 52213
         };
 
-        //REMOVE
-        private Node<TKey, TValue>[] table; // Array of linked lists for collision handling
+        // Tracking table metrics
+        private int _count;
+        private int _currentPrimeIndex;
+        private const double LoadFactorThreshold = 0.75;
 
         //REMOVE
         public HashTable()
