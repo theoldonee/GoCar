@@ -237,14 +237,24 @@ namespace GoCar
                         // month check
                         if (
                             (dateEntered["month"] >= currentDate["month"]) ||
-                            ((dateEntered["month"] <= currentDate["month"]) && (dateEntered["year"] > currentDate["year"]))
+                            ((dateEntered["month"] <= currentDate["month"]) && 
+                            (dateEntered["year"] > currentDate["year"]))
                             )
                         {
                             // day check
                             if (
-                            (dateEntered["day"] > currentDate["day"]) ||
-                            ((dateEntered["day"] <= currentDate["day"]) && (dateEntered["month"] > currentDate["month"]))
+                                (dateEntered["day"] > currentDate["day"]) ||
+                                ((dateEntered["day"] <= currentDate["day"]) && 
+                                (dateEntered["month"] > currentDate["month"]))
                             )
+                            {
+                                result = true;
+
+                            }else if (
+                                    ((dateEntered["day"] <= currentDate["day"]) &&
+                                    (dateEntered["month"] < currentDate["month"]) &&
+                                    (dateEntered["year"] > currentDate["year"]))
+                                )
                             {
                                 result = true;
                             }
@@ -263,6 +273,19 @@ namespace GoCar
                     {
                         result = false;
                     }
+
+                    // checks if year is not a leap year and day is equialent to 29
+                    if( !(IsLeapYear(dateEntered["year"])) && dateEntered["month"] == 2 && dateEntered["day"] == 29 ) 
+                    {
+                        result = false;
+                    }
+
+                    int[] monthsWith30Days = [4, 6, 9, 11];
+                    if( dateEntered["day"] > 30 && monthsWith30Days.Contains(dateEntered["month"]) )
+                    {
+                        result = false;
+                    }
+
                 }
                 catch
                 {
@@ -270,11 +293,10 @@ namespace GoCar
                 }
                 
 
-
-
                 return result;
             }
 
+            // splits date into day month and year and converts to integer
             private static Dictionary<string, int> SplitDate(string date)
             {
                 string[] splitDate = date.Split('-');
@@ -287,6 +309,28 @@ namespace GoCar
                 };
 
                 return dateDictionary;
+            }
+
+            // checks if a year is a leap year
+            private static bool IsLeapYear(int year)
+            {
+                bool isLeapYear = false;
+                if(year % 4 == 0)
+                {
+                    if(year % 100 == 0)
+                    {
+                        if (year % 400 == 0)
+                        {
+                            isLeapYear = true;
+                        }
+                    }
+                    else
+                    {
+                        isLeapYear = true;
+                    }
+                }
+                
+                return isLeapYear;
             }
         }
     }
