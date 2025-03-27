@@ -5,7 +5,6 @@ namespace GoCar
 
     public class HashTable<TKey, TValue>
     {
-
         // Internal storage using array of linked lists (separate chaining)
         private LinkedList<KeyValuePair<TKey, TValue>>[] _buckets;
 
