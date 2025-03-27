@@ -1,39 +1,33 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace GoCar
 {
-    // Node class for linked list (used for collision handling)
-    public class Node<TKey, TValue>
-    {
-        public TKey Key { get; set; }
-        public TValue Value { get; set; }
-        public Node<TKey, TValue> Next { get; set; }
-
-        public Node(TKey key, TValue value)
-        {
-            Key = key;
-            Value = value;
-            Next = null;
-        }
-    }
 
     public class HashTable<TKey, TValue>
     {
+
+
+        // Internal storage using array of linked lists (separate chaining)
+        private LinkedList<KeyValuePair<TKey, TValue>>[] _buckets;
+
+        //REMOVE
         private const int Size = 100; // Hash table size
         private Node<TKey, TValue>[] table; // Array of linked lists for collision handling
 
+        //REMOVE
         public HashTable()
         {
             table = new Node<TKey, TValue>[Size];
         }
 
+        //REMOVE
         // Hash function to compute index based on key
         private int Hash(TKey key)
         {
             int hashValue = key.GetHashCode() % Size;
             return Math.Abs(hashValue); // Ensure non-negative index
         }
-
+//CHANGES//
         // ADD DATA OBJECT TO HASHTABLE
         public void Add(TKey key, TValue value)
         {
