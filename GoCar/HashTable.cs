@@ -114,24 +114,37 @@ namespace GoCar
             }
         }
 
-     //CHANGES//
-        // SEARCH FOR OBJECT BY KEY
-        public TValue Find(TKey key)
+        // Search method with error handling
+        public TValue Search(TKey key)
         {
-            int index = Hash(key);
-            Node<TKey, TValue> current = table[index];
-
-            while (current != null)
+            try
             {
-                if (current.Key.Equals(key))
+                int bucketIndex = GetHashCode(key);
+                var bucket = _buckets[bucketIndex];
+
+                if (bucket != null)
                 {
-                    return current.Value;
+                    foreach (var item in bucket)
+                    {
+                        if (item.Key.Equals(key))
+                        {
+                            return item.Value;
+                        }
+                    }
                 }
-                current = current.Next;
+
+                // Key not found
+                throw new KeyNotFoundException($"The key {key} was not found in the hash table.");
             }
-            return default; // Return default value if key is not found
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Search error: {ex.Message}");
+                // Depending on requirements, you might return default(TValue) or re-throw
+                return default;
+            }
         }
 
+     //CHANGES
         // REMOVE OBJECT BY KEY
         public bool Remove(TKey key)
         {
@@ -158,7 +171,7 @@ namespace GoCar
             }
             return false; // Key not found
         }
-
+    //CHANGES
         // DISPLAY ALL OBJECTS IN HASHTABLE
         public void DisplayAll()
         {
@@ -177,5 +190,10 @@ namespace GoCar
                 }
             }
         }
+
+        // Additional utility methods
+        public int Count => _count;
+        public int BucketCount => _buckets.Length;
+        public double LoadFactor => (double)_count / _buckets.Length;
     }
 }
