@@ -82,7 +82,39 @@ namespace GoCar
             }
         }
 
-    //CHANGES//
+        // Dynamic resizing method with prime number bucket sizes
+        private void Resize()
+        {
+            try
+            {
+                // Move to next prime size
+                _currentPrimeIndex = Math.Min(_currentPrimeIndex + 1, PrimeSizes.Length - 1);
+                int newSize = PrimeSizes[_currentPrimeIndex];
+
+                // Create new buckets and rehash existing elements
+                var oldBuckets = _buckets;
+                _buckets = new LinkedList<KeyValuePair<TKey, TValue>>[newSize];
+                _count = 0;
+
+                foreach (var bucket in oldBuckets)
+                {
+                    if (bucket != null)
+                    {
+                        foreach (var kvp in bucket)
+                        {
+                            Insert(kvp.Key, kvp.Value);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Resize operation failed: {ex.Message}");
+                throw; // Re-throw to allow caller to handle
+            }
+        }
+
+     //CHANGES//
         // SEARCH FOR OBJECT BY KEY
         public TValue Find(TKey key)
         {
