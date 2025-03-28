@@ -19,20 +19,25 @@ namespace GoCar
         private int _currentPrimeIndex;
         private const double LoadFactorThreshold = 0.75;
 
-        //REMOVE
         public HashTable()
         {
-            table = new Node<TKey, TValue>[Size];
+            _currentPrimeIndex = 0;
+            _buckets = new LinkedList<KeyValuePair<TKey, TValue>>[PrimeSizes[_currentPrimeIndex]];
+            _count = 0;
         }
 
-        //REMOVE
-        // Hash function to compute index based on key
-        private int Hash(TKey key)
+        // Custom hash function to distribute keys uniformly
+        private int GetHashCode(TKey key)
         {
-            int hashValue = key.GetHashCode() % Size;
-            return Math.Abs(hashValue); // Ensure non-negative index
+            if (key == null)
+                throw new ArgumentNullException(nameof(key), "Key cannot be null");
+
+            // Use built-in hash code and ensure non-negative index
+            int hashCode = Math.Abs(key.GetHashCode());
+            return hashCode % _buckets.Length;
         }
-//CHANGES//
+
+    //CHANGES//
         // ADD DATA OBJECT TO HASHTABLE
         public void Add(TKey key, TValue value)
         {
