@@ -21,6 +21,11 @@ namespace GoCar
         private int _currentPrimeIndex;
         private const double LoadFactorThreshold = 0.75;
 
+        // Additional utility methods
+        public int Count => _count;
+        public int BucketCount => _buckets.Length;
+        public double LoadFactor => (double)_count / _buckets.Length;
+
         public HashTable()
         {
             _currentPrimeIndex = 0;
@@ -144,56 +149,42 @@ namespace GoCar
             }
         }
 
-     //CHANGES
-        // REMOVE OBJECT BY KEY
-        public bool Remove(TKey key)
+        // Delete method with error handling
+        public bool Delete(TKey key)
         {
-            int index = Hash(key);
-            Node<TKey, TValue> current = table[index];
-            Node<TKey, TValue> previous = null;
-
-            while (current != null)
+            try
             {
-                if (current.Key.Equals(key))
+                int bucketIndex = GetHashCode(key);
+                var bucket = _buckets[bucketIndex];
+
+                if (bucket != null)
                 {
-                    if (previous == null) // If it's the first node
+                    foreach (var item in bucket)
                     {
-                        table[index] = current.Next;
+                        if (item.Key.Equals(key))
+                        {
+                            bucket.Remove(item);
+                            _count--;
+                            return true;
+                        }
                     }
-                    else
-                    {
-                        previous.Next = current.Next;
-                    }
-                    return true;
                 }
-                previous = current;
-                current = current.Next;
+
+                return false;
             }
-            return false; // Key not found
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Deletion error: {ex.Message}");
+                return false;
+            }
         }
-    //CHANGES
+
+     //CHANGES
         // DISPLAY ALL OBJECTS IN HASHTABLE
         public void DisplayAll()
         {
-            for (int i = 0; i < Size; i++)
-            {
-                Node<TKey, TValue> current = table[i];
-                if (current != null)
-                {
-                    Console.Write($"Bucket {i}: ");
-                    while (current != null)
-                    {
-                        Console.Write($"[{current.Key} -> {current.Value}] -> ");
-                        current = current.Next;
-                    }
-                    Console.WriteLine("NULL");
-                }
-            }
         }
 
-        // Additional utility methods
-        public int Count => _count;
-        public int BucketCount => _buckets.Length;
-        public double LoadFactor => (double)_count / _buckets.Length;
+        
     }
 }
