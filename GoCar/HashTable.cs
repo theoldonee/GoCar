@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Internal;
+
 namespace GoCar
 {
 
@@ -37,30 +39,50 @@ namespace GoCar
             return hashCode % _buckets.Length;
         }
 
-    //CHANGES//
-        // ADD DATA OBJECT TO HASHTABLE
-        public void Add(TKey key, TValue value)
+        
+        // Insert a key-value pair with dynamic resizing and update if key exists
+        public void Insert(TKey key, TValue value)
         {
-            int index = Hash(key);
-
-            // Check if key already exists and update if found
-            Node<TKey, TValue> current = table[index];
-            while (current != null)
+            try
             {
-                if (current.Key.Equals(key))
+                // Check load factor and resize if necessary
+                if ((double)_count / _buckets.Length >= LoadFactorThreshold)
                 {
-                    current.Value = value; // Update existing key-value pair
-                    return;
+                    Resize();
                 }
-                current = current.Next;
-            }
 
-            // Insert new node at the start of the linked list
-            Node<TKey, TValue> newNode = new Node<TKey, TValue>(key, value);
-            newNode.Next = table[index];
-            table[index] = newNode;
+                int bucketIndex = GetHashCode(key);
+
+                // Initialize bucket if null
+                if (_buckets[bucketIndex] == null)
+                {
+                    _buckets[bucketIndex] = new LinkedList<KeyValuePair<TKey, TValue>>();
+                }
+
+                // Check for existing key and update value i
+                var bucket = _buckets[bucketIndex];
+                foreach (var item in bucket)
+                {
+                    if (item.Key.Equals(key))
+                    {
+                        // Remove the existing key-value pair and insert the new value
+                        bucket.Remove(item);
+                        bucket.AddLast(new KeyValuePair<TKey, TValue>(key, value));
+                        return; // Exit early since update is complete
+                    }
+                }
+
+                // Add new key-value pair if no duplicate was found
+                bucket.AddLast(new KeyValuePair<TKey, TValue>(key, value));
+                _count++;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error during insertion: {ex.Message}");
+            }
         }
 
+    //CHANGES//
         // SEARCH FOR OBJECT BY KEY
         public TValue Find(TKey key)
         {
