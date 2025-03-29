@@ -279,6 +279,7 @@ internal class Program
         };
 
         //// add to data struct
+        carHashTable.Insert(newCar.CarId, newCar);
 
         //// update database
         //using (var context = new CarRentalContex())
@@ -371,6 +372,8 @@ internal class Program
         };
 
         //Add too data structure
+        clientHashTable.Insert(newClient.ClientId, newClient);
+
         //Add to database
         Console.WriteLine("\n");
         return true;
