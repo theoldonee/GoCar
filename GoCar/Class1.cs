@@ -3,7 +3,7 @@ using GoCar;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.FileIO;
 
-internal class Program
+internal class class1
 {
 
     // DATA IN DATA STRUCTS (car, rental, client);
@@ -60,7 +60,7 @@ internal class Program
         // Add requires all information
         // Search can be don by the attributes of the class
         Execute(choiceArr);
- 
+
     }
 
     // executes commands based on choices
@@ -153,10 +153,10 @@ internal class Program
     public static void LoadDatabase()
     {
         //var carStorage;
-        using(var contex = new CarRentalContex())
+        using (var contex = new CarRentalContex())
         {
             var cars = contex.Car.ToList();
-            foreach( var car in cars)
+            foreach (var car in cars)
             {
                 carHashTable.Insert(car.CarId, car);
             }
@@ -309,7 +309,7 @@ internal class Program
         // get client's phone number
         Console.WriteLine("\n");
         Console.WriteLine("Enter client's phone number: ");
-        bool invalidPhoneNumber= true;
+        bool invalidPhoneNumber = true;
         int phoneNumber = 0;
 
         // phone number check
@@ -420,7 +420,10 @@ internal class Program
         Console.WriteLine("Enter client's Id: ");
         string clientId = Console.ReadLine();
 
+
+
         return true;
+
     }
 
     // get user input and check if CarId format is valid.
