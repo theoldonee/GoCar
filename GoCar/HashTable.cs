@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-//using Internal;
+using Internal;
 
 namespace GoCar
 {
@@ -88,7 +88,7 @@ namespace GoCar
         }
 
         // Dynamic resizing method with prime number bucket sizes
-        private void Resize() 
+        private void Resize()
         {
             try
             {
