@@ -7,9 +7,9 @@ internal class Program
 {
 
     // DATA IN DATA STRUCTS (car, rental, client);
-    static HashTable<string, Car> CarList = new HashTable<string, Car>();
-    static HashTable<string, Client> ClientList = new HashTable<string, Client>();
-    static HashTable<int, Rental> RentalList = new HashTable<int, Rental>();
+    static HashTable<string, Car> carHashTable = new HashTable<string, Car>();
+    static HashTable<string, Client> clientHashTable = new HashTable<string, Client>();
+    static HashTable<int, Rental> rentalHashTable = new HashTable<int, Rental>();
     public static void Main(string[] args)
     {
         string gocarAscii = @"
@@ -60,8 +60,7 @@ internal class Program
         // Add requires all information
         // Search can be don by the attributes of the class
         Execute(choiceArr);
-
-        
+ 
     }
 
     // executes commands based on choices
@@ -154,8 +153,34 @@ internal class Program
     public static void LoadDatabase()
     {
         //var carStorage;
+        using(var contex = new CarRentalContex())
+        {
+            var cars = contex.Car.ToList();
+            foreach( var car in cars)
+            {
+                carHashTable.Insert(car.CarId, car);
+            }
+        }
+
         //var clientStorage;
+        using (var contex = new CarRentalContex())
+        {
+            var clients = contex.Client.ToList();
+            foreach (var client in clients)
+            {
+                clientHashTable.Insert(client.ClientId, client);
+            }
+        }
+
         //var rentalStorage;
+        using (var contex = new CarRentalContex())
+        {
+            var rentals = contex.Rental.ToList();
+            foreach (var rental in rentals)
+            {
+                rentalHashTable.Insert(rental.RentalId, rental);
+            }
+        }
     }
 
 
