@@ -167,19 +167,7 @@ internal class Program
         // get plate number of car
         Console.WriteLine("\n");
         Console.WriteLine("Plate number:");
-        string carId = Console.ReadLine().ToUpper();
-
-        // validate car Id
-        bool idValidation = Validator.CarValidator.ValidateId(carId);
-
-        // id entry validation check
-        while (!idValidation)
-        {
-            Console.WriteLine("Car plate number invalid, enter valid Car plate number.");
-            carId = Console.ReadLine().ToUpper();
-            idValidation = Validator.CarValidator.ValidateId(carId);
-            Console.WriteLine("\n");
-        }
+        string carId = GetCarID();
 
         // get make of car
         Console.WriteLine("\n");
@@ -398,13 +386,34 @@ internal class Program
         }
 
         // carId
-        //Console.WriteLine("Enter client's first name: ");
-        //string CarId = Console.ReadLine();
+        string carId = GetCarID();
 
         //// client ID
-        //Console.WriteLine("Enter client's first name: ");
-        //string ClientId = Console.ReadLine();
+        Console.WriteLine("Enter client's Id: ");
+        string clientId = Console.ReadLine();
 
         return true;
     }
+
+    // get user input and check if CarId format is valid.
+    public static string GetCarID()
+    {
+        Console.WriteLine("Enter Car ID: ");
+        string carId = Console.ReadLine().ToUpper();
+
+        // validate car Id
+        bool idValidation = Validator.CarValidator.ValidateId(carId);
+
+        // id entry validation check
+        while (!idValidation)
+        {
+            Console.WriteLine("Car plate number invalid, enter valid Car plate number.");
+            carId = Console.ReadLine().ToUpper();
+            idValidation = Validator.CarValidator.ValidateId(carId);
+            Console.WriteLine("\n");
+        }
+
+        return carId;
+    }
+
 }
