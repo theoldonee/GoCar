@@ -5,6 +5,11 @@ using Microsoft.VisualBasic.FileIO;
 
 internal class Program
 {
+
+    // DATA IN DATA STRUCTS (car, rental, client);
+    static HashTable<string, Car> CarList = new HashTable<string, Car>();
+    static HashTable<string, Client> ClientList = new HashTable<string, Client>();
+    static HashTable<int, Rental> RentalList = new HashTable<int, Rental>();
     public static void Main(string[] args)
     {
         string gocarAscii = @"
@@ -38,11 +43,6 @@ internal class Program
         }
 
 
-
-        // DATA IN DATA STRUCTS (car, rental, client);
-        List<Car> CarList;
-        List<Client> ClientList;
-        List<Rental> RentalList;
         // User can select an operation, selects a table, enter information
         string[] choiceArr = new string[2];
 
