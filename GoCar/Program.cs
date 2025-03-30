@@ -81,7 +81,22 @@ internal class Program
             }
             else if (arr[1] == "3") // rental
             {
-                result = AddRental();
+                if (carHashTable.Count != 0 && clientHashTable.Count != 0)
+                {
+                    result = AddRental();
+                }
+                else
+                {
+                    if (carHashTable.Count != 0)
+                    {
+                        Console.WriteLine("Cannot add rental. No car in database");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Cannot add rental. No client in database");
+                    }
+                }
+                
             }
 
         }
