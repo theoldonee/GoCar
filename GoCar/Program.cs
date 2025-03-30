@@ -415,10 +415,51 @@ internal class Program
 
         // carId
         string carId = GetCarID();
+        // check if Id exist
+        bool carIsValid = false;
+
+        while(!carIsValid){
+
+            try
+            {
+                var car = carHashTable.Search(carId);
+                if (car != null)
+                {
+                    carIsValid = true;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a car Id that exist within the database: ");
+                carId = GetCarID();
+                Console.WriteLine("\n");
+            }
+        }
+        
 
         //// client ID
         Console.WriteLine("Enter client's Id: ");
         string clientId = Console.ReadLine();
+        bool clientIsValid = false;
+
+        while (!clientIsValid)
+        {
+
+            try
+            {
+                var client = clientHashTable.Search(carId);
+                if (client != null)
+                {
+                    clientIsValid = true;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a client Id that exist within the database: ");
+                carId = GetCarID();
+                Console.WriteLine("\n");
+            }
+        }
 
         return true;
     }
