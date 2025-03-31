@@ -45,22 +45,37 @@ internal class Program
 
         // User can select an operation, selects a table, enter information
         string[] choiceArr = new string[2];
+        bool execute = true;
+        while (execute)
+        {
+            // get user's choice of database
+            Console.WriteLine("Choose an operation:\n1: Add to a database\n2: Remove from a database\n3: Search a database\n");
+            Console.WriteLine("Please enter a number:");
+            choiceArr[0] = Console.ReadLine();
 
-        // get user's choice of database
-        Console.WriteLine("Choose an operation:\n1: Add to a database\n2: Remove from a database\n3: Search a database\n");
-        Console.WriteLine("Please enter a number:");
-        choiceArr[0] = Console.ReadLine();
+            // get user's choice of database
+            Console.WriteLine("\n");
+            Console.WriteLine("Choose a table to perfom this operation\n1: Car\n2: Client\n3: Rental\n");
+            Console.WriteLine("Please enter a number:");
+            choiceArr[1] = Console.ReadLine();
+            // Remove uses a unique ID
+            // Add requires all information
+            // Search can be don by the attributes of the class
+        
+            Execute(choiceArr);
 
-        // get user's choice of database
-        Console.WriteLine("\n");
-        Console.WriteLine("Choose a table to perfom this operation\n1: Car\n2: Client\n3: Rental\n");
-        Console.WriteLine("Please enter a number:");
-        choiceArr[1] = Console.ReadLine();
-        // Remove uses a unique ID
-        // Add requires all information
-        // Search can be don by the attributes of the class
-        Execute(choiceArr);
- 
+            Console.WriteLine("Would you like to perform another operation?: \n1: Yes \n2: No");
+            string choice = Console.ReadLine();
+            Console.WriteLine("\n");
+
+            if (choice != "1")
+            {
+                execute = false;
+                Console.WriteLine("\n");
+                Console.WriteLine("Closing....");
+            }
+        }
+        
     }
 
     // executes commands based on choices
@@ -87,6 +102,7 @@ internal class Program
                 }
                 else
                 {
+                    Console.WriteLine("\n");
                     if (carHashTable.Count != 0)
                     {
                         Console.WriteLine("Cannot add rental. No car in database");
@@ -197,7 +213,6 @@ internal class Program
             }
         }
     }
-
 
     // add car
     public static bool AddCar()
