@@ -328,4 +328,11 @@ namespace GoCar
             return clientList;
         }
     }
+
+    // hashTable for rental information
+    public class RentaltHashTable<TKey> : HashTable<TKey, Rental>
+    {
+        
+    }
+
 }
