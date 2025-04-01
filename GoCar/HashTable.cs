@@ -249,6 +249,10 @@ namespace GoCar
 
         }
 
+    }
 
+    public class ClientHashTable<TKey> : HashTable<TKey, Client>
+    {
+        
     }
 }
