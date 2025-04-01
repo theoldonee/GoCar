@@ -190,7 +190,27 @@ namespace GoCar
 
     public class CarHashTable<TKey> : HashTable<TKey, Car>
     {
-        
+        public List<Car> SearchByFuelType(string fuelType)
+        {
+            List<Car> carList = new List<Car>();
+            foreach (var bucket in _buckets)
+            {
+                if (bucket != null)
+                {
+                    foreach (var item in bucket)
+                    {
+                        Car car = item.Value;
+                        if (car.FuelType == fuelType)
+                        {
+                            carList.Add(car);
+                        }
+                    }
+                }
+            }
+
+            return carList;
+
+        }
 
 
     }
