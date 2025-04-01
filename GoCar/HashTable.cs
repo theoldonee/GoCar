@@ -8,7 +8,7 @@ namespace GoCar
     public class HashTable<TKey, TValue>
     {
         // Internal storage using array of linked lists (separate chaining)
-        private LinkedList<KeyValuePair<TKey, TValue>>[] _buckets;
+        protected LinkedList<KeyValuePair<TKey, TValue>>[] _buckets;
 
         // Prime numbers for bucket sizing to reduce collisions
         private static readonly int[] PrimeSizes = new int[]
@@ -186,5 +186,12 @@ namespace GoCar
         }
 
         
+    }
+
+    public class CarHashTable<TKey> : HashTable<TKey, Car>
+    {
+        
+
+
     }
 }
