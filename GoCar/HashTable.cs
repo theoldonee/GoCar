@@ -189,19 +189,26 @@ namespace GoCar
         
     }
 
+    // hashTable for cars
     public class CarHashTable<TKey> : HashTable<TKey, Car>
     {
-        // searches car hashTable by fueltype
+        // searche's by selected search option
         public List<Car> SearchBy(string value, string searchBy)
         {
             List<Car> carList = new List<Car>();
+
+            // Iterates over bucket
             foreach (var bucket in _buckets)
             {
+                // checks if bucket is empty
                 if (bucket != null)
                 {
+                    // iterates over items in bucket
                     foreach (var item in bucket)
                     {
                         Car car = item.Value;
+
+                        // checks if the search is by car fuelType 
                         if(searchBy == "fuelType")
                         {
                             if (car.FuelType == value)
@@ -209,15 +216,17 @@ namespace GoCar
                                 carList.Add(car);
                             }
                         }
-                        
-                        if(searchBy == "make")
+
+                        // checks if the search is by car make
+                        if (searchBy == "make")
                         {
                             if (car.Make == value)
                             {
                                 carList.Add(car);
                             }
                         }
-                        
+
+                        // checks if the search is by car type
                         if (searchBy == "type")
                         {
                             if (car.Type == value)
@@ -225,7 +234,8 @@ namespace GoCar
                                 carList.Add(car);
                             }
                         }
-                        
+
+                        // checks if the search is by year
                         if (searchBy == "year")
                         {
                             if (car.Year.ToString() == value)
@@ -234,6 +244,7 @@ namespace GoCar
                             }
                         }
 
+                        // checks if the search is by availability
                         if (searchBy == "availabe")
                         {
                             if (car.Available == true)
@@ -252,47 +263,59 @@ namespace GoCar
 
     }
 
+    // hashTable for clients
     public class ClientHashTable<TKey> : HashTable<TKey, Client>
     {
+        // searche's by selected search option
         public List<Client> SearchBy(string value, string searchBy)
         {
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
 
             List<Client> clientList = new List<Client>();
 
+            // Iterates over bucket
             foreach (var bucket in _buckets)
             {
+                // checks if bucket is empty
                 if (bucket != null)
                 {
+                    // iterates over items in bucket
                     foreach (var item in bucket)
                     {
                         Client client = item.Value;
 
-                        if(searchBy == "initials")
+                        // checks if the search is by initials
+                        if (searchBy == "initials")
                         {
+                            // creates initials
                             string initials = $"{client.FirstName[0]}{client.LastName[0]}";
                             value = value.ToUpper();
 
+                            // checks if initals match the value
                             if(initials == value)
                             {
                                 clientList.Add(client);
                             }
                         }
 
+                        // checks if the search is by firstname
                         if (searchBy == "firstname")
                         {
                             value = textInfo.ToTitleCase(value.ToLower());
 
+                            // checks if firstname match the value
                             if (client.FirstName == value)
                             {
                                 clientList.Add(client);
                             }
                         }
 
+                        // checks if the search is by lastname
                         if (searchBy == "lastname")
                         {
                             value = textInfo.ToTitleCase(value.ToLower());
 
+                            // checks if lastname match the value
                             if (client.LastName == value)
                             {
                                 clientList.Add(client);
