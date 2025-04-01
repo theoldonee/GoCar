@@ -190,7 +190,8 @@ namespace GoCar
 
     public class CarHashTable<TKey> : HashTable<TKey, Car>
     {
-        public List<Car> SearchByFuelType(string fuelType)
+        // searches car hashTable by fueltype
+        public List<Car> SearchBy(string value, string searchBy)
         {
             List<Car> carList = new List<Car>();
             foreach (var bucket in _buckets)
@@ -200,10 +201,46 @@ namespace GoCar
                     foreach (var item in bucket)
                     {
                         Car car = item.Value;
-                        if (car.FuelType == fuelType)
+                        if(searchBy == "fuelType")
                         {
-                            carList.Add(car);
+                            if (car.FuelType == value)
+                            {
+                                carList.Add(car);
+                            }
                         }
+                        
+                        if(searchBy == "make")
+                        {
+                            if (car.Make == value)
+                            {
+                                carList.Add(car);
+                            }
+                        }
+                        
+                        if (searchBy == "type")
+                        {
+                            if (car.Type == value)
+                            {
+                                carList.Add(car);
+                            }
+                        }
+                        
+                        if (searchBy == "year")
+                        {
+                            if (car.Year.ToString() == value)
+                            {
+                                carList.Add(car);
+                            }
+                        }
+
+                        if (searchBy == "availabe")
+                        {
+                            if (car.Available == true)
+                            {
+                                carList.Add(car);
+                            }
+                        }
+
                     }
                 }
             }
