@@ -332,7 +332,73 @@ namespace GoCar
     // hashTable for rental information
     public class RentaltHashTable<TKey> : HashTable<TKey, Rental>
     {
-        
+        // searche's by selected search option
+        public List<Rental> SearchBy(string value, string searchBy)
+        {
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+            List<Rental> rentalList = new List<Rental>();
+
+            // Iterates over bucket
+            foreach (var bucket in _buckets)
+            {
+                // checks if bucket is empty
+                if (bucket != null)
+                {
+                    // iterates over items in bucket
+                    foreach (var item in bucket)
+                    {
+                        Rental rental = item.Value;
+
+                        // checks if the search is by collectionDate
+                        if (searchBy == "collectionDate")
+                        {
+
+                            // checks if collectionDate match the value
+                            if (rental.CollectionDate == value)
+                            {
+                                rentalList.Add(rental);
+                            }
+                        }
+
+                        // checks if the search is by returnDate
+                        if (searchBy == "returnDate")
+                        {
+
+                            // checks if returnDate match the value
+                            if (rental.ReturnDate == value)
+                            {
+                                rentalList.Add(rental);
+                            }
+                        }
+
+                        // checks if the search is by carId
+                        if (searchBy == "carId")
+                        {
+
+                            // checks if CarId match the value
+                            if (rental.CarId == value)
+                            {
+                                rentalList.Add(rental);
+                            }
+                        }
+
+                        // checks if the search is by clientId
+                        if (searchBy == "clientId")
+                        {
+
+                            // checks if ClientId match the value
+                            if (rental.ClientId == value)
+                            {
+                                rentalList.Add(rental);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return rentalList;
+        }
     }
 
 }
