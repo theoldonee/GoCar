@@ -17,7 +17,7 @@ namespace GoCar
         public Car Car { get; set; }
 
         //Client relationship
-        public int ClientId { get; set; }
+        public string ClientId { get; set; }
         public Client Client { get; set; }
     }
 }
