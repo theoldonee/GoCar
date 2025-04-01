@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 //using Internal;
 
 namespace GoCar
@@ -253,6 +254,55 @@ namespace GoCar
 
     public class ClientHashTable<TKey> : HashTable<TKey, Client>
     {
-        
+        public List<Client> SearchBy(string value, string searchBy)
+        {
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+            List<Client> clientList = new List<Client>();
+
+            foreach (var bucket in _buckets)
+            {
+                if (bucket != null)
+                {
+                    foreach (var item in bucket)
+                    {
+                        Client client = item.Value;
+
+                        if(searchBy == "initials")
+                        {
+                            string initials = $"{client.FirstName[0]}{client.LastName[0]}";
+                            value = value.ToUpper();
+
+                            if(initials == value)
+                            {
+                                clientList.Add(client);
+                            }
+                        }
+
+                        if (searchBy == "firstname")
+                        {
+                            value = textInfo.ToTitleCase(value.ToLower());
+
+                            if (client.FirstName == value)
+                            {
+                                clientList.Add(client);
+                            }
+                        }
+
+                        if (searchBy == "lastname")
+                        {
+                            value = textInfo.ToTitleCase(value.ToLower());
+
+                            if (client.LastName == value)
+                            {
+                                clientList.Add(client);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            return clientList;
+        }
     }
 }
