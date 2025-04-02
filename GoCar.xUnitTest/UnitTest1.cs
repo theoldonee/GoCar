@@ -1,6 +1,7 @@
 using Xunit;
 using GoCar;
 using static GoCar.Validator;
+using Moq;
 
 public class CarTests
 {
@@ -182,6 +183,138 @@ public class CarTests
         bool result = Validator.RentalValidator.ValidateDate(date);
         Assert.False(result);
     }
+
+    // Test for no clients in the database 
+    [Fact]
+    public void GenerateClientId_ShouldReturnInitials0_WhenNoClientsExist()
+    {
+        var mockSet = new Mock<DbSet<Client>>();
+        var clients = new List<Client>().AsQueryable();
+
+        mockSet.As<IQueryable<Client>>().Setup(m => m.Provider).Returns(clients.Provider);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.Expression).Returns(clients.Expression);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.ElementType).Returns(clients.ElementType);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.GetEnumerator()).Returns(clients.GetEnumerator());
+
+        var mockContext = new Mock<CarRentalContext>();
+        mockContext.Setup(c => c.Client).Returns(mockSet.Object);
+
+        var result = Validator.ClientValidator.GenerateId("A", "B");
+        Assert.Equal("AB0", result); // Should return "AB0" for the first client
+    }
+
+    // Test for empty  rental list 
+    [Fact]
+    public void GenerateRentalId_ShouldReturn1_WhenNoRentalsExist()
+    {
+        var mockSet = new Mock<DbSet<Rental>>();
+        var rentals = new List<Rental>().AsQueryable();
+
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.Provider).Returns(rentals.Provider);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.Expression).Returns(rentals.Expression);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.ElementType).Returns(rentals.ElementType);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.GetEnumerator()).Returns(rentals.GetEnumerator());
+
+        var mockContext = new Mock<CarRentalContext>();
+        mockContext.Setup(c => c.Rental).Returns(mockSet.Object);
+
+        var result = Validator.RentalValidator.GenerateId();
+        Assert.Equal(1, result); // Should return 1 as the first rental ID
+    }
+
+    // Test when the client list contains only one client 
+    [Fact]
+    public void GenerateClientId_ShouldReturnIncrementedId_WhenOneClientExists()
+    {
+        var mockSet = new Mock<DbSet<Client>>();
+        var clients = new List<Client>
+        {
+            new Client { ClientId = "YZ100" }  // Only one client
+        }.AsQueryable();
+
+        mockSet.As<IQueryable<Client>>().Setup(m => m.Provider).Returns(clients.Provider);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.Expression).Returns(clients.Expression);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.ElementType).Returns(clients.ElementType);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.GetEnumerator()).Returns(clients.GetEnumerator());
+
+        var mockContext = new Mock<CarRentalContext>();
+        mockContext.Setup(c => c.Client).Returns(mockSet.Object);
+
+        var result = Validator.ClientValidator.GenerateId("YZ", "100");
+        Assert.Equal("YZ101", result); // Should return "YZ101" as the next client ID
+    }
+
+    // Test when the rental list has only one rentalId
+    [Fact]
+    public void GenerateRentalId_ShouldReturnIncrementedId_WhenOneRentalExists()
+    {
+        var mockSet = new Mock<DbSet<Rental>>();
+        var rentals = new List<Rental>
+        {
+            new Rental { RentalId = 1 }  // Only one rentalID
+        }.AsQueryable();
+
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.Provider).Returns(rentals.Provider);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.Expression).Returns(rentals.Expression);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.ElementType).Returns(rentals.ElementType);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.GetEnumerator()).Returns(rentals.GetEnumerator());
+
+        var mockContext = new Mock<CarRentalContext>();
+        mockContext.Setup(c => c.Rental).Returns(mockSet.Object);
+
+        var result = Validator.RentalValidator.GenerateId();
+        Assert.Equal(2, result); // Should return 2 as the next rentalID
+    }
+
+    // Test when the last client ID is over 100 
+    [Fact]
+    public void GenerateClientId_ShouldHandleMultipleDigits_WhenClientIdOver100()
+    {
+        var mockSet = new Mock<DbSet<Client>>();
+        var clients = new List<Client>
+        {
+            new Client { ClientId = "YZ100" },
+            new Client { ClientId = "YZ101" },
+            new Client { ClientId = "YZ102" }  // Last client with ID102
+        }.AsQueryable();
+
+        mockSet.As<IQueryable<Client>>().Setup(m => m.Provider).Returns(clients.Provider);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.Expression).Returns(clients.Expression);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.ElementType).Returns(clients.ElementType);
+        mockSet.As<IQueryable<Client>>().Setup(m => m.GetEnumerator()).Returns(clients.GetEnumerator());
+
+        var mockContext = new Mock<CarRentalContext>();
+        mockContext.Setup(c => c.Client).Returns(mockSet.Object);
+
+        var result = Validator.ClientValidator.GenerateId("YZ", "103");
+        Assert.Equal("YZ103", result); // Should return "YZ103" as the next client ID
+    }
+
+    // Test when the last rental ID is over 100 
+    [Fact]
+    public void GenerateRentalId_ShouldHandleMultipleDigits_WhenRentalIdOver100()
+    {
+        var mockSet = new Mock<DbSet<Rental>>();
+        var rentals = new List<Rental>
+        {
+            new Rental { RentalId = 100 },
+            new Rental { RentalId = 101 }  // Last rental with ID 101
+        }.AsQueryable();
+
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.Provider).Returns(rentals.Provider);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.Expression).Returns(rentals.Expression);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.ElementType).Returns(rentals.ElementType);
+        mockSet.As<IQueryable<Rental>>().Setup(m => m.GetEnumerator()).Returns(rentals.GetEnumerator());
+
+        var mockContext = new Mock<CarRentalContext>();
+        mockContext.Setup(c => c.Rental).Returns(mockSet.Object);
+
+        var result = Validator.RentalValidator.GenerateId();
+        Assert.Equal(102, result); // Should return 102 as the next rental ID
+
+
+    }
+
 }
 
 
