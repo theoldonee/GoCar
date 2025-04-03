@@ -78,7 +78,8 @@ namespace GoCar
                 return false; // Return false to indicate failure
             }
 
-            
+            // If no errors occur, indicate successful file loading
+            Console.WriteLine($"File '{path}' loaded successfully.");
             return true;
         }
     }
