@@ -18,8 +18,8 @@ namespace GoCar
         //  Loads data from a specified CSV file into the provided hash tables
         public static bool LoadFile(string filePath, CarHashTable<string> carTable, ClientHashTable<string> clientTable, RentaltHashTable<string> rentalTable)
         {
-            //string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
-            //Console.WriteLine(_filePath);
+            // Determine which file path to use (default or provided)
+            string path = string.IsNullOrWhiteSpace(filePath) ? defaultPath : filePath;
 
             string path;
             //check path to use
