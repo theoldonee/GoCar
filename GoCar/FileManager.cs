@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace GoCar
 {
+    // Handles file operations for loading data into hash tables.
     internal class FileManager
     {
+        // Default file path for the dataset
         static string defaultPath = "../../../dataset/dummy.csv";
+
+        // Alternate file path that can be set dynamically
         public static string alternatePath = "";
 
-        public static bool LoadFile(bool useDefault)
+        //  Loads data from a specified CSV file into the provided hash tables
+        public static bool LoadFile(string filePath, CarHashTable<string> carTable, ClientHashTable<string> clientTable, RentaltHashTable<string> rentalTable)
         {
             //string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
             //Console.WriteLine(_filePath);
