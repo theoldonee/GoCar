@@ -7,9 +7,9 @@ internal class Program
 {
 
     // DATA IN DATA STRUCTS (car, rental, client);
-    static HashTable<string, Car> carHashTable = new HashTable<string, Car>();
-    static HashTable<string, Client> clientHashTable = new HashTable<string, Client>();
-    static HashTable<int, Rental> rentalHashTable = new HashTable<int, Rental>();
+    static CarHashTable<string> carHashTable = new CarHashTable<string>();
+    static ClientHashTable<string> clientHashTable = new ClientHashTable<string>();
+    static RentaltHashTable<int> rentalHashTable = new RentaltHashTable<int>();
     public static void Main(string[] args)
     {
         string gocarAscii = @"
