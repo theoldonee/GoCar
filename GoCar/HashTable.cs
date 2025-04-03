@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace GoCar
 {
-
+    // HashTable class
     public class HashTable<TKey, TValue>
     {
         // Internal storage using array of linked lists (separate chaining)
@@ -187,7 +187,7 @@ namespace GoCar
         }
 
         
-    }
+    } // END of HashTable class
 
     // hashTable for cars
     public class CarHashTable<TKey> : HashTable<TKey, Car>
