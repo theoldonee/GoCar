@@ -30,37 +30,55 @@ namespace GoCar
                 return false; // Return false as the file could not be found
             }
 
-            // CHANGED THE IF statement to TRY and CATCH blocks
-            StreamReader reader = null;
-
             try
             {
-                // read from file
-                using (reader = new StreamReader(File.OpenRead(path)))
+                // Open the file using StreamReader
+                using (StreamReader reader = new StreamReader(File.OpenRead(path)))
                 {
-                    //loop through lines in files
+                    // Read the file line by line until the end is reached
                     while (!reader.EndOfStream)
                     {
-                        var line = reader.ReadLine();
-                        var values = line.Split(',');
+                        var line = reader.ReadLine(); // Read a single line from the file
 
-                        // Add to a list
+                        // Ensure the line is not empty or null before processing
+                        if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            // Split the line into an array using commas as delimiters
+                            var values = line.Split(',');
 
+                            // Determine the type of record (Car, Client, or Rental) based on the first column
+                            switch (values[0].Trim().ToLower()) // Convert to lowercase for consistency
+                            {
+                                case "car":
+                                    // Create a new Car object and insert it into the carTable
+                                    Car car = new Car(values[1], values[2], values[3], int.Parse(values[4]), bool.Parse(values[5]));
+                                    carTable.Insert(car.Id, car);
+                                    break;
 
+                                case "client":
+                                    // Create a new Client object and insert it into the clientTable
+                                    Client client = new Client(values[1], values[2], values[3]);
+                                    clientTable.Insert(client.Id, client);
+                                    break;
+
+                                case "rental":
+                                    // Create a new Rental object and insert it into the rentalTable
+                                    Rental rental = new Rental(values[1], values[2], values[3], values[4]);
+                                    rentalTable.Insert(rental.RentalId, rental);
+                                    break;
+                            }
+                        }
                     }
-
                 }
-
             }
-
-            // change to catch block ??
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("File does not exist");
-                return false;
+                // Handle any errors that occur while reading the file
+                Console.WriteLine($"Error reading file: {ex.Message}");
+                return false; // Return false to indicate failure
             }
 
-            // print message if file loading successful 
+            
             return true;
         }
     }
