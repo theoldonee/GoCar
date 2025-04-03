@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Internal;
 
 namespace GoCar
 {
@@ -21,22 +23,17 @@ namespace GoCar
             // Determine which file path to use (default or provided)
             string path = string.IsNullOrWhiteSpace(filePath) ? defaultPath : filePath;
 
-            string path;
-            //check path to use
-            if (useDefault)
+            // Check if the file exists before attempting to read it
+            if (!File.Exists(path))
             {
-                path = defaultPath;
-            }
-            else
-            {
-                path = alternatePath;
+                Console.WriteLine($"Error: File '{path}' does not exist.");
+                return false; // Return false as the file could not be found
             }
 
+            // CHANGED THE IF statement to TRY and CATCH blocks
             StreamReader reader = null;
 
-            //Check if file exist
-            //check if file path is a csv
-            if (File.Exists(path))
+            try
             {
                 // read from file
                 using (reader = new StreamReader(File.OpenRead(path)))
@@ -55,11 +52,15 @@ namespace GoCar
                 }
 
             }
+
+            // change to catch block ??
             else
             {
                 Console.WriteLine("File does not exist");
                 return false;
             }
+
+            // print message if file loading successful 
             return true;
         }
     }
