@@ -56,8 +56,11 @@ namespace GoCar
             private static string Checker(string stringArray)
             {
                 string result = "";
+
+                // iterates over characters in the string
                 foreach (char items in stringArray)
                 {
+                    // tries to convert string to integer
                     try
                     {
                         int number = Int32.Parse(items.ToString());
@@ -75,7 +78,7 @@ namespace GoCar
             // Validate fuel type
             public static bool ValidateFuelType(string fuelType)
             {
-
+                // checks the fueltype
                 if (fuelType == "Diesel" || fuelType == "Petrol" || fuelType == "Electric" || fuelType == "Hybrid")
                 {
                     return true;
@@ -89,13 +92,16 @@ namespace GoCar
             {
                 bool result;
                 int currentYear = DateTime.Now.Year;
+
+                // checks if year is above 1999 and below current year
                 if (year > 1999 && year <= currentYear)
                 {
                     result = true;
                 }
                 else
                 {
-                    if(year > currentYear)
+                    // checks if year is greater than current year
+                    if (year > currentYear)
                     {
                         Console.WriteLine("Year caannot be greater than current year");
                     }
@@ -112,10 +118,12 @@ namespace GoCar
         // Validates client info
         public class ClientValidator
         {
+            // validates client's phone number
             public static bool ValidatePhoneNumber(int phoneNumber)
             {
                 string phoneNo = phoneNumber.ToString();
                 
+                // checks the length of the phone number
                 if (phoneNo.Length != 8)
                 {
                     return false;
@@ -196,6 +204,7 @@ namespace GoCar
         // Validates rental entry
         public class RentalValidator
         {
+            // generates rental id
             public static int GenerateId()
             {
                 int id = 0;
@@ -205,6 +214,7 @@ namespace GoCar
                     var rentalList = context.Rental
                         .Select(r => r).ToList();
 
+                    // checks the number of rentals in the database
                     if (rentalList.Count > 0)
                     {
                         Rental lastRental = rentalList.Last();
@@ -217,31 +227,36 @@ namespace GoCar
                 return id;
             }
 
+            // get's the current date
             public static string GetDate()
             {
                 return DateTime.Now.ToString("dd-MM-yyyy");
             }
 
+            // checks the entered date
             public static bool ValidateDate(string date)
             {
                 bool result = false;
                 Dictionary<string, int> dateEntered = new Dictionary<string, int>();
                 Dictionary<string, int> currentDate = SplitDate(DateTime.Now.ToString("dd-MM-yyyy"));
+
                 try
                 {
                     dateEntered = SplitDate(date);
 
-                    // Year check
+                    // checks if the year entered is greater than or equal to the current year
                     if (dateEntered["year"] >= currentDate["year"])
                     {
-                        // month check
+                        // checks if the month entered is greater than the current month or
+                        // if the month entered is less than the current month but the year entered is greater than the current year
                         if (
                             (dateEntered["month"] >= currentDate["month"]) ||
                             ((dateEntered["month"] <= currentDate["month"]) && 
                             (dateEntered["year"] > currentDate["year"]))
                             )
                         {
-                            // day check
+                            // checks if the day entered is greater than the current day or
+                            // if the day entered is less than the current day but the month entered is greater than the current month
                             if (
                                 (dateEntered["day"] > currentDate["day"]) ||
                                 ((dateEntered["day"] <= currentDate["day"]) && 
@@ -251,9 +266,9 @@ namespace GoCar
                                 result = true;
 
                             }else if (
-                                    ((dateEntered["day"] <= currentDate["day"]) &&
-                                    (dateEntered["month"] < currentDate["month"]) &&
-                                    (dateEntered["year"] > currentDate["year"]))
+                                    ((dateEntered["day"] <= currentDate["day"]) && // checks if the day entered is less than or equal to the current day
+                                    (dateEntered["month"] < currentDate["month"]) && // checks if the month entered is less than the current month
+                                    (dateEntered["year"] > currentDate["year"])) // checks if the year entered is greater than the current year
                                 )
                             {
                                 result = true;
@@ -315,10 +330,14 @@ namespace GoCar
             private static bool IsLeapYear(int year)
             {
                 bool isLeapYear = false;
+
+                // checks if the year is divicible by 4
                 if(year % 4 == 0)
                 {
-                    if(year % 100 == 0)
+                    // checks if the year is divicible by 100
+                    if (year % 100 == 0)
                     {
+                        // checks if the year is divicible by 400
                         if (year % 400 == 0)
                         {
                             isLeapYear = true;
