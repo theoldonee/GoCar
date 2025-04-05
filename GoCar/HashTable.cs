@@ -5,6 +5,25 @@ using System.Globalization;
 
 namespace GoCar
 {
+    // Custom Node class for our linked list
+    public class Node<TKey, TValue>
+    {
+        // Property to store the key associated with this node
+        public TKey Key { get; set; }
+        // Property to store the value associated with the key
+        public TValue Value { get; set; }
+        // Reference to the next node in the linked list
+        public Node<TKey, TValue> Next { get; set; }
+
+        // Constructor to initialize a new node with a given key and value
+        public Node(TKey key, TValue value)
+        {
+            Key = key;
+            Value = value;
+            Next = null; // The Next pointer is set to null by default (end of the list)
+        }
+    }
+
     // HashTable class
     public class HashTable<TKey, TValue>
     {
