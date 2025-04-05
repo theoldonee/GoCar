@@ -24,6 +24,26 @@ namespace GoCar
         }
     }
 
+    // CustomLinkedList class: stores key-value pairs using nodes
+    public class CustomLinkedList<TKey, TValue> // uses the Node<TKey, TValue> class to link multiple elements in a sequence
+    {
+        // If the list is empty, _head will be null
+        private Node<TKey, TValue> _head;
+
+        // Keeps track of how many nodes are in the linked list
+        private int _count;
+
+        // Public read-only property to get the number of elements in the list
+        public int Count => _count;
+
+        // Constructor initializes an empty linked list.
+        public CustomLinkedList()
+        {
+            _head = null;
+            _count = 0;
+        }
+
+
     // HashTable class
     public class HashTable<TKey, TValue>
     {
