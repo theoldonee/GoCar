@@ -43,6 +43,38 @@ namespace GoCar
             _count = 0;
         }
 
+        // Add a new node to the end of the list
+        public void AddLast(TKey key, TValue value)
+        {
+            // Create a new node with the given key and value
+            Node<TKey, TValue> newNode = new Node<TKey, TValue>(key, value);
+
+            // If the list is empty (head is null), the new node becomes the head
+            if (_head == null)
+            {
+                _head = newNode;
+            }
+            else
+            {
+                // If the list is not empty, traverse to the last node
+                Node<TKey, TValue> current = _head;
+
+                // Traverse through the list until we reach the last node (where Next is null)
+                while (current.Next != null)
+                {
+                    current = current.Next;
+                }
+                // Set the Next property of the last node to point to the new node
+                current.Next = newNode;
+            }
+            // Increment the count of nodes in the list
+            _count++;
+        }
+
+        //
+
+    }
+
 
     // HashTable class
     public class HashTable<TKey, TValue>
