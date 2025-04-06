@@ -159,9 +159,17 @@ namespace GoCar
                 // Move to the next node in the list
                 current = current.Next;
             }
-        }
+        } // end of method ForEach
 
+        // Clear the linked list by removing all nodes
+        public void Clear()
+        {
+            // Set the head of the list to null, effectively removing all nodes
+            _head = null;
 
+            // Reset the count of nodes to 0, since the list is now empty
+            _count = 0;
+        } // end of method Clear
 
     } // end of CustomLinkedList
 
