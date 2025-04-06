@@ -120,6 +120,30 @@ namespace GoCar
 
         } // end of method Remove
 
+        // Find a node with the matching key in the linked list
+        public Node<TKey, TValue> Find(TKey key)
+        {
+            // Start from the head node of the list
+            Node<TKey, TValue> current = _head;
+
+            // Traverse through the linked list
+            while (current != null)
+            {
+                // If the current node's key matches the provided key, return this node
+                if (current.Key.Equals(key))
+                {
+                    return current;
+                }
+
+                // Move to the next node in the list
+                current = current.Next;
+            }
+
+            // If no node with the matching key is found, return null
+            return null;
+        } // end of method Node
+
+
 
     } // end of CustomLinkedList
 
