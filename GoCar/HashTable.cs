@@ -24,7 +24,7 @@ namespace GoCar
         }
     }
 
-    // CustomLinkedList class: stores key-value pairs using nodes
+    // CLASS: CustomLinkedList; stores key-value pairs using nodes
     public class CustomLinkedList<TKey, TValue> // uses the Node<TKey, TValue> class to link multiple elements in a sequence
     {
         // If the list is empty, _head will be null
@@ -69,14 +69,62 @@ namespace GoCar
             }
             // Increment the count of nodes in the list
             _count++;
-        }
 
-        //
+        } // end of method AddLast
 
-    }
+        // Find and remove a node with the matching key in the linked list
+        public bool Remove(TKey key)
+        {
+            // If the list is empty (head is null), nothing to remove
+            if (_head == null)
+                return false;
+
+            // If the head node is the one to remove (key matches)
+            if (_head.Key.Equals(key))
+            {
+                // Move the head to the next node, effectively removing the head node
+                _head = _head.Next;
+
+                // Decrease the count of nodes in the list
+                _count--;
+
+                // Return true indicating the node was found and removed
+                return true;
+            }
+
+            // Search for the node in the rest of the list (starting from the second node)
+            Node<TKey, TValue> current = _head;
+
+            // Traverse through the list to find the node with the matching key
+            while (current.Next != null)
+            {
+                // If the next node's key matches the provided key, remove it
+                if (current.Next.Key.Equals(key))
+                {
+                    // Skip the next node by linking the current node to the next node's next
+                    current.Next = current.Next.Next;
+
+                    // Decrease the count of nodes in the list
+                    _count--;
+
+                    // Return true indicating the node was found and removed
+                    return true;
+                }
+
+                // Move to the next node
+                current = current.Next;
+            }
+
+            // If no node with the matching key was found, return false
+            return false;
+
+        } // end of method Remove
 
 
-    // HashTable class
+    } // end of CustomLinkedList
+
+
+    // CLASS: HashTable 
     public class HashTable<TKey, TValue>
     {
         // Internal storage using array of linked lists (separate chaining)
