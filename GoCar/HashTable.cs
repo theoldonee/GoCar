@@ -144,6 +144,24 @@ namespace GoCar
         } // end of method Node
 
 
+        // search through all nodes in the linked list and perform an action on each node
+        public void ForEach(Action<TKey, TValue> action) // allows custom 'actions', similar to the functionality of a foreach loop
+        {
+            // Start from the head of the list
+            Node<TKey, TValue> current = _head;
+
+            // Traverse through the list until the end (when current is null)
+            while (current != null)
+            {
+                // Execute the provided action on the current node's key and value
+                action(current.Key, current.Value);
+
+                // Move to the next node in the list
+                current = current.Next;
+            }
+        }
+
+
 
     } // end of CustomLinkedList
 
