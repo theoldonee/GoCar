@@ -235,8 +235,19 @@ namespace GoCar
                 }
 
                 // find the node with the specified key in the bucket at the calculated index
-                var node = _buckets[bucketIndex].Find(key); 
-              
+                var node = _buckets[bucketIndex].Find(key);
+
+                // Check if the node with the specified key already exists
+                if (node != null)
+                {
+                    // If the node exists, update its value
+                    node.Value = value;
+                    return;
+                }
+
+                // If the node does not exist, add a new node with the provided key and value to the bucket
+                _buckets[bucketIndex].AddLast(key, value);
+                _count++;
 
             }
             catch (Exception ex)
