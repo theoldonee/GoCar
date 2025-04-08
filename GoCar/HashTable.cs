@@ -234,22 +234,10 @@ namespace GoCar
                     _buckets[bucketIndex] = new CustomLinkedList<TKey, TValue>();
                 }
 
-                // Check for existing key and update value i
-                var bucket = _buckets[bucketIndex];
-                foreach (var item in bucket)
-                {
-                    if (item.Key.Equals(key))
-                    {
-                        // Remove the existing key-value pair and insert the new value
-                        bucket.Remove(item);
-                        bucket.AddLast(new KeyValuePair<TKey, TValue>(key, value));
-                        return; // Exit early since update is complete
-                    }
-                }
+                // find the node with the specified key in the bucket at the calculated index
+                var node = _buckets[bucketIndex].Find(key); 
+              
 
-                // Add new key-value pair if no duplicate was found
-                bucket.AddLast(new KeyValuePair<TKey, TValue>(key, value));
-                _count++;
             }
             catch (Exception ex)
             {
