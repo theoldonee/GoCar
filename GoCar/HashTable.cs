@@ -261,30 +261,34 @@ namespace GoCar
         {
             try
             {
-                // Move to next prime size
+                // Move to the next prime size for the bucket array (ensure we're using a larger size)
                 _currentPrimeIndex = Math.Min(_currentPrimeIndex + 1, PrimeSizes.Length - 1);
+                // Get the next prime size for the buckets
                 int newSize = PrimeSizes[_currentPrimeIndex];
 
-                // Create new buckets and rehash existing elements
+                // Store the current buckets in a temporary variable before resizing
                 var oldBuckets = _buckets;
-                _buckets = new CustomLinkedList<TKey, TValue>[newSize];
-                _count = 0;
 
+                // Create a new array of buckets with the new size
+                _buckets = new CustomLinkedList<TKey, TValue>[newSize];
+                _count = 0; // Reset the count of elements as we will rehash and insert them again
+
+                // Rehash all elements from the old buckets and insert them into the new bucket array
                 foreach (var bucket in oldBuckets)
                 {
+                    // Only rehash non-null buckets
                     if (bucket != null)
                     {
-                        foreach (var kvp in bucket)
-                        {
-                            Insert(kvp.Key, kvp.Value);
-                        }
+                        // For each element in the old bucket, insert it into the new bucket array
+                        bucket.ForEach((k, v) => Insert(k, v)); 
                     }
                 }
             }
+            
             catch (Exception ex)
             {
                 Console.WriteLine($"Resize operation failed: {ex.Message}");
-                throw; // Re-throw to allow caller to handle
+                throw; 
             }
         }
 
