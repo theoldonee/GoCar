@@ -297,27 +297,26 @@ namespace GoCar
         {
             try
             {
+                // Calculate the index of the bucket for the given key using its hash code
                 int bucketIndex = GetHashCode(key);
+                // Retrieve the bucket at the calculated index
                 var bucket = _buckets[bucketIndex];
 
                 if (bucket != null)
                 {
-                    foreach (var item in bucket)
+                    // Try to find the node with the matching key in the bucket
+                    var node = bucket.Find(key); 
+                    if (node != null)
                     {
-                        if (item.Key.Equals(key))
-                        {
-                            return item.Value;
-                        }
+                        return node.Value;
                     }
                 }
-
                 // Key not found
                 throw new KeyNotFoundException($"The key {key} was not found in the hash table.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Search error: {ex.Message}");
-                // Depending on requirements, you might return default(TValue) or re-throw
                 return default;
             }
         }
