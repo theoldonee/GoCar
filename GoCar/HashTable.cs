@@ -171,14 +171,14 @@ namespace GoCar
             _count = 0;
         } // end of method Clear
 
-    } // end of CustomLinkedList
+    } // end of class CustomLinkedList
 
 
     // CLASS: HashTable 
     public class HashTable<TKey, TValue>
     {
         // Internal storage using array of linked lists (separate chaining)
-        protected LinkedList<KeyValuePair<TKey, TValue>>[] _buckets;
+        protected CustomLinkedList<TKey, TValue>>[] _buckets;
 
         // Prime numbers for bucket sizing to reduce collisions
         private static readonly int[] PrimeSizes = new int[]
@@ -199,7 +199,7 @@ namespace GoCar
         public HashTable()
         {
             _currentPrimeIndex = 0;
-            _buckets = new LinkedList<KeyValuePair<TKey, TValue>>[PrimeSizes[_currentPrimeIndex]];
+            _buckets = new CustomLinkedList<TKey, TValue>[PrimeSizes[_currentPrimeIndex]];
             _count = 0;
         }
 
@@ -209,7 +209,7 @@ namespace GoCar
             if (key == null)
                 throw new ArgumentNullException(nameof(key), "Key cannot be null");
 
-            // Use built-in hash code and ensure non-negative index
+            // built-in hash code and ensure non-negative index
             int hashCode = Math.Abs(key.GetHashCode());
             return hashCode % _buckets.Length;
         }
@@ -231,7 +231,7 @@ namespace GoCar
                 // Initialize bucket if null
                 if (_buckets[bucketIndex] == null)
                 {
-                    _buckets[bucketIndex] = new LinkedList<KeyValuePair<TKey, TValue>>();
+                    _buckets[bucketIndex] = new CustomLinkedList<TKey, TValue>();
                 }
 
                 // Check for existing key and update value i
@@ -268,7 +268,7 @@ namespace GoCar
 
                 // Create new buckets and rehash existing elements
                 var oldBuckets = _buckets;
-                _buckets = new LinkedList<KeyValuePair<TKey, TValue>>[newSize];
+                _buckets = new CustomLinkedList<TKey, TValue>[newSize];
                 _count = 0;
 
                 foreach (var bucket in oldBuckets)
