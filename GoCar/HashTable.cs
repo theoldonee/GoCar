@@ -22,7 +22,7 @@ namespace GoCar
             Value = value;
             Next = null; // The Next pointer is set to null by default (end of the list)
         }
-    }
+    } // end of class: Node
 
     // CLASS: CustomLinkedList; stores key-value pairs using nodes
     public class CustomLinkedList<TKey, TValue> // uses the Node<TKey, TValue> class to link multiple elements in a sequence
@@ -70,7 +70,7 @@ namespace GoCar
             // Increment the count of nodes in the list
             _count++;
 
-        } // end of method AddLast
+        } // end of method: AddLast
 
         // Find and remove a node with the matching key in the linked list
         public bool Remove(TKey key)
@@ -118,7 +118,7 @@ namespace GoCar
             // If no node with the matching key was found, return false
             return false;
 
-        } // end of method Remove
+        } // end of method: Remove
 
         // Find a node with the matching key in the linked list
         public Node<TKey, TValue> Find(TKey key)
@@ -141,11 +141,12 @@ namespace GoCar
 
             // If no node with the matching key is found, return null
             return null;
-        } // end of method Node
+        } // end of method: Find
 
 
         // search through all nodes in the linked list and perform an action on each node
-        public void ForEach(Action<TKey, TValue> action) // allows custom 'actions', similar to the functionality of a foreach loop
+        // allows custom 'actions'; similar to the functionality of a foreach loop
+        public void ForEach(Action<TKey, TValue> action)
         {
             // Start from the head of the list
             Node<TKey, TValue> current = _head;
@@ -159,7 +160,7 @@ namespace GoCar
                 // Move to the next node in the list
                 current = current.Next;
             }
-        } // end of method ForEach
+        } // end of method: ForEach
 
         // Clear the linked list by removing all nodes
         public void Clear()
@@ -169,9 +170,9 @@ namespace GoCar
 
             // Reset the count of nodes to 0, since the list is now empty
             _count = 0;
-        } // end of method Clear
+        } // end of method: Clear
 
-    } // end of class CustomLinkedList
+    } // end of class: CustomLinkedList
 
 
     // CLASS: HashTable 
@@ -212,9 +213,9 @@ namespace GoCar
             // built-in hash code and ensure non-negative index
             int hashCode = Math.Abs(key.GetHashCode());
             return hashCode % _buckets.Length;
-        }
+        } // end of method: GetHashCode
 
-        
+
         // Insert a key-value pair with dynamic resizing and update if key exists
         public void Insert(TKey key, TValue value)
         {
@@ -254,7 +255,7 @@ namespace GoCar
             {
                 Console.WriteLine($"Error during insertion: {ex.Message}");
             }
-        }
+        } // end of method: Insert
 
         // Dynamic resizing method with prime number bucket sizes
         private void Resize()
@@ -290,7 +291,7 @@ namespace GoCar
                 Console.WriteLine($"Resize operation failed: {ex.Message}");
                 throw; 
             }
-        }
+        } // end of method: Resize
 
         // Search method with error handling
         public TValue Search(TKey key)
@@ -319,29 +320,24 @@ namespace GoCar
                 Console.WriteLine($"Search error: {ex.Message}");
                 return default;
             }
-        }
+        } // end of method: Search
 
         // Delete method with error handling
         public bool Delete(TKey key)
         {
             try
             {
+                // Calculate the index of the bucket for the given key using its hash code
                 int bucketIndex = GetHashCode(key);
+                // Retrieve the bucket at the calculated index
                 var bucket = _buckets[bucketIndex];
 
-                if (bucket != null)
+                // Check if the bucket is not null and if the key exists in the bucket (remove the node if found)
+                if (bucket != null && bucket.Remove(key)) 
                 {
-                    foreach (var item in bucket)
-                    {
-                        if (item.Key.Equals(key))
-                        {
-                            bucket.Remove(item);
-                            _count--;
-                            return true;
-                        }
-                    }
+                    _count--; // Decrement the count of elements since the node was removed
+                    return true;
                 }
-
                 return false;
             }
             catch (Exception ex)
@@ -349,9 +345,8 @@ namespace GoCar
                 Console.WriteLine($"Deletion error: {ex.Message}");
                 return false;
             }
-        }
+        } // end of method: Delete
 
-     //CHANGES
         // DISPLAY ALL OBJECTS IN HASHTABLE
         public void DisplayAll()
         {
