@@ -11,6 +11,8 @@ namespace GoCar
         static string defaultPath = "../../../dataset/dummy.csv";
         public static string alternatePath = "";
         static List<Car> carList = new List<Car>();
+        static List<Car> carsToLoad = new List<Car>();
+        static CarHashTable<string> carDbHashTable = new CarHashTable<string>();
         public static bool LoadFile(bool useDefault)
         {
             //string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
@@ -60,7 +62,7 @@ namespace GoCar
                         }
                         catch
                         {
-                            
+
                         }
 
 
@@ -75,13 +77,24 @@ namespace GoCar
                 return false;
             }
 
-    
+            LoadDatabase();
 
 
 
             return true;
         }
 
-       
+        public static void LoadDatabase()
+        {
+            //var carStorage;
+            using (var contex = new CarRentalContex())
+            {
+                var cars = contex.Car.ToList();
+                foreach (var car in cars)
+                {
+                    carDbHashTable.Insert(car.CarId, car);
+                }
+            }
+        }
     }
 }
