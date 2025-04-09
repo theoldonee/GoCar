@@ -492,6 +492,7 @@ internal class Program
 
         };
 
+        OperationsManager.rentalOperations["add"].Add(newRental);
         return true;
     }
 
