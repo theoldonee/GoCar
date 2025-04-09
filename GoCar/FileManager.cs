@@ -50,21 +50,21 @@ namespace GoCar
                             switch (values[0].Trim().ToLower()) // Convert to lowercase for consistency
                             {
                                 case "car":
-                                    // Create a new Car object and insert it into the carTable
+                                    // Create a new Car object and insert it into the CarHashTable
                                     Car car = new Car(values[1], values[2], values[3], int.Parse(values[4]), bool.Parse(values[5]));
-                                    carTable.Insert(car.Id, car);
+                                    CarHashTable.Insert(car.Id, car);
                                     break;
 
                                 case "client":
-                                    // Create a new Client object and insert it into the clientTable
+                                    // Create a new Client object and insert it into the ClientHashTable
                                     Client client = new Client(values[1], values[2], values[3]);
-                                    clientTable.Insert(client.Id, client);
+                                    ClientHashTable.Insert(client.Id, client);
                                     break;
 
                                 case "rental":
                                     // Create a new Rental object and insert it into the rentalTable
                                     Rental rental = new Rental(values[1], values[2], values[3], values[4]);
-                                    rentalTable.Insert(rental.RentalId, rental);
+                                    RentaltHashTable.Insert(rental.RentalId, rental);
                                     break;
                             }
                         }
