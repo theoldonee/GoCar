@@ -482,6 +482,16 @@ internal class Program
             }
         }
 
+        Rental newRental = new Rental
+        {
+            RentalId = rentalId,
+            CollectionDate = CollectionDate,
+            ReturnDate = ReturnDate,
+            CarId = carId,
+            ClientId = clientId
+
+        };
+
         return true;
     }
 
