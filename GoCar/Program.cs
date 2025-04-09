@@ -517,4 +517,12 @@ internal class Program
         return carId;
     }
 
+    // removecar
+    public static bool RemoveCar()
+    {
+        string carId = GetCarID();
+        carHashTable.Delete(carId);
+        return true;
+    }
+
 }
