@@ -430,14 +430,14 @@ internal class Program
         while (invalidDate)
         {
             // return date validation
-            if (Validator.RentalValidator.ValidateDate(ReturnDate))
+            if (Validator.RentalValidator.ValidateDate(returnDate))
             {
                 invalidDate = false;
             }
             else
             {
                 Console.WriteLine("Date invalid: Please enter a valid return date in the format 'dd-MM-yyyy': ");
-                ReturnDate = Console.ReadLine();
+                returnDate = Console.ReadLine();
             }
             Console.WriteLine("\n");
         }
