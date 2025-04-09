@@ -525,4 +525,41 @@ internal class Program
         return true;
     }
 
+    //search car
+    public static void SearchCar()
+    {
+        // ask user what to search by 
+        Console.WriteLine("What would you like to search by?");
+        Console.WriteLine("1: Id");
+        Console.WriteLine("2: Make");
+        Console.WriteLine("3: Fuel type");
+        Console.WriteLine("4: Type");
+        Console.WriteLine("5: Year");
+        Console.WriteLine("6: Availability");
+        string searchBy = Console.ReadLine();
+
+        Console.WriteLine("\n");
+        Console.WriteLine("Enter your search");
+        string value = Console.ReadLine();
+
+        // checks if the search is not by Id
+        if (searchBy != "1")
+        {
+            List<Car> carList = carHashTable.SearchBy(value, searchBy);
+
+            // iterates over carList
+            foreach(var car in carList)
+            {
+                Console.WriteLine($"{car.CarId}, {car.Make}, {car.Model}, {car.FuelType}, {car.Type}, {car.Available}");
+            }
+        }
+        else
+        {
+            Car car = carHashTable.Search(value);
+            Console.WriteLine($"{car.CarId}, {car.Make}, {car.Model}, {car.FuelType}, {car.Type}, {car.Available}");
+        }
+
+
+    }
+
 }
