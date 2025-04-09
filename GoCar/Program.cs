@@ -41,12 +41,16 @@ internal class Program
             {
                 LoadDatabase();
             }
+            else
+            {
+                LoadFile(databaseCheckResult);
+            }
 
         }
         else // IF no, Ask user if they would like to use default file or enter their own file
         {
-            Console.WriteLine("Database is empty.\n1: Load default file.\n2: Load another csv file\n");
-            Console.WriteLine("Please enter a number:");
+
+            LoadFile(databaseCheckResult);
         }
 
 
@@ -219,6 +223,31 @@ internal class Program
             {
                 rentalHashTable.Insert(rental.RentalId, rental);
             }
+        }
+    }
+
+    // loads data from file to database
+    public static void LoadFile(bool showMessage)
+    {
+        if (showMessage) {
+            Console.WriteLine("What would you like to load.\n1: Load default file.\n2: Load another csv file\n");
+        }
+        else
+        {
+            Console.WriteLine("Database is empty.\n1: Load default file.\n2: Load another csv file\n");
+        }
+
+        Console.WriteLine("Please enter a number:");
+        string load = Console.ReadLine();
+        if (load == "1")
+        {
+            FileManager.LoadFile(true);
+        }
+        else
+        {
+            Console.WriteLine("Enter a file path");
+            FileManager.alternatePath = Console.ReadLine();
+            FileManager.LoadFile(false);
         }
     }
 
@@ -601,7 +630,7 @@ internal class Program
         // checks if the search is not by Id
         if (searchBy != "1")
         {
-            List<Car> carList = carHashTable.SearchBy(value, searchBy);
+            var carList = carHashTable.SearchBy(value, searchBy);
 
             // iterates over carList
             foreach(var car in carList)
