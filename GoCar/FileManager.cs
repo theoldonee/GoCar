@@ -1,85 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Internal;
 
 namespace GoCar
 {
-    // Handles file operations for loading data into hash tables.
     internal class FileManager
     {
-        // Default file path for the dataset
         static string defaultPath = "../../../dataset/dummy.csv";
-
-        // Alternate file path that can be set dynamically
         public static string alternatePath = "";
 
-        //  Loads data from a specified CSV file into the provided hash tables
-        public static bool LoadFile(string filePath, CarHashTable<string> carTable, ClientHashTable<string> clientTable, RentaltHashTable<string> rentalTable)
+        public static bool LoadFile(bool useDefault)
         {
-            // Determine which file path to use (default or provided)
-            string path = string.IsNullOrWhiteSpace(filePath) ? defaultPath : filePath;
+            //string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
+            //Console.WriteLine(_filePath);
 
-            // Check if the file exists before attempting to read it
-            if (!File.Exists(path))
+            string path;
+            //check path to use
+            if (useDefault)
             {
-                Console.WriteLine($"Error: File '{path}' does not exist.");
-                return false; // Return false as the file could not be found
+                path = defaultPath;
+            }
+            else
+            {
+                path = alternatePath;
             }
 
-            try
+            StreamReader reader = null;
+
+            //Check if file exist
+            //check if file path is a csv
+            if (File.Exists(path))
             {
-                // Open the file using StreamReader
-                using (StreamReader reader = new StreamReader(File.OpenRead(path)))
+                // read from file
+                using (reader = new StreamReader(File.OpenRead(path)))
                 {
-                    // Read the file line by line until the end is reached
+                    //loop through lines in files
                     while (!reader.EndOfStream)
                     {
-                        var line = reader.ReadLine(); // Read a single line from the file
+                        var line = reader.ReadLine();
+                        var values = line.Split(',');
 
-                        // Ensure the line is not empty or null before processing
-                        if (!string.IsNullOrWhiteSpace(line))
-                        {
-                            // Split the line into an array using commas as delimiters
-                            var values = line.Split(',');
+                        // Add to a list
 
-                            // Determine the type of record (Car, Client, or Rental) based on the first column
-                            switch (values[0].Trim().ToLower()) // Convert to lowercase for consistency
-                            {
-                                case "car":
-                                    // Create a new Car object and insert it into the CarHashTable
-                                    Car car = new Car(values[1], values[2], values[3], int.Parse(values[4]), bool.Parse(values[5]));
-                                    CarHashTable.Insert(car.Id, car);
-                                    break;
 
-                                case "client":
-                                    // Create a new Client object and insert it into the ClientHashTable
-                                    Client client = new Client(values[1], values[2], values[3]);
-                                    ClientHashTable.Insert(client.Id, client);
-                                    break;
-
-                                case "rental":
-                                    // Create a new Rental object and insert it into the rentalTable
-                                    Rental rental = new Rental(values[1], values[2], values[3], values[4]);
-                                    RentaltHashTable.Insert(rental.RentalId, rental);
-                                    break;
-                            }
-                        }
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle any errors that occur while reading the file
-                Console.WriteLine($"Error reading file: {ex.Message}");
-                return false; // Return false to indicate failure
-            }
 
-            // If no errors occur, indicate successful file loading
-            Console.WriteLine($"File '{path}' loaded successfully.");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("File does not exist");
+                return false;
+            }
             return true;
         }
     }
