@@ -179,7 +179,7 @@ namespace GoCar
     public class HashTable<TKey, TValue>
     {
         // Internal storage using array of linked lists (separate chaining)
-        protected CustomLinkedList<TKey, TValue>>[] _buckets;
+        protected CustomLinkedList<TKey, TValue>[] _buckets;
 
         // Prime numbers for bucket sizing to reduce collisions
         private static readonly int[] PrimeSizes = new int[]
