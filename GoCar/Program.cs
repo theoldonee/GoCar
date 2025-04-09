@@ -420,12 +420,12 @@ internal class Program
 
         // collection date
         // generated
-        string CollectionDate = Validator.RentalValidator.GetDate();
+        string collectionDate = Validator.RentalValidator.GetDate();
 
         // return date
         Console.WriteLine("\n");
         Console.WriteLine("Enter the return date in the format 'dd-MM-yyyy': ");
-        string ReturnDate = Console.ReadLine();
+        string returnDate = Console.ReadLine();
         bool invalidDate = true;
         while (invalidDate)
         {
@@ -485,8 +485,8 @@ internal class Program
         Rental newRental = new Rental
         {
             RentalId = rentalId,
-            CollectionDate = CollectionDate,
-            ReturnDate = ReturnDate,
+            CollectionDate = collectionDate,
+            ReturnDate = returnDate,
             CarId = carId,
             ClientId = clientId
 
