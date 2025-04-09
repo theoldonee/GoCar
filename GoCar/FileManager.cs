@@ -8,7 +8,7 @@ namespace GoCar
 {
     internal class FileManager
     {
-        static string defaultPath = "../../../dataset/dummy.csv";
+        private static string defaultPath = "../../../dataset/dummy.csv";
         public static string alternatePath = "";
 
         public static bool LoadFile(bool useDefault)
