@@ -35,6 +35,13 @@ internal class Program
             Console.WriteLine("Database is not empty.\n1: Load from database.\n2: Load file.\n");
             Console.WriteLine("Please enter a number:");
 
+            string load = Console.ReadLine();
+
+            if (load == "1")
+            {
+                LoadDatabase();
+            }
+
         }
         else // IF no, Ask user if they would like to use default file or enter their own file
         {
