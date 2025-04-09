@@ -10,7 +10,7 @@ namespace GoCar
     {
         static string defaultPath = "../../../dataset/dummy.csv";
         public static string alternatePath = "";
-
+        static List<Car> carList = new List<Car>();
         public static bool LoadFile(bool useDefault)
         {
             //string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
@@ -41,8 +41,27 @@ namespace GoCar
                     {
                         var line = reader.ReadLine();
                         var values = line.Split(',');
+                        // Add to a hashtable
+                        try
+                        {
 
-                        // Add to a list
+                            Car car = new Car
+                            {
+                                CarId = values[0],
+                                Make = values[1],
+                                Model = values[2],
+                                FuelType = values[3],
+                                Type = values[4],
+                                Year = Int32.Parse(values[5]),
+                                Available = bool.Parse(values[6])
+                            };
+
+                            carList.Add(car);
+                        }
+                        catch
+                        {
+                            
+                        }
 
 
                     }
@@ -55,7 +74,14 @@ namespace GoCar
                 Console.WriteLine("File does not exist");
                 return false;
             }
+
+    
+
+
+
             return true;
         }
+
+       
     }
 }
