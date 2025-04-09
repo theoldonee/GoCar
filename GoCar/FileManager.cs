@@ -79,7 +79,25 @@ namespace GoCar
 
             LoadDatabase();
 
+            foreach(var car in carList)
+            {
+                Car carSearch = carDbHashTable.Search(car.CarId);
+                if (!(carSearch is Car))
+                {
+                    carsToLoad.Add(car);
+                }
+            }
 
+            using (var contex = new CarRentalContex())
+            {
+                
+                foreach (var car in carsToLoad)
+                {
+                    contex.Car.Add(car);
+                }
+
+                contex.SaveChanges();
+            }
 
             return true;
         }
