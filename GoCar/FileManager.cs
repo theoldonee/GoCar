@@ -8,7 +8,7 @@ namespace GoCar
 {
     internal class FileManager
     {
-        static string defaultPath = "../../../dataset/dummy.csv";
+        static string defaultPath = "../../../dataset/cars_data.csv";
         public static string alternatePath = "";
         static List<Car> carList = new List<Car>();
         static List<Car> carsToLoad = new List<Car>();
@@ -55,7 +55,7 @@ namespace GoCar
                                 FuelType = values[3],
                                 Type = values[4],
                                 Year = Int32.Parse(values[5]),
-                                Available = bool.Parse(values[6])
+                                Available = true
                             };
 
                             carList.Add(car);
@@ -82,12 +82,15 @@ namespace GoCar
             foreach(var car in carList)
             {
                 Car carSearch = carDbHashTable.Search(car.CarId);
+                // check if a car was gotten
                 if (!(carSearch is Car))
                 {
                     carsToLoad.Add(car);
                 }
             }
 
+            
+            // opens connction to database
             using (var contex = new CarRentalContex())
             {
                 
@@ -102,6 +105,7 @@ namespace GoCar
             return true;
         }
 
+        // loads database
         public static void LoadDatabase()
         {
             //var carStorage;
