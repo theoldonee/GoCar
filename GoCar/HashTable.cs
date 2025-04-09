@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 //using Internal;
@@ -25,7 +26,7 @@ namespace GoCar
     } // end of class: Node
 
     // CLASS: CustomLinkedList; stores key-value pairs using nodes
-    public class CustomLinkedList<TKey, TValue> // uses the Node<TKey, TValue> class to link multiple elements in a sequence
+    public class CustomLinkedList<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>// uses the Node<TKey, TValue> class to link multiple elements in a sequence
     {
         // If the list is empty, _head will be null
         private Node<TKey, TValue> _head;
@@ -172,6 +173,24 @@ namespace GoCar
             _count = 0;
         } // end of method: Clear
 
+        //
+        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+        {
+            Node<TKey, TValue> current = _head;
+
+            while (current != null)
+            {
+                yield return new KeyValuePair<TKey, TValue>(current.Key, current.Value);
+                current = current.Next;
+            }
+        }
+
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
     } // end of class: CustomLinkedList
 
 
@@ -281,15 +300,15 @@ namespace GoCar
                     if (bucket != null)
                     {
                         // For each element in the old bucket, insert it into the new bucket array
-                        bucket.ForEach((k, v) => Insert(k, v)); 
+                        bucket.ForEach((k, v) => Insert(k, v));
                     }
                 }
             }
-            
+
             catch (Exception ex)
             {
                 Console.WriteLine($"Resize operation failed: {ex.Message}");
-                throw; 
+                throw;
             }
         } // end of method: Resize
 
@@ -306,7 +325,7 @@ namespace GoCar
                 if (bucket != null)
                 {
                     // Try to find the node with the matching key in the bucket
-                    var node = bucket.Find(key); 
+                    var node = bucket.Find(key);
                     if (node != null)
                     {
                         return node.Value;
@@ -333,7 +352,7 @@ namespace GoCar
                 var bucket = _buckets[bucketIndex];
 
                 // Check if the bucket is not null and if the key exists in the bucket (remove the node if found)
-                if (bucket != null && bucket.Remove(key)) 
+                if (bucket != null && bucket.Remove(key))
                 {
                     _count--; // Decrement the count of elements since the node was removed
                     return true;
@@ -352,7 +371,7 @@ namespace GoCar
         {
         }
 
-        
+
     } // END of HashTable class
 
     // hashTable for cars
@@ -369,13 +388,14 @@ namespace GoCar
                 // checks if bucket is empty
                 if (bucket != null)
                 {
+
                     // iterates over items in bucket
                     foreach (var item in bucket)
                     {
                         Car car = item.Value;
 
                         // checks if the search is by car fuelType 
-                        if(searchBy == "fuelType")
+                        if (searchBy == "fuelType")
                         {
                             if (car.FuelType == value)
                             {
@@ -458,7 +478,7 @@ namespace GoCar
                             value = value.ToUpper();
 
                             // checks if initals match the value
-                            if(initials == value)
+                            if (initials == value)
                             {
                                 clientList.Add(client);
                             }
@@ -490,7 +510,7 @@ namespace GoCar
                     }
                 }
             }
-            
+
             return clientList;
         }
     }
