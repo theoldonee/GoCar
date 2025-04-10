@@ -547,7 +547,15 @@ internal class Program
     {
         Console.WriteLine("Enter: car's Id");
         string carId = Console.ReadLine();
-        carHashTable.Delete(carId);
+
+        Car car = carHashTable.Search(carId);
+        if(car is Car)
+        {
+            carHashTable.Delete(carId);
+            OperationsManager.carOperations["delete"].Add(car);
+        }
+        
+        
     }
 
     // removecar
@@ -557,6 +565,7 @@ internal class Program
         string clientId = Console.ReadLine();
         clientHashTable.Delete(clientId);
     }
+
     // removecar
     public static void RemoveRental()
     {
