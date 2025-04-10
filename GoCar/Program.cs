@@ -78,6 +78,7 @@ internal class Program
             if (choice != "1")
             {
                 execute = false;
+                OperationsManager.Dump();
                 Console.WriteLine("\n");
                 Console.WriteLine("Closing....");
             }
@@ -145,7 +146,7 @@ internal class Program
             // car
             if (arr[1] == "1")
             {
-                result = AddCar();
+                SearchCar();
             }
             else if (arr[1] == "2") // client
             {
@@ -528,6 +529,7 @@ internal class Program
     //search car
     public static void SearchCar()
     {
+        Console.WriteLine("\n");
         // ask user what to search by 
         Console.WriteLine("What would you like to search by?");
         Console.WriteLine("1: Id");
@@ -550,15 +552,18 @@ internal class Program
             // iterates over carList
             foreach(var car in carList)
             {
+                Console.WriteLine("\n");
                 Console.WriteLine($"{car.CarId}, {car.Make}, {car.Model}, {car.FuelType}, {car.Type}, {car.Available}");
             }
         }
         else
         {
+            Console.WriteLine("\n");
             Car car = carHashTable.Search(value);
             Console.WriteLine($"{car.CarId}, {car.Make}, {car.Model}, {car.FuelType}, {car.Type}, {car.Available}");
         }
 
+        Console.WriteLine("\n");
 
     }
 
