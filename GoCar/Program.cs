@@ -546,7 +546,7 @@ internal class Program
     public static void RemoveCar()
     {
         Console.WriteLine("Enter: car's Id");
-        string carId = GetCarID();
+        string carId = Console.ReadLine();
         carHashTable.Delete(carId);
     }
 
