@@ -376,9 +376,9 @@ namespace GoCar
     public class CarHashTable<TKey> : HashTable<TKey, Car>
     {
         // searche's by selected search option
-        public List<Car> SearchBy(string value, string searchBy)
+        public IEnumerable<Car> SearchBy(string value, string searchBy)
         {
-            List<Car> carList = new List<Car>();
+         
 
             // Iterates over bucket
             foreach (var bucket in _buckets)
@@ -397,7 +397,7 @@ namespace GoCar
                         {
                             if (car.FuelType == value)
                             {
-                                carList.Add(car);
+                                yield return car;
                             }
                         }
 
@@ -406,7 +406,7 @@ namespace GoCar
                         {
                             if (car.Make == value)
                             {
-                                carList.Add(car);
+                                yield return car;
                             }
                         }
 
@@ -415,7 +415,7 @@ namespace GoCar
                         {
                             if (car.Type == value)
                             {
-                                carList.Add(car);
+                                yield return car;
                             }
                         }
 
@@ -424,7 +424,7 @@ namespace GoCar
                         {
                             if (car.Year.ToString() == value)
                             {
-                                carList.Add(car);
+                                yield return car;
                             }
                         }
 
@@ -433,7 +433,7 @@ namespace GoCar
                         {
                             if (car.Available == true)
                             {
-                                carList.Add(car);
+                                yield return car;
                             }
                         }
 
@@ -441,7 +441,6 @@ namespace GoCar
                 }
             }
 
-            return carList;
 
         }
 
@@ -451,11 +450,10 @@ namespace GoCar
     public class ClientHashTable<TKey> : HashTable<TKey, Client>
     {
         // searche's by selected search option
-        public List<Client> SearchBy(string value, string searchBy)
+        public IEnumerable<Client> SearchBy(string value, string searchBy)
         {
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
 
-            List<Client> clientList = new List<Client>();
 
             // Iterates over bucket
             foreach (var bucket in _buckets)
@@ -478,7 +476,7 @@ namespace GoCar
                             // checks if initals match the value
                             if (initials == value)
                             {
-                                clientList.Add(client);
+                                yield return client;
                             }
                         }
 
@@ -490,7 +488,7 @@ namespace GoCar
                             // checks if firstname match the value
                             if (client.FirstName == value)
                             {
-                                clientList.Add(client);
+                                yield return client;
                             }
                         }
 
@@ -502,14 +500,13 @@ namespace GoCar
                             // checks if lastname match the value
                             if (client.LastName == value)
                             {
-                                clientList.Add(client);
+                                yield return client;
                             }
                         }
                     }
                 }
             }
 
-            return clientList;
         }
     }
 
@@ -517,11 +514,9 @@ namespace GoCar
     public class RentaltHashTable<TKey> : HashTable<TKey, Rental>
     {
         // searche's by selected search option
-        public List<Rental> SearchBy(string value, string searchBy)
+        public IEnumerable<Rental> SearchBy(string value, string searchBy)
         {
             TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-
-            List<Rental> rentalList = new List<Rental>();
 
             // Iterates over bucket
             foreach (var bucket in _buckets)
@@ -541,7 +536,7 @@ namespace GoCar
                             // checks if collectionDate match the value
                             if (rental.CollectionDate == value)
                             {
-                                rentalList.Add(rental);
+                                yield return rental;
                             }
                         }
 
@@ -552,7 +547,7 @@ namespace GoCar
                             // checks if returnDate match the value
                             if (rental.ReturnDate == value)
                             {
-                                rentalList.Add(rental);
+                                yield return rental;
                             }
                         }
 
@@ -563,7 +558,7 @@ namespace GoCar
                             // checks if CarId match the value
                             if (rental.CarId == value)
                             {
-                                rentalList.Add(rental);
+                                yield return rental;
                             }
                         }
 
@@ -574,14 +569,13 @@ namespace GoCar
                             // checks if ClientId match the value
                             if (rental.ClientId == value)
                             {
-                                rentalList.Add(rental);
+                                yield return rental;
                             }
                         }
                     }
                 }
             }
 
-            return rentalList;
         }
     }
 
