@@ -563,7 +563,12 @@ internal class Program
     {
         Console.WriteLine("Enter: client's Id");
         string clientId = Console.ReadLine();
-        clientHashTable.Delete(clientId);
+        Client client = clientHashTable.Search(clientId);
+        if (client is Client)
+        {
+            clientHashTable.Delete(clientId);
+            OperationsManager.clientOperations["delete"].Add(client);
+        }
     }
 
     // removecar
