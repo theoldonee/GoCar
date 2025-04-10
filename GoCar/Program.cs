@@ -129,15 +129,15 @@ internal class Program
             // car
             if (arr[1] == "1")
             {
-                result = AddCar();
+                RemoveCar();
             }
             else if (arr[1] == "2") // client
             {
-                result = AddClient();
+                RemoveClient();
             }
             else if (arr[1] == "3") // rental
             {
-                result = AddClient();
+                RemoveRental();
             }
 
         }
@@ -543,11 +543,10 @@ internal class Program
     }
 
     // removecar
-    public static bool RemoveCar()
+    public static void RemoveCar()
     {
         string carId = GetCarID();
         carHashTable.Delete(carId);
-        return true;
     }
 
     // removecar
