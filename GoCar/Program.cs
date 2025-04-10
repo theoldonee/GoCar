@@ -545,6 +545,7 @@ internal class Program
     // removecar
     public static void RemoveCar()
     {
+        Console.WriteLine("Enter: car's Id");
         string carId = GetCarID();
         carHashTable.Delete(carId);
     }
@@ -552,12 +553,14 @@ internal class Program
     // removecar
     public static void RemoveClient()
     {
+        Console.WriteLine("Enter: client's Id");
         string clientId = Console.ReadLine();
         clientHashTable.Delete(clientId);
     }
     // removecar
     public static void RemoveRental()
     {
+        Console.WriteLine("Enter: rental's Id");
         int rentalId = Int32.Parse(Console.ReadLine());
         rentalHashTable.Delete(rentalId);    
     }
