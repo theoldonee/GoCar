@@ -16,4 +16,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Meeting Minutes\" />
+  </ItemGroup>
+
 </Project>
