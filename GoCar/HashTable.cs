@@ -395,7 +395,7 @@ namespace GoCar
                         Car car = item.Value;
 
                         // checks if the search is by car fuelType 
-                        if (searchBy == "fuelType")
+                        if (searchBy == "3")
                         {
                             if (car.FuelType == value)
                             {
@@ -404,7 +404,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by car make
-                        if (searchBy == "make")
+                        if (searchBy == "2")
                         {
                             if (car.Make == value)
                             {
@@ -413,7 +413,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by car type
-                        if (searchBy == "type")
+                        if (searchBy == "4")
                         {
                             if (car.Type == value)
                             {
@@ -422,7 +422,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by year
-                        if (searchBy == "year")
+                        if (searchBy == "5")
                         {
                             if (car.Year.ToString() == value)
                             {
@@ -431,7 +431,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by availability
-                        if (searchBy == "availabe")
+                        if (searchBy == "6")
                         {
                             if (car.Available == true)
                             {
