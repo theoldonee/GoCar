@@ -505,13 +505,23 @@ internal class Program
 
         // validate car Id
         bool idValidation = Validator.CarValidator.ValidateId(carId);
+        bool carExist = CarExist(carId);
 
         // id entry validation check
-        while (!idValidation)
+        while (!idValidation || carExist)
         {
-            Console.WriteLine("Car plate number invalid, enter valid Car plate number.");
+            if (carExist)
+            {
+                Console.WriteLine("Car plate number already exist. Please enter a new valid Car plate number.");
+            }
+            else
+            {
+                Console.WriteLine("Car plate number invalid, enter valid Car plate number.");
+            }
+  
             carId = Console.ReadLine().ToUpper();
             idValidation = Validator.CarValidator.ValidateId(carId);
+            carExist = CarExist(carId);
             Console.WriteLine("\n");
         }
 
@@ -539,6 +549,20 @@ internal class Program
         carHashTable.Delete(carId);
         return true;
     }
+
+    // removecar
+    public static void RemoveClient()
+    {
+        string clientId = Console.ReadLine();
+        clientHashTable.Delete(clientId);
+    }
+    // removecar
+    public static void RemoveRental()
+    {
+        int rentalId = Int32.Parse(Console.ReadLine());
+        rentalHashTable.Delete(rentalId);    
+    }
+
 
     //search car
     public static void SearchCar()
