@@ -518,6 +518,20 @@ internal class Program
         return carId;
     }
 
+    // checks if a car exist
+    public static bool CarExist(string carId)
+    {
+        bool result = false;
+        Car car = carHashTable.Search(carId);
+        if (car is Car)
+        {
+            result = true;
+            Console.WriteLine("Car already exist in the database.");
+        }
+
+        return result;
+    }
+
     // removecar
     public static bool RemoveCar()
     {
