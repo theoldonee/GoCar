@@ -307,7 +307,6 @@ namespace GoCar
 
             catch (Exception ex)
             {
-                Console.WriteLine($"Resize operation failed: {ex.Message}");
                 throw;
             }
         } // end of method: Resize
@@ -336,7 +335,6 @@ namespace GoCar
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Search error: {ex.Message}");
                 return default;
             }
         } // end of method: Search
