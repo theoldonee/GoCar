@@ -143,6 +143,7 @@ namespace GoCar
             Console.Clear(); // Clears the screen
 
             Console.WriteLine(gocarAscii);
+            Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
         }
         public static void AboutUs()
         {
