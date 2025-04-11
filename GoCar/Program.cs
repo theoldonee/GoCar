@@ -5,13 +5,21 @@ using Microsoft.VisualBasic.FileIO;
 
 internal class Program
 {
+   
 
     // DATA IN DATA STRUCTS (car, rental, client);
     static CarHashTable<string> carHashTable = new CarHashTable<string>();
     static ClientHashTable<string> clientHashTable = new ClientHashTable<string>();
     static RentaltHashTable<int> rentalHashTable = new RentaltHashTable<int>();
+
+    //MAIN METHOD
     public static void Main(string[] args)
     {
+        // Create instance of ConsoleUI and launch the Menu 
+        var UI = new ConsoleUI();
+        UI.ShowMenuWithNavigation();
+
+
         string gocarAscii = @"
         
  ░▒▓██████▓▒░ ░▒▓██████▓▒░        ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░       ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓███████▓▒░  
