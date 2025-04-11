@@ -15,9 +15,12 @@ internal class Program
     //MAIN METHOD
     public static void Main(string[] args)
     {
-        // Create instance of ConsoleUI and launch the Menu 
-        var UI = new ConsoleUI();
-        UI.ShowMenuWithNavigation();
+
+        // Create an instance of the UI, passing in the hash tables
+        var UI = new ConsoleUI(carHashTable, clientHashTable, rentalHashTable);
+
+        // Start the UI menu loop
+        UI.HandleMenuSelection();
 
 
         string gocarAscii = @"
