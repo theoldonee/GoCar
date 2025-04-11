@@ -1,47 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GoCar
 {
-    public class ConsoleUI
+    internal class ConsoleUI
     {
-        //car HashTable
-        private readonly CarHashTable<string> carHashTable;
-
-        // Constructor initializes the UI with a reference to the car hash table.
-        public ConsoleUI(CarHashTable<string> carHashTable)
-        {
-            this.carHashTable = carHashTable;
-        }
-
         // Displays the main menu with arrow key navigation
-        public void ShowMenuWithNavigation()
+        public static string ShowMenuWithNavigation()
         {
             // Menu options displayed to the user
             string[] options = {
                 "1. Add Car",
-                "2. Search Car",
-                "3. View All Cars",
-                "4. Edit Car",
-                "5. Delete Car",
-                "6. About Us",
-                "7. Exit"
+                "2. About Us",
+                "3. Exit"
             };
 
             // Defines the list of menu options displayed to the user.
             int selectedIndex = 0; // Tracks currently highlighted menu item
 
             Console.Clear(); // Clears the screen
+            string gocarAscii = @"
+        
+ ░▒▓██████▓▒░ ░▒▓██████▓▒░        ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░       ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓███████▓▒░  
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒▒▓███▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓████████▓▒░▒▓███████▓▒░       ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░ 
+ ░▒▓██████▓▒░ ░▒▓██████▓▒░        ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓█▓▒░   ░▒▓███████▓▒░  
+                     
+";
+            Console.WriteLine(gocarAscii);
             Console.ForegroundColor = ConsoleColor.Green; // Sets title color to green
             TypeEffect("Welcome to GoCar - Car Rental System!"); // Animated intro
             Console.ResetColor();
             TypeEffect("Use arrow keys to navigate and press Enter to select.\n");
+            Thread.Sleep(2000);
+
 
             while (true) // Menu loop
             {
                 Console.Clear(); // Refresh screen
+                Console.WriteLine(gocarAscii);
                 Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
 
                 // Loop through each menu option
@@ -68,14 +71,9 @@ namespace GoCar
                     // Call appropriate method based on selection
                     switch (selectedIndex)
                     {
-                        //MUST  MATCH CLASSES IN CAR CLASS
-                        case 0: AddCar(); break;
-                        case 1: SearchCar(); break;
-                        case 2: DisplayAllCars(); break;
-                        case 3: EditCar(); break;
-                        case 4: DeleteCar(); break;
-                        case 5: AboutUs(); break;
-                        case 6:
+                        case 0: return "1"; break;
+                        case 1: return "2"; break;
+                        case 2:
                             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
                             TypeEffect("\nYou have exited. Thank you for using GoCar!");
                             Console.ResetColor();
@@ -84,10 +82,49 @@ namespace GoCar
                     }
                 }
             }
-        } // end of Method: ShowMenuWithNavigation
+        }
 
 
+        public static void AboutUs()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            TypeEffect("About Us");
+            Console.ResetColor();
 
-    } // end of Class:ConsoleUI
+            Console.WriteLine("\nGoCar is a reliable and customer-centric car rental service,");
+            Console.WriteLine("committed to making transportation accessible and hassle-free.");
+            Console.WriteLine("Whether for travel, commuting, or business, GoCar offers a wide");
+            Console.WriteLine("fleet of vehicles to meet your needs. Enjoy transparent pricing,");
+            Console.WriteLine("a smooth booking experience, and great service with GoCar.");
 
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
+        // Prints text with typing effect - cool stuff!! 
+        public static void TypeEffect(string text)
+        {
+            //Simulates typing animation by printing one character at a time.
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                Thread.Sleep(20); // 20 ms delay between characters
+            }
+            Console.WriteLine();
+        }
+
+        // Shows a dialog box with a title and message
+        public static void DisplayDialog(string title, string message)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine($"==== {title} ====");
+            Console.ResetColor();
+            Console.WriteLine(message);
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+        }
+
+    }
 }
