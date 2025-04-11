@@ -47,6 +47,7 @@ namespace GoCar
                         try
                         {
 
+<<<<<<< Updated upstream
                             Car car = new Car
                             {
                                 CarId = values[0],
@@ -59,6 +60,26 @@ namespace GoCar
                             };
 
                             carList.Add(car);
+=======
+                            // Process only 'car' records - storing only car object data 
+                            if (values[0].Trim().ToLower() == "car")
+                            {
+                                // Create a new Car object and assign its properties from the CSV values
+                                Car car = new Car
+                                {
+                                    CarId = values[1],
+                                    Make = values[2],
+                                    Model = values[3],
+                                    FuelType = values[4],
+                                    Type = values[5],
+                                    Year = int.Parse(values[6]),
+                                    Available = bool.Parse(values[7]),
+                                    Rental = new List<Rental>()  // Initialize an empty list for the car's rentals
+                                };
+                                // Insert the new Car object into the carTable hash table using its CarId as the key
+                                carTable.Insert(car.CarId, car);
+                            } // end if statement 
+>>>>>>> Stashed changes
                         }
                         catch
                         {
