@@ -18,7 +18,7 @@ namespace GoCar
         // Configure connection string and options
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Data Source=ROUVAF;Initial Catalog=GoCarDb;Integrated Security=True;Trust Server Certificate=True";
+            string connectionString = "Data Source=HP-PAVILION;Initial Catalog=GoCarDb;Integrated Security=True;Trust Server Certificate=True";
             optionsBuilder.UseSqlServer(connectionString);
         }
     }
