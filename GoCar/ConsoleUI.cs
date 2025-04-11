@@ -72,7 +72,7 @@ namespace GoCar
                     switch (selectedIndex)
                     {
                         case 0: return "1"; break;
-                        case 1: return "2"; break;
+                        case 1: AboutUs(); break;
                         case 2:
                             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
                             TypeEffect("\nYou have exited. Thank you for using GoCar!");
