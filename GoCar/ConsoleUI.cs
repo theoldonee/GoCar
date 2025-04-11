@@ -7,6 +7,14 @@ namespace GoCar
 {
     public class ConsoleUI
     {
+        //car HashTable
+        private readonly CarHashTable<string> carHashTable;
+
+        // Constructor initializes the UI with a reference to the car hash table.
+        public ConsoleUI(CarHashTable<string> carHashTable)
+        {
+            this.carHashTable = carHashTable;
+        }
 
         // Displays the main menu with arrow key navigation
         public void ShowMenuWithNavigation()
@@ -60,6 +68,7 @@ namespace GoCar
                     // Call appropriate method based on selection
                     switch (selectedIndex)
                     {
+                        //MUST  MATCH CLASSES IN CAR CLASS
                         case 0: AddCar(); break;
                         case 1: SearchCar(); break;
                         case 2: DisplayAllCars(); break;

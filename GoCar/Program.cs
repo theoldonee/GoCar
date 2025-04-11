@@ -17,7 +17,7 @@ internal class Program
     {
 
         // Create an instance of the UI, passing in the hash tables
-        var UI = new ConsoleUI(carHashTable, clientHashTable, rentalHashTable);
+        var UI = new ConsoleUI(carHashTable); //(carHashTable, clientHashTable, rentalHashTable);
 
         // Start the UI menu loop
         UI.HandleMenuSelection();
