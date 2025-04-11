@@ -34,9 +34,7 @@ namespace GoCar
             // Defines the list of menu options displayed to the user.
             int selectedIndex = 0; // Tracks currently highlighted menu item
 
-            Console.Clear(); // Clears the screen
-
-            Console.WriteLine(gocarAscii);
+            DrawAscii(false);
             Console.ForegroundColor = ConsoleColor.Green; // Sets title color to green
             TypeEffect("Welcome to GoCar - Car Rental System!"); // Animated intro
             Console.ResetColor();
@@ -46,10 +44,7 @@ namespace GoCar
 
             while (true) // Menu loop
             {
-                Console.Clear(); // Refresh screen
-                Console.WriteLine(gocarAscii);
-                Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
-
+                DrawAscii(true);
                 SelectedIndex(selectedIndex, options);
 
                 var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
@@ -92,10 +87,7 @@ namespace GoCar
 
             while (true) // Menu loop
             {
-                Console.Clear(); // Refresh screen
-                Console.WriteLine(gocarAscii);
-                Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
-
+                DrawAscii(true);
                 SelectedIndex(selectedIndex, options);
 
                 var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
@@ -138,12 +130,12 @@ namespace GoCar
             }
         }
 
-        public static void DrawAscii()
+        public static void DrawAscii(bool show)
         {
             Console.Clear(); // Clears the screen
 
             Console.WriteLine(gocarAscii);
-            Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
+            if (show) Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
         }
         public static void AboutUs()
         {
