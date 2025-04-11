@@ -58,14 +58,7 @@ internal class Program
 
             choiceArr[0] = ConsoleUI.SelectDatabaseOperation();
 
-            // get user's choice of database
-            Console.WriteLine("\n");
-            Console.WriteLine("Choose a table to perfom this operation\n1: Car\n2: Client\n3: Rental\n");
-            Console.WriteLine("Please enter a number:");
-            choiceArr[1] = Console.ReadLine();
-            // Remove uses a unique ID
-            // Add requires all information
-            // Search can be don by the attributes of the class
+            choiceArr[1] = ConsoleUI.SelectDatabase();
         
             Execute(choiceArr);
 
