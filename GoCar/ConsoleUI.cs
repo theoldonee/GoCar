@@ -153,6 +153,13 @@ namespace GoCar
             }
         }
 
+        public static void Exit(){
+            Console.ForegroundColor = ConsoleColor.Red; //text color to Red
+            TypeEffect("\nYou have exited. Thank you for using GoCar!");
+            Console.ResetColor();
+            Environment.Exit(0); // Exit application
+        }
+
         public static void SelectedIndex(int selectedIndex, string[] options)
         {
             // Loop through each menu option
