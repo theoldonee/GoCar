@@ -26,7 +26,7 @@ namespace GoCar
         {
             // Menu options displayed to the user
             string[] options = {
-                "1. Add Car",
+                "1. Database",
                 "2. About Us",
                 "3. Exit"
             };
