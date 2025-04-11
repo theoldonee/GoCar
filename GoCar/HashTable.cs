@@ -467,7 +467,7 @@ namespace GoCar
                         Client client = item.Value;
 
                         // checks if the search is by initials
-                        if (searchBy == "initials")
+                        if (searchBy == "2")
                         {
                             // creates initials
                             string initials = $"{client.FirstName[0]}{client.LastName[0]}";
@@ -481,7 +481,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by firstname
-                        if (searchBy == "firstname")
+                        if (searchBy == "3")
                         {
                             value = textInfo.ToTitleCase(value.ToLower());
 
@@ -493,7 +493,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by lastname
-                        if (searchBy == "lastname")
+                        if (searchBy == "4")
                         {
                             value = textInfo.ToTitleCase(value.ToLower());
 
@@ -530,7 +530,7 @@ namespace GoCar
                         Rental rental = item.Value;
 
                         // checks if the search is by collectionDate
-                        if (searchBy == "collectionDate")
+                        if (searchBy == "2")
                         {
 
                             // checks if collectionDate match the value
@@ -541,7 +541,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by returnDate
-                        if (searchBy == "returnDate")
+                        if (searchBy == "3")
                         {
 
                             // checks if returnDate match the value
@@ -552,7 +552,7 @@ namespace GoCar
                         }
 
                         // checks if the search is by carId
-                        if (searchBy == "carId")
+                        if (searchBy == "4")
                         {
 
                             // checks if CarId match the value
@@ -563,11 +563,11 @@ namespace GoCar
                         }
 
                         // checks if the search is by clientId
-                        if (searchBy == "clientId")
+                        if (searchBy == "5")
                         {
 
                             // checks if ClientId match the value
-                            if (rental.ClientId == value)
+                            if (rental.ClientId.Equals(value))
                             {
                                 yield return rental;
                             }
