@@ -28,10 +28,9 @@ internal class Program
         // check's database  check result
         if (databaseCheckResult)
         {
-            Console.WriteLine("Database is not empty.\n1: Load from database.\n2: Load file.\n");
-            Console.WriteLine("Please enter a number:");
+            
 
-            string load = Console.ReadLine();
+            string load = ConsoleUI.LoadDatabaseOrFileMenu();
 
             if (load == "1")
             {
