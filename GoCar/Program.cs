@@ -650,4 +650,100 @@ internal class Program
 
     }
 
+    public static void SearchClient()
+    {
+        Console.WriteLine("\n");
+        // ask user what to search by 
+        Console.WriteLine("What would you like to search by?");
+        Console.WriteLine("1: Id");
+        Console.WriteLine("2: Initials");
+        Console.WriteLine("3: First name");
+        Console.WriteLine("4: Last name");
+        string searchBy = Console.ReadLine();
+
+        Console.WriteLine("\n");
+        Console.WriteLine("Enter your search");
+        string value = Console.ReadLine();
+
+        // checks if the search is not by Id
+        if (searchBy != "1")
+        {
+            var clientList = clientHashTable.SearchBy(value, searchBy);
+
+            // iterates over carList
+            foreach (var client in clientList)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine($"{client.ClientId}, {client.FirstName}, {client.LastName}, {client.PhoneNumber}, {client.Email}");
+            }
+        }
+        else
+        {
+            try
+            {
+                Console.WriteLine("\n");
+                var client = clientHashTable.Search(value);
+                Console.WriteLine($"{client.ClientId}, {client.FirstName}, {client.LastName}, {client.PhoneNumber}, {client.Email}");
+            }
+            catch
+            {
+                Console.WriteLine("Cannot find client");
+            }
+
+
+        }
+
+        Console.WriteLine("\n");
+
+    }
+
+    public static void SearchRental()
+    {
+        Console.WriteLine("\n");
+        // ask user what to search by 
+        Console.WriteLine("What would you like to search by?");
+        Console.WriteLine("1: Id");
+        Console.WriteLine("2: Collection Date");
+        Console.WriteLine("3: Return Date");
+        Console.WriteLine("4: Car Id");
+        Console.WriteLine("5: Client Id");
+        string searchBy = Console.ReadLine();
+
+        Console.WriteLine("\n");
+        Console.WriteLine("Enter your search");
+        string value = Console.ReadLine();
+
+        // checks if the search is not by Id
+        if (searchBy != "1")
+        {
+            var rentalList = rentalHashTable.SearchBy(value, searchBy);
+
+            // iterates over carList
+            foreach (var rental in rentalList)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine($"{rental.RentalId}, {rental.CollectionDate}, {rental.ReturnDate}, {rental.CarId}, {rental.ClientId}");
+            }
+        }
+        else
+        {
+            try
+            {
+                Console.WriteLine("\n");
+                var rental = rentalHashTable.Search(Int32.Parse(value));
+                Console.WriteLine($"{rental.RentalId}, {rental.CollectionDate}, {rental.ReturnDate}, {rental.CarId}, {rental.ClientId}");
+
+            }
+            catch
+            {
+                Console.WriteLine("Cannot find rental");
+
+            }
+
+        }
+
+        Console.WriteLine("\n");
+
+    }
+
 }
