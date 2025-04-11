@@ -71,8 +71,6 @@ namespace GoCar
 
         }
 
-
-
         public static string LoadDatabaseOrFileMenu()
         {
             // Menu options displayed to the user
@@ -103,6 +101,48 @@ namespace GoCar
                         case 0: return "1"; break;
                         case 1: return "2"; break;
                         case 2:
+                            Console.ForegroundColor = ConsoleColor.Red; //text color to Red
+                            TypeEffect("\nYou have exited. Thank you for using GoCar!");
+                            Console.ResetColor();
+                            Environment.Exit(0); // Exit application
+                            break;
+                    }
+                }
+            }
+        }
+
+        public static string SelectDatabaseOperation() 
+        { 
+            // Menu options displayed to the user
+            string[] options = {
+                "1. Add to a database",
+                "2. Remove from a database",
+                "3. Search a database",
+                "4. Exit"
+            };
+
+            // Defines the list of menu options displayed to the user.
+            int selectedIndex = 0; // Tracks currently highlighted menu item
+
+            while (true) // Menu loop
+            {
+                DrawAscii(true);
+                SelectedIndex(selectedIndex, options);
+
+                var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
+
+                // Navigate down or up the list based on arrow key presses
+                if (key.Key == ConsoleKey.DownArrow) selectedIndex = (selectedIndex + 1) % options.Length;
+                else if (key.Key == ConsoleKey.UpArrow) selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    // Call appropriate method based on selection
+                    switch (selectedIndex)
+                    {
+                        case 0: return "1"; break;
+                        case 1: return "2"; break;
+                        case 2: return "3"; break;
+                        case 3:
                             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
                             TypeEffect("\nYou have exited. Thank you for using GoCar!");
                             Console.ResetColor();
