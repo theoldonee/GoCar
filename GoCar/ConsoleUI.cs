@@ -137,6 +137,13 @@ namespace GoCar
                 Console.ResetColor(); // Reset color after each option
             }
         }
+
+        public static void DrawAscii()
+        {
+            Console.Clear(); // Clears the screen
+
+            Console.WriteLine(gocarAscii);
+        }
         public static void AboutUs()
         {
             Console.Clear();
