@@ -50,19 +50,7 @@ namespace GoCar
                 Console.WriteLine(gocarAscii);
                 Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
 
-                // Loop through each menu option
-                for (int i = 0; i < options.Length; i++)
-                {
-                    if (i == selectedIndex)
-                    {   // Highlight selected option with a diff colour 
-                        Console.BackgroundColor = ConsoleColor.Cyan;
-                        Console.ForegroundColor = ConsoleColor.Black;
-                    }
-                    else Console.ResetColor();
-
-                    Console.WriteLine(options[i]);
-                    Console.ResetColor(); // Reset color after each option
-                }
+                SelectedIndex(selectedIndex, options);
 
                 var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
 
