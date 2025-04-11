@@ -55,9 +55,8 @@ internal class Program
         while (execute)
         {
             // get user's choice of database
-            Console.WriteLine("Choose an operation:\n1: Add to a database\n2: Remove from a database\n3: Search a database\n");
-            Console.WriteLine("Please enter a number:");
-            choiceArr[0] = Console.ReadLine();
+
+            choiceArr[0] = ConsoleUI.SelectDatabaseOperation();
 
             // get user's choice of database
             Console.WriteLine("\n");
