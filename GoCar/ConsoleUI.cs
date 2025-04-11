@@ -59,12 +59,7 @@ namespace GoCar
                     {
                         case 0: return "1"; break;
                         case 1: AboutUs(); break;
-                        case 2:
-                            Console.ForegroundColor = ConsoleColor.Red; //text color to Red
-                            TypeEffect("\nYou have exited. Thank you for using GoCar!");
-                            Console.ResetColor();
-                            Environment.Exit(0); // Exit application
-                            break;
+                        case 2: Exit(); break;
                     }
                 }
             }
@@ -100,12 +95,7 @@ namespace GoCar
                     {
                         case 0: return "1"; break;
                         case 1: return "2"; break;
-                        case 2:
-                            Console.ForegroundColor = ConsoleColor.Red; //text color to Red
-                            TypeEffect("\nYou have exited. Thank you for using GoCar!");
-                            Console.ResetColor();
-                            Environment.Exit(0); // Exit application
-                            break;
+                        case 2: Exit(); break;
                     }
                 }
             }
@@ -142,12 +132,7 @@ namespace GoCar
                         case 0: return "1"; break;
                         case 1: return "2"; break;
                         case 2: return "3"; break;
-                        case 3:
-                            Console.ForegroundColor = ConsoleColor.Red; //text color to Red
-                            TypeEffect("\nYou have exited. Thank you for using GoCar!");
-                            Console.ResetColor();
-                            Environment.Exit(0); // Exit application
-                            break;
+                        case 3: Exit(); break;
                     }
                 }
             }
