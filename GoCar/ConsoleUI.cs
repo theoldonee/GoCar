@@ -88,7 +88,22 @@ namespace GoCar
 
         }
 
-      
+        public static void SelectedIndex(int selectedIndex, string[] options)
+        {
+            // Loop through each menu option
+            for (int i = 0; i < options.Length; i++)
+            {
+                if (i == selectedIndex)
+                {   // Highlight selected option with a diff colour 
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                }
+                else Console.ResetColor();
+
+                Console.WriteLine(options[i]);
+                Console.ResetColor(); // Reset color after each option
+            }
+        }
         public static void AboutUs()
         {
             Console.Clear();
