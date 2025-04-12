@@ -268,7 +268,7 @@ namespace GoCar
 
             //if carList is empty
             if (carList.Count() == 0)
-                Console.WriteLine("\nNo car(s) found.");
+                RedTextDisplay("No car(s) found.");
             else
                 foreach (Car car in carList) {
                     Console.WriteLine($"{car.CarId, -10}| {car.Make,-12}| {car.Model,-12}| {car.FuelType,-10}| {car.Type,-15}| {car.Year,-10}| {car.Available,-10}");
@@ -286,7 +286,7 @@ namespace GoCar
             //if car is a car object
             if (!(car is Car))
             {
-                Console.WriteLine("\n\u001b[31mNo car was found.\u001b[0m");
+                RedTextDisplay("No car was found.");
             }
             else
             {
