@@ -313,6 +313,7 @@ public class CarTests
         Assert.Equal(102, result); // Should return 102 as the next rental ID
 
 
+
     }
 
 }
