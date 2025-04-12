@@ -515,14 +515,20 @@ internal class Program
     }
 
     // get user input and check if CarId format is valid.
-    public static string GetCarID()
+    public static string GetCarID(bool checkExistence)
     {
         Console.WriteLine("Enter Car ID: ");
         string carId = Console.ReadLine().ToUpper();
 
         // validate car Id
         bool idValidation = Validator.CarValidator.ValidateId(carId);
-        bool carExist = CarExist(carId);
+
+        bool carExist = false;
+        if (checkExistence)
+        {
+            carExist = CarExist(carId);
+        }
+        
 
         // id entry validation check
         while (!idValidation || carExist)
@@ -538,7 +544,15 @@ internal class Program
   
             carId = Console.ReadLine().ToUpper();
             idValidation = Validator.CarValidator.ValidateId(carId);
-            carExist = CarExist(carId);
+
+            if (checkExistence)
+            {
+                carExist = CarExist(carId);
+            }
+            else
+            {
+                carExist = false;
+            }
             Console.WriteLine("\n");
         }
 
