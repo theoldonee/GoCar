@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GoCar.Migrations
 {
-    [DbContext(typeof(CarRentalContex))]
+    [DbContext(typeof(CarRentalContext))]
     [Migration("20250401183953_InitialMigration")]
     partial class InitialMigration
     {
