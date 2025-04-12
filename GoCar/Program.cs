@@ -510,6 +510,7 @@ internal class Program
 
         };
 
+        rentalHashTable.Insert(newRental.RentalId, newRental);
         OperationsManager.rentalOperations["add"].Add(newRental);
         return true;
     }
