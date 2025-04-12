@@ -260,6 +260,29 @@ namespace GoCar
             Console.ResetColor();
         }
 
+        public static void DrawTableHead(string table)
+        {
+            if(table == "car")
+            {
+                // Print the table header with column names
+                // -10, -12, -12, -6 are alignment specifiers
+                // Negative means left-aligned; the number sets the width of the column
+                Console.WriteLine($"\n{"Car ID",-10}| {"Make",-12}| {"Model",-12}| {"Fuel Type",-10}| {"Type",-15}| {"Year",-10}| {"Availability",-10}");
+
+                // Print a horizontal line for visual separation under the headers
+                // This draws 45 dashes to match the width of the table
+                Console.WriteLine(new string('-', 100));
+            }
+            else if (table == "client")
+            {
+                
+            }
+            else if (table == "rental")
+            {
+                
+            }
+            
+        }
         public static void Exit(){
             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
             TypeEffect("\nYou have exited. Thank you for using GoCar!");
