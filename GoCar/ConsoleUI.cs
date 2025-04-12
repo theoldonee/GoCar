@@ -426,7 +426,9 @@ namespace GoCar
             }
             else if (table == "rental")
             {
+                Console.WriteLine($"{"Rental Id",-10}| {"Collection Date",-12}| {"Return Date",-12}| {"Client Id",-10}| {"Car Id",-10}");
                 
+                Console.WriteLine(new string('-', 70));
             }
             
         }
