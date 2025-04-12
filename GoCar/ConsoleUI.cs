@@ -316,6 +316,25 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        public static void DisplayClient(Client client)
+        {
+            DrawHeader("Client search result");
+            DrawTableHead("client"); // Draws the table header
+            //
+            //if client is a client object
+            if (!(client is Client))
+            {
+                RedTextDisplay("No client was found.");
+            }
+            else
+            {
+                // Print the client details
+                Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-10}| {client.Email,-15}");
+            }
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
         public static void RedTextDisplay(string message)
         {
             Console.WriteLine($"\n\u001b[31m{message}\u001b[0m");
