@@ -255,7 +255,7 @@ namespace GoCar
                         case 1: return "2"; break;
                         case 2: return "3"; break;
                         case 3: return "4"; break;
-                        case 5: Exit(); break;
+                        case 4: Exit(); break;
                     }
                 }
             }
@@ -300,7 +300,7 @@ namespace GoCar
 
         public static void DisplayClients(IEnumerable<Client> clientList)
         {
-            DrawHeader("Car search result");
+            DrawHeader("Client search result");
             DrawTableHead("client"); // Draws the table header
 
             //if carList is empty
@@ -315,7 +315,6 @@ namespace GoCar
             Console.WriteLine("\nPress any key to return...");
             Console.ReadKey();
         }
-
 
         public static void RedTextDisplay(string message)
         {
