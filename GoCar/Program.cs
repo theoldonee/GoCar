@@ -637,12 +637,7 @@ internal class Program
         {
             var clientList = clientHashTable.SearchBy(value, searchBy);
 
-            // iterates over carList
-            foreach (var client in clientList)
-            {
-                Console.WriteLine("\n");
-                Console.WriteLine($"{client.ClientId}, {client.FirstName}, {client.LastName}, {client.PhoneNumber}, {client.Email}");
-            }
+            ConsoleUI.DisplayClients(clientList);
         }
         else
         {
@@ -650,7 +645,7 @@ internal class Program
             {
                 Console.WriteLine("\n");
                 var client = clientHashTable.Search(value);
-                Console.WriteLine($"{client.ClientId}, {client.FirstName}, {client.LastName}, {client.PhoneNumber}, {client.Email}");
+                ConsoleUI.DisplayClient(client);
             }
             catch
             {
@@ -660,7 +655,6 @@ internal class Program
 
         }
 
-        Console.WriteLine("\n");
 
     }
 
