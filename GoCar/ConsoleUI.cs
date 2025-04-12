@@ -223,21 +223,8 @@ namespace GoCar
 
         public static void DisplayCars(IEnumerable<Car> carList)
         {
-            Console.Clear();
-            DrawAscii(true);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            TypeEffect("\nCar search result");
-            Console.ResetColor();
-
-           
-            // Print the table header with column names
-            // -10, -12, -12, -6 are alignment specifiers
-            // Negative means left-aligned; the number sets the width of the column
-            Console.WriteLine($"\n{"Car ID",-10}| {"Make",-12}| {"Model",-12}| {"Fuel Type",-10}| {"Type",-15}| {"Year",-10}| {"Availability",-10}");
-
-            // Print a horizontal line for visual separation under the headers
-            // This draws 45 dashes to match the width of the table
-            Console.WriteLine(new string('-', 100));
+            DrawHeader("Car search result");
+            DrawTableHead("car"); // Draws the table header
 
             //if carList is empty
             if (carList.Count() == 0)
