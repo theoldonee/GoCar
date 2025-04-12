@@ -142,11 +142,11 @@ internal class Program
             }
             else if (arr[1] == "2") // client
             {
-                result = AddClient();
+                SearchClient();
             }
             else if (arr[1] == "3") // rental
             {
-                result = AddClient();
+                SearchRental();
             }
         }
 
