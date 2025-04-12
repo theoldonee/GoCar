@@ -21,7 +21,8 @@ namespace GoCar
  ░▒▓██████▓▒░ ░▒▓██████▓▒░        ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓█▓▒░   ░▒▓███████▓▒░  
                      
 ";
-        // Displays the main menu with arrow key navigation
+        
+        // Displays the main menu 
         public static string ShowMenuWithNavigation()
         {
             // Menu options displayed to the user
@@ -66,6 +67,7 @@ namespace GoCar
 
         }
 
+        // Displays load database or file menu 
         public static string LoadDatabaseOrFileMenu()
         {
             // Menu options displayed to the user
@@ -101,6 +103,7 @@ namespace GoCar
             }
         }
 
+        // Displays the database operation menu 
         public static string SelectDatabaseOperation() 
         { 
             // Menu options displayed to the user
@@ -138,6 +141,7 @@ namespace GoCar
             }
         }
 
+        // Displays the database menu for selecting a specific database
         public static string SelectDatabase()
         {
             // Menu options displayed to the user
@@ -175,6 +179,7 @@ namespace GoCar
             }
         }
 
+        // Displays search car menu
         public static string SearchCar()
         {
             // Menu options displayed to the user
@@ -221,6 +226,7 @@ namespace GoCar
             }
         }
 
+        // Displays search client menu
         public static string SearchClient()
         {
             // Menu options displayed to the user
@@ -261,6 +267,7 @@ namespace GoCar
             }
         }
 
+        // Displays info of different cars
         public static void DisplayCars(IEnumerable<Car> carList)
         {
             DrawHeader("Car search result");
@@ -278,6 +285,7 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        // Displays info of a car
         public static void DisplayCar(Car car)
         {
             DrawHeader("Car search result");
@@ -298,6 +306,7 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        // Displays info of different clients
         public static void DisplayClients(IEnumerable<Client> clientList)
         {
             DrawHeader("Client search result");
@@ -316,6 +325,7 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        // Displays info of a client
         public static void DisplayClient(Client client)
         {
             DrawHeader("Client search result");
@@ -335,20 +345,23 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        // Displays text in red
         public static void RedTextDisplay(string message)
         {
             Console.WriteLine($"\n\u001b[31m{message}\u001b[0m");
         }
 
+        // Displays header
         public static void DrawHeader(string message)
         {
             Console.Clear();
             DrawAscii(true);
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Cyan; // Sets title color to cyan
             TypeEffect($"\n{message}");
-            Console.ResetColor();
+            Console.ResetColor(); // Resets color to default
         }
 
+        // Draws the table head
         public static void DrawTableHead(string table)
         {
             if(table == "car")
@@ -373,6 +386,7 @@ namespace GoCar
             
         }
 
+        // Exits the application
         public static void Exit(){
             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
             TypeEffect("\nYou have exited. Thank you for using GoCar!");
@@ -380,6 +394,7 @@ namespace GoCar
             Environment.Exit(0); // Exit application
         }
 
+        // Switches the highlighted menu option
         public static void SelectedIndex(int selectedIndex, string[] options)
         {
             // Loop through each menu option
@@ -396,6 +411,8 @@ namespace GoCar
                 Console.ResetColor(); // Reset color after each option
             }
         }
+
+        // Draws the ASCII art and title
         public static void DrawAscii(bool show)
         {
             Console.Clear(); // Clears the screen
@@ -403,6 +420,8 @@ namespace GoCar
             Console.WriteLine(gocarAscii);
             if (show) Console.WriteLine("Navigate using Arrow keys. \nPress Enter to select.\n");
         }
+
+        // Displays the about us section
         public static void AboutUs()
         {
             Console.Clear();
