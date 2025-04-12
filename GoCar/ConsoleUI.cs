@@ -298,6 +298,12 @@ namespace GoCar
             Console.ReadKey();
         }
 
+
+        public static void RedTextDisplay(string message)
+        {
+            Console.WriteLine($"\n\u001b[31m{message}\u001b[0m");
+        }
+
         public static void DrawHeader(string message)
         {
             Console.Clear();
