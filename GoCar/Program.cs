@@ -247,7 +247,7 @@ internal class Program
         // get plate number of car
         Console.WriteLine("\n");
         Console.WriteLine("Plate number:");
-        string carId = GetCarID();
+        string carId = GetCarID(true);
 
         // get make of car
         Console.WriteLine("\n");
@@ -461,7 +461,7 @@ internal class Program
         }
 
         // carId
-        string carId = GetCarID();
+        string carId = GetCarID(false);
         // check if Id exist
         bool carIsValid = false;
 
@@ -474,7 +474,7 @@ internal class Program
                 carIsValid = true;
             }else{
                 Console.WriteLine("Please enter a car Id that exist within the database: ");
-                carId = GetCarID();
+                carId = GetCarID(false);
                 Console.WriteLine("\n");
             }
         }
