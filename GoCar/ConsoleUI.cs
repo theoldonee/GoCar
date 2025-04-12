@@ -361,7 +361,7 @@ namespace GoCar
             else
                 foreach (Client client in clientList)
                 {
-                    Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-10}| {client.Email,-15}");
+                    Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-15}| {client.Email,-15}");
                 }
 
             Console.WriteLine("\nPress any key to return...");
@@ -400,7 +400,7 @@ namespace GoCar
             else
                 foreach (Rental rental in rentalList)
                 {
-                    Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-12}| {rental.ReturnDate,-12}| {rental.ClientId,-10}| {rental.CarId,-10}");
+                    Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-20}| {rental.ReturnDate,-15}| {rental.ClientId,-10}| {rental.CarId,-10}");
                 }
 
             Console.WriteLine("\nPress any key to return...");
@@ -421,7 +421,7 @@ namespace GoCar
             else
             {
                 // Print the client details
-                Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-12}| {rental.ReturnDate,-12}| {rental.ClientId,-10}| {rental.CarId,-10}");
+                Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-20}| {rental.ReturnDate,-15}| {rental.ClientId,-10}| {rental.CarId,-10}");
             }
             Console.WriteLine("\nPress any key to return...");
             Console.ReadKey();
@@ -465,7 +465,7 @@ namespace GoCar
             }
             else if (table == "rental")
             {
-                Console.WriteLine($"{"Rental Id",-10}| {"Collection Date",-12}| {"Return Date",-12}| {"Client Id",-10}| {"Car Id",-10}");
+                Console.WriteLine($"{"Rental Id",-10}| {"Collection Date",-20}| {"Return Date",-15}| {"Client Id",-10}| {"Car Id",-10}");
                 
                 Console.WriteLine(new string('-', 70));
             }
