@@ -618,13 +618,8 @@ internal class Program
         if (searchBy != "1")
         {
             var carList = carHashTable.SearchBy(value, searchBy);
-
-            // iterates over carList
-            foreach(var car in carList)
-            {
-                Console.WriteLine("\n");
-                Console.WriteLine($"{car.CarId}, {car.Make}, {car.Model}, {car.FuelType}, {car.Type}, {car.Available}");
-            }
+            
+            ConsoleUI.DisplayCars(carList);
         }
         else
         {
