@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 using GoCar;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.FileIO;
@@ -599,16 +600,7 @@ internal class Program
     //search car
     public static void SearchCar()
     {
-        Console.WriteLine("\n");
-        // ask user what to search by 
-        Console.WriteLine("What would you like to search by?");
-        Console.WriteLine("1: Id");
-        Console.WriteLine("2: Make");
-        Console.WriteLine("3: Fuel type");
-        Console.WriteLine("4: Type");
-        Console.WriteLine("5: Year");
-        Console.WriteLine("6: Availability");
-        string searchBy = Console.ReadLine();
+        string searchBy = ConsoleUI.SearchCar();
 
         Console.WriteLine("\n");
         Console.WriteLine("Enter your search");
@@ -623,9 +615,9 @@ internal class Program
         }
         else
         {
-            Console.WriteLine("\n");
+          
             Car car = carHashTable.Search(value);
-            Console.WriteLine($"{car.CarId}, {car.Make}, {car.Model}, {car.FuelType}, {car.Type}, {car.Available}");
+            ConsoleUI.DisplayCar(car);
         }
 
         Console.WriteLine("\n");
