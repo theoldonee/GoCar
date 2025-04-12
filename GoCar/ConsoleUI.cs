@@ -238,6 +238,26 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        public static void DisplayCar(Car car)
+        {
+            DrawHeader("Car search result");
+            DrawTableHead("car"); // Draws the table header
+            //
+            //if car is a car object
+            if (!(car is Car))
+            {
+                Console.WriteLine("\n\u001b[31mNo car was found.\u001b[0m");
+            }
+            else
+            {
+                // Print the car details
+                Console.WriteLine($"{car.CarId,-10}| {car.Make,-12}| {car.Model,-12}| {car.FuelType,-10}| {car.Type,-15}| {car.Year,-10}| {car.Available,-10}");
+            }
+
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
         public static void DrawHeader(string message)
         {
             Console.Clear();
