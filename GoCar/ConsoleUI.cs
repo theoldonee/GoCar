@@ -310,6 +310,44 @@ namespace GoCar
             }
         }
 
+        public static string PerformOperation()
+        {
+            Console.WriteLine(": \n1: Yes \n2: No");
+            // Menu options displayed to the user
+            string[] options = {
+                "1. Yes",
+                "2. No",
+                "3. Exit"
+            };
+
+            // Defines the list of menu options displayed to the user.
+            int selectedIndex = 0; // Tracks currently highlighted menu item
+
+            while (true) // Menu loop
+            {
+                DrawAscii(true);
+                Console.WriteLine("Would you like to perform another operation?");
+                SelectedIndex(selectedIndex, options);
+
+                var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
+
+                // Navigate down or up the list based on arrow key presses
+                if (key.Key == ConsoleKey.DownArrow) selectedIndex = (selectedIndex + 1) % options.Length;
+                else if (key.Key == ConsoleKey.UpArrow) selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    // Call appropriate method based on selection
+                    switch (selectedIndex)
+                    {
+                        case 0: return "1"; break;
+                        case 1: return "2"; break;
+                        case 2: Exit(); break;
+                    }
+                }
+            }
+        }
+
+
         // Displays info of different cars
         public static void DisplayCars(IEnumerable<Car> carList)
         {
