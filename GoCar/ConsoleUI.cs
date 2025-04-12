@@ -355,7 +355,7 @@ namespace GoCar
             DrawHeader("Client search result");
             DrawTableHead("client"); // Draws the table header
 
-            //if carList is empty
+            //if clientList is empty
             if (clientList.Count() == 0)
                 RedTextDisplay("No client(s) found.");
             else
@@ -387,6 +387,28 @@ namespace GoCar
             Console.WriteLine("\nPress any key to return...");
             Console.ReadKey();
         }
+
+        // Displays info of different rentals
+        public static void DisplayRentals(IEnumerable<Rental> rentalList)
+        {
+            DrawHeader("Rental search result");
+            DrawTableHead("rental"); // Draws the table header
+
+            //if rentalList is empty
+            if (rentalList.Count() == 0)
+                RedTextDisplay("No rental(s) found.");
+            else
+                foreach (Rental rental in rentalList)
+                {
+                    Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-12}| {rental.ReturnDate,-12}| {rental.ClientId,-10}| {rental.CarId,-10}");
+                }
+
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
+        // Displays info of a rental
+
 
         // Displays text in red
         public static void RedTextDisplay(string message)
