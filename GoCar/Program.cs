@@ -695,13 +695,14 @@ internal class Program
             {
                 Console.WriteLine("\n");
                 var rental = rentalHashTable.Search(Int32.Parse(value));
-                Console.WriteLine($"{rental.RentalId}, {rental.CollectionDate}, {rental.ReturnDate}, {rental.CarId}, {rental.ClientId}");
+                ConsoleUI.DisplayRental(rental);
 
             }
             catch
             {
-                Console.WriteLine("Cannot find rental");
-
+                ConsoleUI.DrawHeader("Rental search result");
+                ConsoleUI.DrawTableHead("rental");
+                ConsoleUI.RedTextDisplay("No rental found.");
             }
 
         }
