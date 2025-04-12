@@ -221,6 +221,36 @@ namespace GoCar
             }
         }
 
+        public static void DisplayCars(IEnumerable<Car> carList)
+        {
+            Console.Clear();
+            DrawAscii(true);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            TypeEffect("\nCar search result");
+            Console.ResetColor();
+
+           
+            // Print the table header with column names
+            // -10, -12, -12, -6 are alignment specifiers
+            // Negative means left-aligned; the number sets the width of the column
+            Console.WriteLine($"\n{"Car ID",-10}| {"Make",-12}| {"Model",-12}| {"Fuel Type",-10}| {"Type",-15}| {"Year",-10}| {"Availability",-10}");
+
+            // Print a horizontal line for visual separation under the headers
+            // This draws 45 dashes to match the width of the table
+            Console.WriteLine(new string('-', 100));
+
+            //if carList is empty
+            if (carList.Count() == 0)
+                Console.WriteLine("\nNo car(s) found.");
+            else
+                foreach (Car car in carList) {
+                    Console.WriteLine($"{car.CarId, -10}| {car.Make,-12}| {car.Model,-12}| {car.FuelType,-10}| {car.Type,-15}| {car.Year,-10}| {car.Available,-10}");
+                }
+
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
         public static void Exit(){
             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
             TypeEffect("\nYou have exited. Thank you for using GoCar!");
@@ -244,7 +274,6 @@ namespace GoCar
                 Console.ResetColor(); // Reset color after each option
             }
         }
-
         public static void DrawAscii(bool show)
         {
             Console.Clear(); // Clears the screen
