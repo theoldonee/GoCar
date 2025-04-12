@@ -339,7 +339,7 @@ namespace GoCar
             else
             {
                 // Print the client details
-                Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-10}| {client.Email,-15}");
+                Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-15}| {client.Email,-15}");
             }
             Console.WriteLine("\nPress any key to return...");
             Console.ReadKey();
@@ -377,7 +377,9 @@ namespace GoCar
             }
             else if (table == "client")
             {
-                Console.WriteLine($"{"ClientId",-10}| {"FirstName",-12}| {"LastName",-12}| {"PhoneNumber",-10}| {"Email",-15}");
+                Console.WriteLine($"{"Client Id",-10}| {"First Name",-12}| {"Last Name",-12}| {"Phone Number",-15}| {"Email",-15}");
+
+                Console.WriteLine(new string('-', 70));
             }
             else if (table == "rental")
             {
