@@ -626,14 +626,7 @@ internal class Program
 
     public static void SearchClient()
     {
-        Console.WriteLine("\n");
-        // ask user what to search by 
-        Console.WriteLine("What would you like to search by?");
-        Console.WriteLine("1: Id");
-        Console.WriteLine("2: Initials");
-        Console.WriteLine("3: First name");
-        Console.WriteLine("4: Last name");
-        string searchBy = Console.ReadLine();
+        string searchBy = ConsoleUI.SearchClient();
 
         Console.WriteLine("\n");
         Console.WriteLine("Enter your search");
