@@ -408,7 +408,24 @@ namespace GoCar
         }
 
         // Displays info of a rental
-
+        public static void DisplayRental(Rental rental)
+        {
+            DrawHeader("Client search result");
+            DrawTableHead("rental"); // Draws the table header
+            //
+            //if rental is a rental object
+            if (!(rental is Rental))
+            {
+                RedTextDisplay("No rental was found.");
+            }
+            else
+            {
+                // Print the client details
+                Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-12}| {rental.ReturnDate,-12}| {rental.ClientId,-10}| {rental.CarId,-10}");
+            }
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
 
         // Displays text in red
         public static void RedTextDisplay(string message)
