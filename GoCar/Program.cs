@@ -660,15 +660,8 @@ internal class Program
 
     public static void SearchRental()
     {
-        Console.WriteLine("\n");
-        // ask user what to search by 
-        Console.WriteLine("What would you like to search by?");
-        Console.WriteLine("1: Id");
-        Console.WriteLine("2: Collection Date");
-        Console.WriteLine("3: Return Date");
-        Console.WriteLine("4: Car Id");
-        Console.WriteLine("5: Client Id");
-        string searchBy = Console.ReadLine();
+        
+        string searchBy = ConsoleUI.SearchRental();
 
         Console.WriteLine("\n");
         Console.WriteLine("Enter your search");
