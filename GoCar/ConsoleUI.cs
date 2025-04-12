@@ -251,6 +251,15 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        public static void DrawHeader(string message)
+        {
+            Console.Clear();
+            DrawAscii(true);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            TypeEffect($"\n{message}");
+            Console.ResetColor();
+        }
+
         public static void Exit(){
             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
             TypeEffect("\nYou have exited. Thank you for using GoCar!");
