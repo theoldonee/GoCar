@@ -267,6 +267,49 @@ namespace GoCar
             }
         }
 
+        // Displays search rental menu
+        public static string SearchRental()
+        {
+            // Menu options displayed to the user
+            string[] options = {
+                "1. Id",
+                "2. Collection Date",
+                "3. Return Date",
+                "4. Car Id",
+                "5. Client Id",
+                "6. Exit"
+            };
+
+            // Defines the list of menu options displayed to the user.
+            int selectedIndex = 0; // Tracks currently highlighted menu item
+
+            while (true) // Menu loop
+            {
+                DrawAscii(true);
+                Console.WriteLine("What would you like to search by?");
+                SelectedIndex(selectedIndex, options);
+
+                var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
+
+                // Navigate down or up the list based on arrow key presses
+                if (key.Key == ConsoleKey.DownArrow) selectedIndex = (selectedIndex + 1) % options.Length;
+                else if (key.Key == ConsoleKey.UpArrow) selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    // Call appropriate method based on selection
+                    switch (selectedIndex)
+                    {
+                        case 0: return "1"; break;
+                        case 1: return "2"; break;
+                        case 2: return "3"; break;
+                        case 3: return "4"; break;
+                        case 4: return "5"; break;
+                        case 5: Exit(); break;
+                    }
+                }
+            }
+        }
+
         // Displays info of different cars
         public static void DisplayCars(IEnumerable<Car> carList)
         {
