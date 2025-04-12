@@ -176,7 +176,7 @@ namespace GoCar
                 string initials = $"{firstName[0]}{lastName[0]}";   
 
                 // access database
-                using(var context = new CarRentalContex())
+                using(var context = new CarRentalContext())
                 {
                     // creates list of clients that have same initials
                     var clientList = context.Client.AsEnumerable()
@@ -209,7 +209,7 @@ namespace GoCar
             {
                 int id = 0;
 
-                using (var context = new CarRentalContex())
+                using (var context = new CarRentalContext())
                 {
                     var rentalList = context.Rental
                         .Select(r => r).ToList();
