@@ -160,7 +160,7 @@ internal class Program
         bool databaseNotEmpty = false;
 
         // open connection to database
-        using (var contex = new CarRentalContex())
+        using (var contex = new CarRentalContext())
         {
             // get's all cars in database
             var cars = contex.Car.ToList();
@@ -184,7 +184,7 @@ internal class Program
     public static void LoadDatabase()
     {
         //var carStorage;
-        using(var contex = new CarRentalContex())
+        using(var contex = new CarRentalContext())
         {
             var cars = contex.Car.ToList();
             foreach( var car in cars)
@@ -194,7 +194,7 @@ internal class Program
         }
 
         //var clientStorage;
-        using (var contex = new CarRentalContex())
+        using (var contex = new CarRentalContext())
         {
             var clients = contex.Client.ToList();
             foreach (var client in clients)
@@ -204,7 +204,7 @@ internal class Program
         }
 
         //var rentalStorage;
-        using (var contex = new CarRentalContex())
+        using (var contex = new CarRentalContext())
         {
             var rentals = contex.Rental.ToList();
             foreach (var rental in rentals)
