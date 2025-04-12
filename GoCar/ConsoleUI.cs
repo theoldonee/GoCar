@@ -298,6 +298,24 @@ namespace GoCar
             Console.ReadKey();
         }
 
+        public static void DisplayClients(IEnumerable<Client> clientList)
+        {
+            DrawHeader("Car search result");
+            DrawTableHead("client"); // Draws the table header
+
+            //if carList is empty
+            if (clientList.Count() == 0)
+                RedTextDisplay("No client(s) found.");
+            else
+                foreach (Client client in clientList)
+                {
+                    Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-10}| {client.Email,-15}");
+                }
+
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
 
         public static void RedTextDisplay(string message)
         {
