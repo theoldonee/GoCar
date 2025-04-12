@@ -686,12 +686,7 @@ internal class Program
         {
             var rentalList = rentalHashTable.SearchBy(value, searchBy);
 
-            // iterates over carList
-            foreach (var rental in rentalList)
-            {
-                Console.WriteLine("\n");
-                Console.WriteLine($"{rental.RentalId}, {rental.CollectionDate}, {rental.ReturnDate}, {rental.CarId}, {rental.ClientId}");
-            }
+            ConsoleUI.DisplayRentals(rentalList);
         }
         else
         {
