@@ -220,6 +220,7 @@ namespace GoCar
                 }
             }
         }
+
         public static string SearchClient()
         {
             // Menu options displayed to the user
@@ -321,7 +322,7 @@ namespace GoCar
             }
             else if (table == "client")
             {
-                
+                Console.WriteLine($"{"ClientId",-10}| {"FirstName",-12}| {"LastName",-12}| {"PhoneNumber",-10}| {"Email",-15}");
             }
             else if (table == "rental")
             {
@@ -329,6 +330,7 @@ namespace GoCar
             }
             
         }
+
         public static void Exit(){
             Console.ForegroundColor = ConsoleColor.Red; //text color to Red
             TypeEffect("\nYou have exited. Thank you for using GoCar!");
