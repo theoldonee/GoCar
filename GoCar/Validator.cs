@@ -169,34 +169,28 @@ namespace GoCar
             }
             
             // generates client id
-            public static string GenerateId(string firstName, string lastName) {
+            public static string GenerateId(string firstName, string lastName, ClientHashTable<string> clientHashTable) {
                 string Id = "";
 
                 // get client initials
-                string initials = $"{firstName[0]}{lastName[0]}";   
+                string initials = $"{firstName[0]}{lastName[0]}";
 
-                // access database
-                using(var context = new CarRentalContext())
-                {
-                    // creates list of clients that have same initials
-                    var clientList = context.Client.AsEnumerable()
-                        .Where(c  => $"{c.ClientId[0]}{c.ClientId[1]}" == initials)
-                        .Select(c => c).ToList();
+                var clientList = clientHashTable.SearchBy(initials, "2");
 
-                    // checks if list is empty
-                    if (clientList.Count > 0) {
-                        // get's last client on the list
-                        Client lastClient = clientList.Last();
+                // checks if list is empty
+                if (clientList.Count() > 0) {
+                    // get's last client on the list
+                    Client lastClient = clientList.Last();
 
-                        // creates new id number
-                        int idNumber = Int32.Parse(lastClient.ClientId.Remove(0,1)) + 1;
-                        Id = $"{initials}{idNumber}";
-                    }
-                    else
-                    {
-                        Id = $"{initials}0";
-                    }
+                    // creates new id number
+                    int idNumber = Int32.Parse(lastClient.ClientId.Remove(0,1)) + 1;
+                    Id = $"{initials}{idNumber}";
                 }
+                else
+                {
+                    Id = $"{initials}0";
+                }
+                
                 return Id;
             }
         }
