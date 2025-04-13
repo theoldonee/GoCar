@@ -224,23 +224,23 @@ internal class Program
 
             if (!FileExist)
             {
-                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file", true);
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
             }
         }
         else // load custom file
         {
-            Console.WriteLine("Enter a file path");
+            Console.WriteLine("Enter a file path:");
             FileManager.alternatePath = Console.ReadLine();
             bool FileExist = FileManager.LoadFile(false);
 
             if (!FileExist)
             {
-                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file", true);
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
             }
         }
     }
 
-    // add car
+    // add car information
     public static bool AddCar()
     {
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
@@ -341,7 +341,7 @@ internal class Program
         return true;
     }
 
-    // add client 
+    // add client information
     public static bool AddClient()
     {
         // get client's first name of client
@@ -574,10 +574,10 @@ internal class Program
         return result;
     }
 
-    // removecar
+    // remove car
     public static void RemoveCar()
     {
-        Console.WriteLine("Enter: car's Id");
+        Console.WriteLine("\nEnter car's Id:");
         string carId = Console.ReadLine();
 
         Car car = carHashTable.Search(carId);
@@ -586,14 +586,18 @@ internal class Program
             carHashTable.Delete(carId);
             OperationsManager.carOperations["delete"].Add(car);
         }
+        else
+        {
+            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find car {carId}.", true);
+        }
         
         
     }
 
-    // removecar
+    // remove client
     public static void RemoveClient()
     {
-        Console.WriteLine("Enter: client's Id");
+        Console.WriteLine("\nEnter client's Id:");
         string clientId = Console.ReadLine();
         Client client = clientHashTable.Search(clientId);
         if (client is Client)
@@ -601,18 +605,39 @@ internal class Program
             clientHashTable.Delete(clientId);
             OperationsManager.clientOperations["delete"].Add(client);
         }
+        else
+        {
+            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find client {clientId}.", true);
+        }
     }
 
-    // removecar
+    // remove rental
     public static void RemoveRental()
     {
-        Console.WriteLine("Enter: rental's Id");
-        int rentalId = Int32.Parse(Console.ReadLine());
-        rentalHashTable.Delete(rentalId);    
+
+        Console.WriteLine("\nEnter rental's Id:");
+        try {
+            
+            int rentalId = Int32.Parse(Console.ReadLine());
+            Rental  rental = rentalHashTable.Search(rentalId);
+            if (rental is Rental)
+            {
+                rentalHashTable.Delete(rentalId);
+            }
+            else
+            {
+                ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find rental {rentalId}.", true);
+            }
+        }
+        catch
+        {
+            ConsoleUI.DisplayDialog("Unsuccessful", "Entry invalid.", true);
+        }
+        
     }
 
 
-    //search car
+    // search for car
     public static void SearchCar()
     {
         string searchBy = ConsoleUI.SearchCar();
@@ -639,6 +664,7 @@ internal class Program
 
     }
 
+    // search for client
     public static void SearchClient()
     {
         string searchBy = ConsoleUI.SearchClient();
@@ -673,6 +699,7 @@ internal class Program
 
     }
 
+    // search for rental
     public static void SearchRental()
     {
         
