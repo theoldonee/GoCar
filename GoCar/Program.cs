@@ -216,21 +216,14 @@ internal class Program
     // loads data from file to database
     public static void LoadFile(bool showMessage)
     {
-        if (showMessage) {
-            Console.WriteLine("What would you like to load.\n1: Load default file.\n2: Load another csv file\n");
-        }
-        else
-        {
-            Console.WriteLine("Database is empty.\n1: Load default file.\n2: Load another csv file\n");
-        }
+        string load = ConsoleUI.SelectFileToLoad(showMessage);
 
-        Console.WriteLine("Please enter a number:");
-        string load = Console.ReadLine();
+        // load default file
         if (load == "1")
         {
             FileManager.LoadFile(true);
         }
-        else
+        else // load custom file
         {
             Console.WriteLine("Enter a file path");
             FileManager.alternatePath = Console.ReadLine();
