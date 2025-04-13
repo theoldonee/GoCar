@@ -63,8 +63,7 @@ internal class Program
         
             Execute(choiceArr);
 
-            Console.WriteLine("Would you like to perform another operation?: \n1: Yes \n2: No");
-            string choice = Console.ReadLine();
+            string choice = ConsoleUI.PerformOperation();
             Console.WriteLine("\n");
 
             if (choice != "1")
