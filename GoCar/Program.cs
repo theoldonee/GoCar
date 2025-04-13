@@ -70,8 +70,7 @@ internal class Program
             {
                 execute = false;
                 OperationsManager.Dump();
-                Console.WriteLine("\n");
-                Console.WriteLine("Closing....");
+                ConsoleUI.Exit();
             }
         }
         
@@ -569,7 +568,7 @@ internal class Program
         if (car is Car)
         {
             result = true;
-            Console.WriteLine("Car already exist in the database.");
+            Console.WriteLine("\nCar already exist in the database.");
         }
 
         return result;
