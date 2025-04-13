@@ -621,10 +621,19 @@ namespace GoCar
         }
 
         // Shows a dialog box with a title and message
-        public static void DisplayDialog(string title, string message)
+        public static void DisplayDialog(string title, string message, bool red)
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            DrawAscii(true);
+            if (red)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+
+            }
+
             Console.WriteLine($"==== {title} ====");
             Console.ResetColor();
             Console.WriteLine(message);
