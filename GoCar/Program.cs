@@ -403,8 +403,7 @@ internal class Program
         }
 
         //generate client Id
-        Console.WriteLine("Enter client's Id: ");
-        string clientId = Validator.ClientValidator.GenerateId(firstName, lastName);
+        string clientId = Validator.ClientValidator.GenerateId(firstName, lastName, clientHashTable);
         Console.WriteLine($"Client id is: {clientId}");
 
         // create new client
