@@ -201,7 +201,7 @@ namespace GoCar
             // generates rental id
             public static int GenerateId()
             {
-                int id = 0;
+                int id = 1;
 
                 using (var context = new CarRentalContext())
                 {
