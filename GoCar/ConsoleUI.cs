@@ -179,6 +179,51 @@ namespace GoCar
             }
         }
 
+        // Displays the database menu for selecting a specific database
+        public static string SelectFileToLoad(bool showMessage)
+        {
+            // Menu options displayed to the user
+            string[] options = {
+                "1. Load default file.",
+                "2. Load another csv file",
+                "3. Exit"
+            };
+
+            // Defines the list of menu options displayed to the user.
+            int selectedIndex = 0; // Tracks currently highlighted menu item
+
+            while (true) // Menu loop
+            {
+                DrawAscii(true);
+
+                if (showMessage)
+                {
+                    Console.WriteLine("What would you like to load.");
+                }
+                else
+                {
+                    Console.WriteLine("Database is empty.");       
+                }
+                SelectedIndex(selectedIndex, options);
+
+                var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
+
+                // Navigate down or up the list based on arrow key presses
+                if (key.Key == ConsoleKey.DownArrow) selectedIndex = (selectedIndex + 1) % options.Length;
+                else if (key.Key == ConsoleKey.UpArrow) selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    // Call appropriate method based on selection
+                    switch (selectedIndex)
+                    {
+                        case 0: return "1"; break;
+                        case 1: return "2"; break;
+                        case 2: Exit(); break;
+                    }
+                }
+            }
+        }
+
         // Displays search car menu
         public static string SearchCar()
         {
