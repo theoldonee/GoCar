@@ -221,13 +221,23 @@ internal class Program
         // load default file
         if (load == "1")
         {
-            FileManager.LoadFile(true);
+            bool FileExist = FileManager.LoadFile(true);
+
+            if (!FileExist)
+            {
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file", true);
+            }
         }
         else // load custom file
         {
             Console.WriteLine("Enter a file path");
             FileManager.alternatePath = Console.ReadLine();
-            FileManager.LoadFile(false);
+            bool FileExist = FileManager.LoadFile(false);
+
+            if (!FileExist)
+            {
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file", true);
+            }
         }
     }
 
