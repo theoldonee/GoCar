@@ -11,7 +11,7 @@ internal class Program
     // DATA IN DATA STRUCTS (car, rental, client);
     static CarHashTable<string> carHashTable = new CarHashTable<string>();
     static ClientHashTable<string> clientHashTable = new ClientHashTable<string>();
-    static RentaltHashTable<int> rentalHashTable = new RentaltHashTable<int>();
+    static RentaltHashTable<string> rentalHashTable = new RentaltHashTable<string>();
 
     //MAIN METHOD
     public static void Main(string[] args)
@@ -433,7 +433,7 @@ internal class Program
         // generated
         Console.WriteLine("\n");
         Console.WriteLine("Generating rental Id....");
-        int rentalId = Validator.RentalValidator.GenerateId();
+        string rentalId = Validator.RentalValidator.GenerateId(rentalHashTable);
         Console.WriteLine($"Rental Id is {rentalId}");
 
         // collection date
@@ -618,7 +618,7 @@ internal class Program
         Console.WriteLine("\nEnter rental's Id:");
         try {
             
-            int rentalId = Int32.Parse(Console.ReadLine());
+            string rentalId = Console.ReadLine();
             Rental  rental = rentalHashTable.Search(rentalId);
             if (rental is Rental)
             {
@@ -721,7 +721,7 @@ internal class Program
             try
             {
                 Console.WriteLine("\n");
-                var rental = rentalHashTable.Search(Int32.Parse(value));
+                var rental = rentalHashTable.Search(value);
                 ConsoleUI.DisplayRental(rental);
 
             }
