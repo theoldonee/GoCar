@@ -17,7 +17,7 @@ The application allows one to:
 * SQL server. Link: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 * SQL Server Management Studio (SSMS). Link: https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms
 
-### Step one: Get Code.
+### Step one: Get The Code.
 The fastest way to get started is to fork the project and initiate a pull request using git.
 ```git
 git pull https://github.com/theoldonee/GoCar.git
@@ -47,16 +47,47 @@ Does not open automatically, click the plug icon in the **Object Explorer** tool
 ![Screenshot 2025-04-14 1632011](https://github.com/user-attachments/assets/6316d955-a955-493d-90ce-6bac72c00478)
 
 With the SQL Server window open, select your server and ensure **Trust server certificate** is ticked and click **Connect**.
+You should see your server in the **Object Explorer** with the server name. Clicking on the server would present you with a drop down menu, shown below.
 
+![Screenshot 2025-04-14 1641322](https://github.com/user-attachments/assets/e360bda2-b14e-482d-b49c-bfea6d3441c4)
 
-```python
-import foobar
+Right clicking on the **Database** option would present you with a menu containing the **New Database** option. Click the **New Database** option, name the database appropriately, and click **Ok**.
 
-# returns 'words'
-foobar.pluralize('word')
+### Step three: Connect To Database.
+To connect to the database, open the **Tools** tab and click on **Connect to Database**.
 
-# returns 'geese'
-foobar.pluralize('goose')
+![image](https://github.com/user-attachments/assets/ff9e077f-6ce1-47b8-9b8f-d7b637559a07)
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+Clicking **Connect to Database** would open the **Add Connection** window.
+
+![image](https://github.com/user-attachments/assets/93a29d83-beef-47f6-a11e-e5e3bf2eaa2f)
+
+Enter your server name, click **Trust server certificate**, select the database you created and click **Ok**. On the right side of ypur window, you would see the connection to your database with under **Data Connections**.
+
+![image](https://github.com/user-attachments/assets/5bdac73f-4a8e-41c6-a4ff-4ab933475cb7)
+
+Right click on the server connection and select **Properties**. At the bottom right of you window, the **Properties** panel would be open.
+
+![image](https://github.com/user-attachments/assets/928ebb31-2da7-49d9-adb3-e9b4929feaca)
+
+Double clicking the **Connection String** highlights it, copy and replace the connection string in the **OnConfiguring** method of the **CarRentalContext** class.
+
+### Step four: Add migration.
+Open the **Nuget Package Manager** and select the **Package Manager Console**.
+
+![image](https://github.com/user-attachments/assets/3c8e82cb-d89b-454f-8ccf-ff36158bbf54)
+
+In the console, run the command:
+```
+## This creates the initial migration.
+Add-Migration InitialMigration
+```
+### Note:
+If there are any errors in the code, the build will fail.
+After running the *Add-Migration InitialMigration* command, run the command:
+```
+## This updates the database.
+Update-Database
+```
+### Step five: Run the program.
+With the dataabase updated, you are now ready to run the program. 

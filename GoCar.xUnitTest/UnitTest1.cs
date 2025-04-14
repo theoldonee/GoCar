@@ -183,137 +183,103 @@ public class CarTests
         Assert.False(result);
     }
 
-    // Test for no clients in the database 
+    // Test for no clients in the hash table
     [Fact]
     public void GenerateClientId_ShouldReturnInitials0_WhenNoClientsExist()
     {
-        var mockSet = new Mock<DbSet<Client>>();
-        var clients = new List<Client>().AsQueryable();
+        // Mock the ClientHashTable and simulate no clients with the given initials
+        var mockHashTable = new Mock<ClientHashTable<string>>();
+        mockHashTable.Setup(h => h.SearchBy("AB", "2")).Returns(Enumerable.Empty<Client>());
 
-        mockSet.As<IQueryable<Client>>().Setup(m => m.Provider).Returns(clients.Provider);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.Expression).Returns(clients.Expression);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.ElementType).Returns(clients.ElementType);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.GetEnumerator()).Returns(clients.GetEnumerator());
-
-        var mockContext = new Mock<CarRentalContext>();
-        mockContext.Setup(c => c.Client).Returns(mockSet.Object);
-
-        var result = Validator.ClientValidator.GenerateId("A", "B");
-        Assert.Equal("AB0", result); // Should return "AB0" for the first client
+        // Generate ID and expect it to be "AB0" since no clients exist
+        var result = Validator.ClientValidator.GenerateId("A", "B", mockHashTable.Object);
+        Assert.Equal("AB0", result);
     }
 
-    // Test for empty  rental list 
+    // Test for empty rental hash table
     [Fact]
-    public void GenerateRentalId_ShouldReturn1_WhenNoRentalsExist()
+    public void GenerateRentalId_ShouldReturnR0_WhenNoRentalsExist()
     {
-        var mockSet = new Mock<DbSet<Rental>>();
-        var rentals = new List<Rental>().AsQueryable();
+        // Mock the RentaltHashTable and simulate no rentals with prefix "R"
+        var mockHashTable = new Mock<RentaltHashTable<string>>();
+        mockHashTable.Setup(h => h.SearchBy("6", "R")).Returns(Enumerable.Empty<Rental>());
 
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.Provider).Returns(rentals.Provider);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.Expression).Returns(rentals.Expression);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.ElementType).Returns(rentals.ElementType);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.GetEnumerator()).Returns(rentals.GetEnumerator());
-
-        var mockContext = new Mock<CarRentalContext>();
-        mockContext.Setup(c => c.Rental).Returns(mockSet.Object);
-
-        var result = Validator.RentalValidator.GenerateId();
-        Assert.Equal(1, result); // Should return 1 as the first rental ID
+        // Generate ID and expect it to be "R0" since no rentals exist
+        var result = Validator.RentalValidator.GenerateId(mockHashTable.Object);
+        Assert.Equal("R0", result);
     }
 
-    // Test when the client list contains only one client 
+    // Test when the client list contains only one client
     [Fact]
     public void GenerateClientId_ShouldReturnIncrementedId_WhenOneClientExists()
     {
-        var mockSet = new Mock<DbSet<Client>>();
-        var clients = new List<Client>
-        {
-            new Client { ClientId = "YZ100" }  // Only one client
-        }.AsQueryable();
+        // Mock the hash table to return one client with ID "YZ100"
+        var mockHashTable = new Mock<ClientHashTable<string>>();
+        var existingClients = new List<Client>
+    {
+        new Client { ClientId = "YZ100" }
+    };
+        mockHashTable.Setup(h => h.SearchBy("YZ", "2")).Returns(existingClients);
 
-        mockSet.As<IQueryable<Client>>().Setup(m => m.Provider).Returns(clients.Provider);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.Expression).Returns(clients.Expression);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.ElementType).Returns(clients.ElementType);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.GetEnumerator()).Returns(clients.GetEnumerator());
-
-        var mockContext = new Mock<CarRentalContext>();
-        mockContext.Setup(c => c.Client).Returns(mockSet.Object);
-
-        var result = Validator.ClientValidator.GenerateId("YZ", "100");
-        Assert.Equal("YZ101", result); // Should return "YZ101" as the next client ID
+        // Expect the next ID to increment to "YZ101"
+        var result = Validator.ClientValidator.GenerateId("Y", "Z", mockHashTable.Object);
+        Assert.Equal("YZ101", result);
     }
 
-    // Test when the rental list has only one rentalId
+    // Test when the rental list has only one rental
     [Fact]
     public void GenerateRentalId_ShouldReturnIncrementedId_WhenOneRentalExists()
     {
-        var mockSet = new Mock<DbSet<Rental>>();
-        var rentals = new List<Rental>
-        {
-            new Rental { RentalId = 1 }  // Only one rentalID
-        }.AsQueryable();
+        // Mock the hash table to return one rental with ID "R1"
+        var mockHashTable = new Mock<RentaltHashTable<string>>();
+        var existingRentals = new List<Rental>
+    {
+        new Rental { RentalId = "R1" }
+    };
+        mockHashTable.Setup(h => h.SearchBy("6", "R")).Returns(existingRentals);
 
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.Provider).Returns(rentals.Provider);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.Expression).Returns(rentals.Expression);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.ElementType).Returns(rentals.ElementType);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.GetEnumerator()).Returns(rentals.GetEnumerator());
-
-        var mockContext = new Mock<CarRentalContext>();
-        mockContext.Setup(c => c.Rental).Returns(mockSet.Object);
-
-        var result = Validator.RentalValidator.GenerateId();
-        Assert.Equal(2, result); // Should return 2 as the next rentalID
+        // Expect the next ID to increment to "R2"
+        var result = Validator.RentalValidator.GenerateId(mockHashTable.Object);
+        Assert.Equal("R2", result);
     }
 
-    // Test when the last client ID is over 100 
+    // Test when the last client ID is over 100
     [Fact]
     public void GenerateClientId_ShouldHandleMultipleDigits_WhenClientIdOver100()
     {
-        var mockSet = new Mock<DbSet<Client>>();
+        // Mock clients with IDs ending in 100, 101, and 102
+        var mockHashTable = new Mock<ClientHashTable<string>>();
         var clients = new List<Client>
-        {
-            new Client { ClientId = "YZ100" },
-            new Client { ClientId = "YZ101" },
-            new Client { ClientId = "YZ102" }  // Last client with ID102
-        }.AsQueryable();
+    {
+        new Client { ClientId = "YZ100" },
+        new Client { ClientId = "YZ101" },
+        new Client { ClientId = "YZ102" }
+    };
+        mockHashTable.Setup(h => h.SearchBy("YZ", "2")).Returns(clients);
 
-        mockSet.As<IQueryable<Client>>().Setup(m => m.Provider).Returns(clients.Provider);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.Expression).Returns(clients.Expression);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.ElementType).Returns(clients.ElementType);
-        mockSet.As<IQueryable<Client>>().Setup(m => m.GetEnumerator()).Returns(clients.GetEnumerator());
-
-        var mockContext = new Mock<CarRentalContext>();
-        mockContext.Setup(c => c.Client).Returns(mockSet.Object);
-
-        var result = Validator.ClientValidator.GenerateId("YZ", "103");
-        Assert.Equal("YZ103", result); // Should return "YZ103" as the next client ID
+        // Expect the next ID to be "YZ103"
+        var result = Validator.ClientValidator.GenerateId("Y", "Z", mockHashTable.Object);
+        Assert.Equal("YZ103", result);
     }
 
-    // Test when the last rental ID is over 100 
+    // Test when the last rental ID is over 100
     [Fact]
     public void GenerateRentalId_ShouldHandleMultipleDigits_WhenRentalIdOver100()
     {
-        var mockSet = new Mock<DbSet<Rental>>();
+        // Mock rentals with IDs ending in 100 and 101
+        var mockHashTable = new Mock<RentaltHashTable<string>>();
         var rentals = new List<Rental>
-        {
-            new Rental { RentalId = 100 },
-            new Rental { RentalId = 101 }  // Last rental with ID 101
-        }.AsQueryable();
+    {
+        new Rental { RentalId = "R100" },
+        new Rental { RentalId = "R101" }
+    };
+        mockHashTable.Setup(h => h.SearchBy("6", "R")).Returns(rentals);
 
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.Provider).Returns(rentals.Provider);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.Expression).Returns(rentals.Expression);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.ElementType).Returns(rentals.ElementType);
-        mockSet.As<IQueryable<Rental>>().Setup(m => m.GetEnumerator()).Returns(rentals.GetEnumerator());
-
-        var mockContext = new Mock<CarRentalContext>();
-        mockContext.Setup(c => c.Rental).Returns(mockSet.Object);
-
-        var result = Validator.RentalValidator.GenerateId();
-        Assert.Equal(102, result); // Should return 102 as the next rental ID
-
-
-
+        // Expect the next ID to be "R102"
+        var result = Validator.RentalValidator.GenerateId(mockHashTable.Object);
+        Assert.Equal("R102", result);
     }
+
 
 }
 
