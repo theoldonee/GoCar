@@ -565,13 +565,22 @@ namespace GoCar
                         // checks if the search is by clientId
                         if (searchBy == "5")
                         {
-
                             // checks if ClientId match the value
                             if (rental.ClientId.Equals(value))
                             {
                                 yield return rental;
                             }
                         }
+
+                        if (searchBy == "6")
+                        {
+                            // checks if ClientId match the value
+                            if (rental.RentalId[0].Equals(value))
+                            {
+                                yield return rental;
+                            }
+                        }
+
                     }
                 }
             }
