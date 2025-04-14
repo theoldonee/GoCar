@@ -77,10 +77,17 @@ Open the **Nuget Package Manager** and select the **Package Manager Console**.
 
 ![image](https://github.com/user-attachments/assets/3c8e82cb-d89b-454f-8ccf-ff36158bbf54)
 
-In the console, run the command
+In the console, run the command:
 ```
+## This creates the initial migration.
 Add-Migration InitialMigration
 ```
-#### Note:
+### Note:
 If there are any errors in the code, the build will fail.
-
+After running the *Add-Migration InitialMigration* command, run the command:
+```
+## This updates the database.
+Update-Database
+```
+### Step five: Run the program.
+With the dataabase updated, you are now ready to run the program. 
