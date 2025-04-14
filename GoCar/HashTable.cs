@@ -575,7 +575,7 @@ namespace GoCar
                         if (searchBy == "6")
                         {
                             // checks if ClientId match the value
-                            if (rental.RentalId[0].Equals(value))
+                            if ($"{rental.RentalId[0]}" == value)
                             {
                                 yield return rental;
                             }
