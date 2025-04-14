@@ -199,26 +199,23 @@ namespace GoCar
         public class RentalValidator
         {
             // generates rental id
-            public static int GenerateId()
+            public static string GenerateId(RentaltHashTable<string> rentaltHashTable)
             {
-                int id = 1;
+                string id = "";
 
-                using (var context = new CarRentalContext())
+                var rentalList = rentaltHashTable.SearchBy("6", "R");
+
+                if (rentalList.Count() == 0)
                 {
-                    var rentalList = context.Rental
-                        .Select(r => r).ToList();
-
-                    // checks the number of rentals in the database
-                    if (rentalList.Count > 0)
-                    {
-                        Rental lastRental = rentalList.Last();
-
-                        id = lastRental.RentalId++; 
-
-                    }      
-
+                    id = "R0" ;
                 }
-                return id;
+                else
+                {
+                    Rental rental = rentalList.Last<Rental>();
+                    int rentalNumber = Int32.Parse(rental.RentalId.Remove(0, 1));
+                    id = $"R{rentalNumber+1}";
+                }
+                    return id;
             }
 
             // get's the current date
