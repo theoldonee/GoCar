@@ -239,6 +239,8 @@ internal class Program
                 ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
             }
         }
+
+        LoadDatabase();
     }
 
     // add car information
