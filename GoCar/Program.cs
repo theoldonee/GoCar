@@ -181,7 +181,7 @@ internal class Program
     // loads data from database
     public static void LoadDatabase()
     {
-        ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false);
+        ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false, false);
         //var carStorage;
         using (var contex = new CarRentalContext())
         {
@@ -222,10 +222,10 @@ internal class Program
         if (load == "1")
         {
             bool FileExist = FileManager.LoadFile(true);
-            ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false);
+            ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false, false);
             if (!FileExist)
             {
-                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true, true);
             }
         }
         else // load custom file
@@ -233,10 +233,10 @@ internal class Program
             Console.WriteLine("Enter a file path:");
             FileManager.alternatePath = Console.ReadLine();
             bool FileExist = FileManager.LoadFile(false);
-            ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false);
+            ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false, false);
             if (!FileExist)
             {
-                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true, true);
             }
         }
 
@@ -591,7 +591,7 @@ internal class Program
         }
         else
         {
-            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find car {carId}.", true);
+            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find car {carId}.", true, true);
         }
         
         
@@ -610,7 +610,7 @@ internal class Program
         }
         else
         {
-            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find client {clientId}.", true);
+            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find client {clientId}.", true, true);
         }
     }
 
@@ -629,12 +629,12 @@ internal class Program
             }
             else
             {
-                ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find rental {rentalId}.", true);
+                ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find rental {rentalId}.", true, true);
             }
         }
         catch
         {
-            ConsoleUI.DisplayDialog("Unsuccessful", "Entry invalid.", true);
+            ConsoleUI.DisplayDialog("Unsuccessful", "Entry invalid.", true, true);
         }
         
     }

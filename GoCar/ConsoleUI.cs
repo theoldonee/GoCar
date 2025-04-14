@@ -621,7 +621,7 @@ namespace GoCar
         }
 
         // Shows a dialog box with a title and message
-        public static void DisplayDialog(string title, string message, bool red)
+        public static void DisplayDialog(string title, string message, bool red, bool pressKey)
         {
             DrawAscii(true);
             if (red)
@@ -637,8 +637,11 @@ namespace GoCar
             Console.WriteLine($"==== {title} ====");
             Console.ResetColor();
             Console.WriteLine(message);
-            Console.WriteLine("\nPress any key to continue...");
-            Console.ReadKey();
+            if (pressKey)
+            {
+                Console.WriteLine("\nPress any key to continue...");
+                Console.ReadKey();
+            }
         }
 
     }
