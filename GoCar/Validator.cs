@@ -183,7 +183,7 @@ namespace GoCar
                     Client lastClient = clientList.Last();
 
                     // creates new id number
-                    int idNumber = Int32.Parse(lastClient.ClientId.Remove(0,1)) + 1;
+                    int idNumber = Int32.Parse(lastClient.ClientId.Remove(0,2)) + 1;
                     Id = $"{initials}{idNumber}";
                 }
                 else
@@ -203,7 +203,7 @@ namespace GoCar
             {
                 string id = "";
 
-                var rentalList = rentaltHashTable.SearchBy("6", "R");
+                var rentalList = rentaltHashTable.SearchBy("R", "6");
 
                 if (rentalList.Count() == 0)
                 {
