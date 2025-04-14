@@ -46,8 +46,7 @@ namespace GoCar.Migrations
                 name: "Rental",
                 columns: table => new
                 {
-                    RentalId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RentalId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CollectionDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ReturnDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CarId = table.Column<string>(type: "nvarchar(450)", nullable: false),

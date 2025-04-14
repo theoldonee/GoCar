@@ -80,11 +80,8 @@ namespace GoCar.Migrations
 
             modelBuilder.Entity("GoCar.Rental", b =>
                 {
-                    b.Property<int>("RentalId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RentalId"));
+                    b.Property<string>("RentalId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CarId")
                         .IsRequired()
