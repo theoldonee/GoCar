@@ -181,8 +181,9 @@ internal class Program
     // loads data from database
     public static void LoadDatabase()
     {
+        ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false);
         //var carStorage;
-        using(var contex = new CarRentalContext())
+        using (var contex = new CarRentalContext())
         {
             var cars = contex.Car.ToList();
             foreach( var car in cars)
@@ -221,7 +222,7 @@ internal class Program
         if (load == "1")
         {
             bool FileExist = FileManager.LoadFile(true);
-
+            ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false);
             if (!FileExist)
             {
                 ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
@@ -232,7 +233,7 @@ internal class Program
             Console.WriteLine("Enter a file path:");
             FileManager.alternatePath = Console.ReadLine();
             bool FileExist = FileManager.LoadFile(false);
-
+            ConsoleUI.DisplayDialog("Loading Database", "Loading.....", false);
             if (!FileExist)
             {
                 ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
