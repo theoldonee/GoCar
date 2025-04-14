@@ -11,7 +11,7 @@ internal class Program
     // DATA IN DATA STRUCTS (car, rental, client);
     static CarHashTable<string> carHashTable = new CarHashTable<string>();
     static ClientHashTable<string> clientHashTable = new ClientHashTable<string>();
-    static RentaltHashTable<int> rentalHashTable = new RentaltHashTable<int>();
+    static RentaltHashTable<string> rentalHashTable = new RentaltHashTable<string>();
 
     //MAIN METHOD
     public static void Main(string[] args)
@@ -63,16 +63,14 @@ internal class Program
         
             Execute(choiceArr);
 
-            Console.WriteLine("Would you like to perform another operation?: \n1: Yes \n2: No");
-            string choice = Console.ReadLine();
+            string choice = ConsoleUI.PerformOperation();
             Console.WriteLine("\n");
 
             if (choice != "1")
             {
                 execute = false;
                 OperationsManager.Dump();
-                Console.WriteLine("\n");
-                Console.WriteLine("Closing....");
+                ConsoleUI.Exit();
             }
         }
         
@@ -160,7 +158,7 @@ internal class Program
         bool databaseNotEmpty = false;
 
         // open connection to database
-        using (var contex = new CarRentalContex())
+        using (var contex = new CarRentalContext())
         {
             // get's all cars in database
             var cars = contex.Car.ToList();
@@ -184,7 +182,7 @@ internal class Program
     public static void LoadDatabase()
     {
         //var carStorage;
-        using(var contex = new CarRentalContex())
+        using(var contex = new CarRentalContext())
         {
             var cars = contex.Car.ToList();
             foreach( var car in cars)
@@ -194,7 +192,7 @@ internal class Program
         }
 
         //var clientStorage;
-        using (var contex = new CarRentalContex())
+        using (var contex = new CarRentalContext())
         {
             var clients = contex.Client.ToList();
             foreach (var client in clients)
@@ -204,7 +202,7 @@ internal class Program
         }
 
         //var rentalStorage;
-        using (var contex = new CarRentalContex())
+        using (var contex = new CarRentalContext())
         {
             var rentals = contex.Rental.ToList();
             foreach (var rental in rentals)
@@ -217,29 +215,32 @@ internal class Program
     // loads data from file to database
     public static void LoadFile(bool showMessage)
     {
-        if (showMessage) {
-            Console.WriteLine("What would you like to load.\n1: Load default file.\n2: Load another csv file\n");
-        }
-        else
-        {
-            Console.WriteLine("Database is empty.\n1: Load default file.\n2: Load another csv file\n");
-        }
+        string load = ConsoleUI.SelectFileToLoad(showMessage);
 
-        Console.WriteLine("Please enter a number:");
-        string load = Console.ReadLine();
+        // load default file
         if (load == "1")
         {
-            FileManager.LoadFile(true);
+            bool FileExist = FileManager.LoadFile(true);
+
+            if (!FileExist)
+            {
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
+            }
         }
-        else
+        else // load custom file
         {
-            Console.WriteLine("Enter a file path");
+            Console.WriteLine("Enter a file path:");
             FileManager.alternatePath = Console.ReadLine();
-            FileManager.LoadFile(false);
+            bool FileExist = FileManager.LoadFile(false);
+
+            if (!FileExist)
+            {
+                ConsoleUI.DisplayDialog("Unsuccessful", "Could not find file.", true);
+            }
         }
     }
 
-    // add car
+    // add car information
     public static bool AddCar()
     {
         TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
@@ -340,7 +341,7 @@ internal class Program
         return true;
     }
 
-    // add client 
+    // add client information
     public static bool AddClient()
     {
         // get client's first name of client
@@ -404,8 +405,7 @@ internal class Program
         }
 
         //generate client Id
-        Console.WriteLine("Enter client's Id: ");
-        string clientId = Validator.ClientValidator.GenerateId(firstName, lastName);
+        string clientId = Validator.ClientValidator.GenerateId(firstName, lastName, clientHashTable);
         Console.WriteLine($"Client id is: {clientId}");
 
         // create new client
@@ -433,7 +433,7 @@ internal class Program
         // generated
         Console.WriteLine("\n");
         Console.WriteLine("Generating rental Id....");
-        int rentalId = Validator.RentalValidator.GenerateId();
+        string rentalId = Validator.RentalValidator.GenerateId(rentalHashTable);
         Console.WriteLine($"Rental Id is {rentalId}");
 
         // collection date
@@ -568,16 +568,16 @@ internal class Program
         if (car is Car)
         {
             result = true;
-            Console.WriteLine("Car already exist in the database.");
+            Console.WriteLine("\nCar already exist in the database.");
         }
 
         return result;
     }
 
-    // removecar
+    // remove car
     public static void RemoveCar()
     {
-        Console.WriteLine("Enter: car's Id");
+        Console.WriteLine("\nEnter car's Id:");
         string carId = Console.ReadLine();
 
         Car car = carHashTable.Search(carId);
@@ -586,14 +586,18 @@ internal class Program
             carHashTable.Delete(carId);
             OperationsManager.carOperations["delete"].Add(car);
         }
+        else
+        {
+            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find car {carId}.", true);
+        }
         
         
     }
 
-    // removecar
+    // remove client
     public static void RemoveClient()
     {
-        Console.WriteLine("Enter: client's Id");
+        Console.WriteLine("\nEnter client's Id:");
         string clientId = Console.ReadLine();
         Client client = clientHashTable.Search(clientId);
         if (client is Client)
@@ -601,18 +605,39 @@ internal class Program
             clientHashTable.Delete(clientId);
             OperationsManager.clientOperations["delete"].Add(client);
         }
+        else
+        {
+            ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find client {clientId}.", true);
+        }
     }
 
-    // removecar
+    // remove rental
     public static void RemoveRental()
     {
-        Console.WriteLine("Enter: rental's Id");
-        int rentalId = Int32.Parse(Console.ReadLine());
-        rentalHashTable.Delete(rentalId);    
+
+        Console.WriteLine("\nEnter rental's Id:");
+        try {
+            
+            string rentalId = Console.ReadLine();
+            Rental  rental = rentalHashTable.Search(rentalId);
+            if (rental is Rental)
+            {
+                rentalHashTable.Delete(rentalId);
+            }
+            else
+            {
+                ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find rental {rentalId}.", true);
+            }
+        }
+        catch
+        {
+            ConsoleUI.DisplayDialog("Unsuccessful", "Entry invalid.", true);
+        }
+        
     }
 
 
-    //search car
+    // search for car
     public static void SearchCar()
     {
         string searchBy = ConsoleUI.SearchCar();
@@ -639,6 +664,7 @@ internal class Program
 
     }
 
+    // search for client
     public static void SearchClient()
     {
         string searchBy = ConsoleUI.SearchClient();
@@ -673,6 +699,7 @@ internal class Program
 
     }
 
+    // search for rental
     public static void SearchRental()
     {
         
@@ -694,14 +721,15 @@ internal class Program
             try
             {
                 Console.WriteLine("\n");
-                var rental = rentalHashTable.Search(Int32.Parse(value));
-                Console.WriteLine($"{rental.RentalId}, {rental.CollectionDate}, {rental.ReturnDate}, {rental.CarId}, {rental.ClientId}");
+                var rental = rentalHashTable.Search(value);
+                ConsoleUI.DisplayRental(rental);
 
             }
             catch
             {
-                Console.WriteLine("Cannot find rental");
-
+                ConsoleUI.DrawHeader("Rental search result");
+                ConsoleUI.DrawTableHead("rental");
+                ConsoleUI.RedTextDisplay("No rental found.");
             }
 
         }

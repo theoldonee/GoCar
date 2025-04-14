@@ -169,34 +169,28 @@ namespace GoCar
             }
             
             // generates client id
-            public static string GenerateId(string firstName, string lastName) {
+            public static string GenerateId(string firstName, string lastName, ClientHashTable<string> clientHashTable) {
                 string Id = "";
 
                 // get client initials
-                string initials = $"{firstName[0]}{lastName[0]}";   
+                string initials = $"{firstName[0]}{lastName[0]}";
 
-                // access database
-                using(var context = new CarRentalContex())
-                {
-                    // creates list of clients that have same initials
-                    var clientList = context.Client.AsEnumerable()
-                        .Where(c  => $"{c.ClientId[0]}{c.ClientId[1]}" == initials)
-                        .Select(c => c).ToList();
+                var clientList = clientHashTable.SearchBy(initials, "2");
 
-                    // checks if list is empty
-                    if (clientList.Count > 0) {
-                        // get's last client on the list
-                        Client lastClient = clientList.Last();
+                // checks if list is empty
+                if (clientList.Count() > 0) {
+                    // get's last client on the list
+                    Client lastClient = clientList.Last();
 
-                        // creates new id number
-                        int idNumber = Int32.Parse(lastClient.ClientId.Remove(0,1)) + 1;
-                        Id = $"{initials}{idNumber}";
-                    }
-                    else
-                    {
-                        Id = $"{initials}0";
-                    }
+                    // creates new id number
+                    int idNumber = Int32.Parse(lastClient.ClientId.Remove(0,1)) + 1;
+                    Id = $"{initials}{idNumber}";
                 }
+                else
+                {
+                    Id = $"{initials}0";
+                }
+                
                 return Id;
             }
         }
@@ -205,26 +199,23 @@ namespace GoCar
         public class RentalValidator
         {
             // generates rental id
-            public static int GenerateId()
+            public static string GenerateId(RentaltHashTable<string> rentaltHashTable)
             {
-                int id = 0;
+                string id = "";
 
-                using (var context = new CarRentalContex())
+                var rentalList = rentaltHashTable.SearchBy("6", "R");
+
+                if (rentalList.Count() == 0)
                 {
-                    var rentalList = context.Rental
-                        .Select(r => r).ToList();
-
-                    // checks the number of rentals in the database
-                    if (rentalList.Count > 0)
-                    {
-                        Rental lastRental = rentalList.Last();
-
-                        id = lastRental.RentalId++; 
-
-                    }      
-
+                    id = "R0" ;
                 }
-                return id;
+                else
+                {
+                    Rental rental = rentalList.Last<Rental>();
+                    int rentalNumber = Int32.Parse(rental.RentalId.Remove(0, 1));
+                    id = $"R{rentalNumber+1}";
+                }
+                    return id;
             }
 
             // get's the current date

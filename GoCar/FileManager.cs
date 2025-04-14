@@ -91,7 +91,7 @@ namespace GoCar
 
             
             // opens connction to database
-            using (var contex = new CarRentalContex())
+            using (var contex = new CarRentalContext())
             {
                 
                 foreach (var car in carsToLoad)
@@ -109,7 +109,7 @@ namespace GoCar
         public static void LoadDatabase()
         {
             //var carStorage;
-            using (var contex = new CarRentalContex())
+            using (var contex = new CarRentalContext())
             {
                 var cars = contex.Car.ToList();
                 foreach (var car in cars)

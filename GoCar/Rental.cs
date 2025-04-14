@@ -8,7 +8,7 @@ namespace GoCar
 {
     public class Rental
     {
-        public int RentalId { get; set; }
+        public string RentalId { get; set; }
         public string CollectionDate { get; set; }
         public string ReturnDate { get; set; }
 

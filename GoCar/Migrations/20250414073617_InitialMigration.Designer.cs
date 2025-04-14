@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GoCar.Migrations
 {
-    [DbContext(typeof(CarRentalContex))]
-    [Migration("20250401183953_InitialMigration")]
+    [DbContext(typeof(CarRentalContext))]
+    [Migration("20250414073617_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -83,11 +83,8 @@ namespace GoCar.Migrations
 
             modelBuilder.Entity("GoCar.Rental", b =>
                 {
-                    b.Property<int>("RentalId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RentalId"));
+                    b.Property<string>("RentalId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CarId")
                         .IsRequired()

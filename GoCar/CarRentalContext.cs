@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoCar
 {
-    internal class CarRentalContex : DbContext
+    public class CarRentalContext : DbContext
     {
         public DbSet<Client> Client { get; set; }
         public DbSet<Car> Car { get; set; }

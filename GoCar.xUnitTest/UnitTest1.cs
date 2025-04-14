@@ -1,7 +1,6 @@
-using Xunit;
 using GoCar;
-using static GoCar.Validator;
 using Moq;
+using Microsoft.EntityFrameworkCore;
 
 public class CarTests
 {

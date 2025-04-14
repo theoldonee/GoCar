@@ -179,6 +179,51 @@ namespace GoCar
             }
         }
 
+        // Displays the database menu for selecting a specific database
+        public static string SelectFileToLoad(bool showMessage)
+        {
+            // Menu options displayed to the user
+            string[] options = {
+                "1. Load default file.",
+                "2. Load another csv file",
+                "3. Exit"
+            };
+
+            // Defines the list of menu options displayed to the user.
+            int selectedIndex = 0; // Tracks currently highlighted menu item
+
+            while (true) // Menu loop
+            {
+                DrawAscii(true);
+
+                if (showMessage)
+                {
+                    Console.WriteLine("What would you like to load.");
+                }
+                else
+                {
+                    Console.WriteLine("Database is empty.");       
+                }
+                SelectedIndex(selectedIndex, options);
+
+                var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
+
+                // Navigate down or up the list based on arrow key presses
+                if (key.Key == ConsoleKey.DownArrow) selectedIndex = (selectedIndex + 1) % options.Length;
+                else if (key.Key == ConsoleKey.UpArrow) selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    // Call appropriate method based on selection
+                    switch (selectedIndex)
+                    {
+                        case 0: return "1"; break;
+                        case 1: return "2"; break;
+                        case 2: Exit(); break;
+                    }
+                }
+            }
+        }
+
         // Displays search car menu
         public static string SearchCar()
         {
@@ -310,6 +355,44 @@ namespace GoCar
             }
         }
 
+        public static string PerformOperation()
+        {
+            Console.WriteLine(": \n1: Yes \n2: No");
+            // Menu options displayed to the user
+            string[] options = {
+                "1. Yes",
+                "2. No",
+                "3. Exit"
+            };
+
+            // Defines the list of menu options displayed to the user.
+            int selectedIndex = 0; // Tracks currently highlighted menu item
+
+            while (true) // Menu loop
+            {
+                DrawAscii(true);
+                Console.WriteLine("Would you like to perform another operation?");
+                SelectedIndex(selectedIndex, options);
+
+                var key = Console.ReadKey(true); //Reads a key press from user without displaying it on screen
+
+                // Navigate down or up the list based on arrow key presses
+                if (key.Key == ConsoleKey.DownArrow) selectedIndex = (selectedIndex + 1) % options.Length;
+                else if (key.Key == ConsoleKey.UpArrow) selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    // Call appropriate method based on selection
+                    switch (selectedIndex)
+                    {
+                        case 0: return "1"; break;
+                        case 1: return "2"; break;
+                        case 2: Exit(); break;
+                    }
+                }
+            }
+        }
+
+
         // Displays info of different cars
         public static void DisplayCars(IEnumerable<Car> carList)
         {
@@ -355,13 +438,13 @@ namespace GoCar
             DrawHeader("Client search result");
             DrawTableHead("client"); // Draws the table header
 
-            //if carList is empty
+            //if clientList is empty
             if (clientList.Count() == 0)
                 RedTextDisplay("No client(s) found.");
             else
                 foreach (Client client in clientList)
                 {
-                    Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-10}| {client.Email,-15}");
+                    Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-15}| {client.Email,-15}");
                 }
 
             Console.WriteLine("\nPress any key to return...");
@@ -383,6 +466,45 @@ namespace GoCar
             {
                 // Print the client details
                 Console.WriteLine($"{client.ClientId,-10}| {client.FirstName,-12}| {client.LastName,-12}| {client.PhoneNumber,-15}| {client.Email,-15}");
+            }
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
+        // Displays info of different rentals
+        public static void DisplayRentals(IEnumerable<Rental> rentalList)
+        {
+            DrawHeader("Rental search result");
+            DrawTableHead("rental"); // Draws the table header
+
+            //if rentalList is empty
+            if (rentalList.Count() == 0)
+                RedTextDisplay("No rental(s) found.");
+            else
+                foreach (Rental rental in rentalList)
+                {
+                    Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-20}| {rental.ReturnDate,-15}| {rental.ClientId,-10}| {rental.CarId,-10}");
+                }
+
+            Console.WriteLine("\nPress any key to return...");
+            Console.ReadKey();
+        }
+
+        // Displays info of a rental
+        public static void DisplayRental(Rental rental)
+        {
+            DrawHeader("Client search result");
+            DrawTableHead("rental"); // Draws the table header
+            //
+            //if rental is a rental object
+            if (!(rental is Rental))
+            {
+                RedTextDisplay("No rental was found.");
+            }
+            else
+            {
+                // Print the client details
+                Console.WriteLine($"{rental.RentalId,-10}| {rental.CollectionDate,-20}| {rental.ReturnDate,-15}| {rental.ClientId,-10}| {rental.CarId,-10}");
             }
             Console.WriteLine("\nPress any key to return...");
             Console.ReadKey();
@@ -426,7 +548,7 @@ namespace GoCar
             }
             else if (table == "rental")
             {
-                Console.WriteLine($"{"Rental Id",-10}| {"Collection Date",-12}| {"Return Date",-12}| {"Client Id",-10}| {"Car Id",-10}");
+                Console.WriteLine($"{"Rental Id",-10}| {"Collection Date",-20}| {"Return Date",-15}| {"Client Id",-10}| {"Car Id",-10}");
                 
                 Console.WriteLine(new string('-', 70));
             }
@@ -499,10 +621,19 @@ namespace GoCar
         }
 
         // Shows a dialog box with a title and message
-        public static void DisplayDialog(string title, string message)
+        public static void DisplayDialog(string title, string message, bool red)
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            DrawAscii(true);
+            if (red)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+
+            }
+
             Console.WriteLine($"==== {title} ====");
             Console.ResetColor();
             Console.WriteLine(message);

@@ -15,7 +15,7 @@ namespace GoCar
         public static void Dump()
         {
             // opens connection to database
-            using (var context = new CarRentalContex())
+            using (var context = new CarRentalContext())
             {
                 // Add operations
                 foreach (var car in carOperations["add"])
