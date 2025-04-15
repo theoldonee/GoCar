@@ -179,11 +179,10 @@ namespace GoCar
 
                 // checks if list is empty
                 if (clientList.Count() > 0) {
-                    // get's last client on the list
-                    Client lastClient = clientList.Last();
+                    int[] idArr = clientList.Select(c => Int32.Parse(c.ClientId.Remove(0, 2))).ToArray();
 
                     // creates new id number
-                    int idNumber = Int32.Parse(lastClient.ClientId.Remove(0,2)) + 1;
+                    int idNumber = idArr.Max() + 1;
                     Id = $"{initials}{idNumber}";
                 }
                 else
