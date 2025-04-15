@@ -11,7 +11,7 @@ The application allows one to:
 * Search the hashtable.
 
 # Installation Guide
-## What you will need
+## What You Will Need
 * Visual studio 2022. Link: https://visualstudio.microsoft.com/downloads/
 * Dotnet core and dotnet 8.0.
 * SQL server. Link: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
@@ -72,7 +72,7 @@ Right click on the server connection and select **Properties**. At the bottom ri
 
 Double clicking the **Connection String** highlights it, copy and replace the connection string in the **OnConfiguring** method of the **CarRentalContext** class.
 
-### Step four: Add migration.
+### Step four: Add Migration.
 Open the **Nuget Package Manager** and select the **Package Manager Console**.
 
 ![image](https://github.com/user-attachments/assets/3c8e82cb-d89b-454f-8ccf-ff36158bbf54)
@@ -89,7 +89,7 @@ After running the *Add-Migration InitialMigration* command, run the command:
 ## This updates the database.
 Update-Database
 ```
-### Step five: Run the program.
+### Step five: Run The Program.
 With the dataabase updated, you are now ready to run the program. Clicking the green play button at the top center of your window would start the application.
 
 ![image](https://github.com/user-attachments/assets/3d11ed56-e898-4edf-81c8-f5228d8fb734)
@@ -101,6 +101,12 @@ Once the program is running, navigate using the up and down arrow keys and press
 * Date entries should follow the format dd-mm-yyyy.
 * Phone number entries sould be 8 digits long.
 * Car plate numbers should  follow tthe format lnnn-llnn with *l* representing letters and *n* representing numbers.
+* Rental entries cannot be made if the car or client table is empty.
+* The allowed fuel types are:
+  * Petrol
+  * Diesel
+  * Hybrid
+  * Electric
   
 # Limitiations
 * A user cannot go back once they have selected an operation.
