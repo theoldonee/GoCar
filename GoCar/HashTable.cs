@@ -364,10 +364,6 @@ namespace GoCar
             }
         } // end of method: Delete
 
-        // DISPLAY ALL OBJECTS IN HASHTABLE
-        public void DisplayAll()
-        {
-        }
 
 
     } // END of HashTable class
