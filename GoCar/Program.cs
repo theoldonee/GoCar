@@ -347,15 +347,19 @@ internal class Program
     // add client information
     public static bool AddClient()
     {
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
         // get client's first name of client
         Console.WriteLine("\n");
         Console.WriteLine("Enter client's first name: ");
         string firstName = Console.ReadLine();
+        firstName = textInfo.ToTitleCase(firstName.ToLower());
 
         // get client's last name of client
         Console.WriteLine("\n");
         Console.WriteLine("Enter client's last name: ");
         string lastName = Console.ReadLine();
+        lastName = textInfo.ToTitleCase(lastName.ToLower());
 
         // get client's phone number
         Console.WriteLine("\n");
