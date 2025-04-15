@@ -1,6 +1,4 @@
 using GoCar;
-using Moq;
-using Microsoft.EntityFrameworkCore;
 
 public class CarTests
 {
@@ -188,11 +186,10 @@ public class CarTests
     public void GenerateClientId_ShouldReturnInitials0_WhenNoClientsExist()
     {
         // Mock the ClientHashTable and simulate no clients with the given initials
-        var mockHashTable = new Mock<ClientHashTable<string>>();
-        mockHashTable.Setup(h => h.SearchBy("AB", "2")).Returns(Enumerable.Empty<Client>());
+        var mockHashTable = new ClientHashTable<string>();
 
         // Generate ID and expect it to be "AB0" since no clients exist
-        var result = Validator.ClientValidator.GenerateId("A", "B", mockHashTable.Object);
+        var result = Validator.ClientValidator.GenerateId("A", "B", mockHashTable);
         Assert.Equal("AB0", result);
     }
 
@@ -201,11 +198,10 @@ public class CarTests
     public void GenerateRentalId_ShouldReturnR0_WhenNoRentalsExist()
     {
         // Mock the RentaltHashTable and simulate no rentals with prefix "R"
-        var mockHashTable = new Mock<RentaltHashTable<string>>();
-        mockHashTable.Setup(h => h.SearchBy("6", "R")).Returns(Enumerable.Empty<Rental>());
+        var mockHashTable = new RentaltHashTable<string>();
 
         // Generate ID and expect it to be "R0" since no rentals exist
-        var result = Validator.RentalValidator.GenerateId(mockHashTable.Object);
+        var result = Validator.RentalValidator.GenerateId(mockHashTable);
         Assert.Equal("R0", result);
     }
 
@@ -214,15 +210,11 @@ public class CarTests
     public void GenerateClientId_ShouldReturnIncrementedId_WhenOneClientExists()
     {
         // Mock the hash table to return one client with ID "YZ100"
-        var mockHashTable = new Mock<ClientHashTable<string>>();
-        var existingClients = new List<Client>
-    {
-        new Client { ClientId = "YZ100" }
-    };
-        mockHashTable.Setup(h => h.SearchBy("YZ", "2")).Returns(existingClients);
+        var mockHashTable = new ClientHashTable<string>();
 
+        mockHashTable.Insert("YZ100", new Client { ClientId = "YZ100", FirstName = "Y", LastName = "Z" });
         // Expect the next ID to increment to "YZ101"
-        var result = Validator.ClientValidator.GenerateId("Y", "Z", mockHashTable.Object);
+        var result = Validator.ClientValidator.GenerateId("Y", "Z", mockHashTable);
         Assert.Equal("YZ101", result);
     }
 
@@ -231,15 +223,12 @@ public class CarTests
     public void GenerateRentalId_ShouldReturnIncrementedId_WhenOneRentalExists()
     {
         // Mock the hash table to return one rental with ID "R1"
-        var mockHashTable = new Mock<RentaltHashTable<string>>();
-        var existingRentals = new List<Rental>
-    {
-        new Rental { RentalId = "R1" }
-    };
-        mockHashTable.Setup(h => h.SearchBy("6", "R")).Returns(existingRentals);
+        var mockHashTable = new RentaltHashTable<string>();
+
+        mockHashTable.Insert("R1", new Rental { RentalId = "R1" });
 
         // Expect the next ID to increment to "R2"
-        var result = Validator.RentalValidator.GenerateId(mockHashTable.Object);
+        var result = Validator.RentalValidator.GenerateId(mockHashTable);
         Assert.Equal("R2", result);
     }
 
@@ -248,17 +237,13 @@ public class CarTests
     public void GenerateClientId_ShouldHandleMultipleDigits_WhenClientIdOver100()
     {
         // Mock clients with IDs ending in 100, 101, and 102
-        var mockHashTable = new Mock<ClientHashTable<string>>();
-        var clients = new List<Client>
-    {
-        new Client { ClientId = "YZ100" },
-        new Client { ClientId = "YZ101" },
-        new Client { ClientId = "YZ102" }
-    };
-        mockHashTable.Setup(h => h.SearchBy("YZ", "2")).Returns(clients);
+        var mockHashTable = new ClientHashTable<string>();
+        mockHashTable.Insert("YZ100", new Client { ClientId = "YZ100", FirstName = "Y", LastName = "Z"});
+        mockHashTable.Insert("YZ101", new Client { ClientId = "YZ101", FirstName = "Y", LastName = "Z" });
+        mockHashTable.Insert("YZ102", new Client { ClientId = "YZ102", FirstName = "Y", LastName = "Z" });
 
         // Expect the next ID to be "YZ103"
-        var result = Validator.ClientValidator.GenerateId("Y", "Z", mockHashTable.Object);
+        var result = Validator.ClientValidator.GenerateId("Y", "Z", mockHashTable);
         Assert.Equal("YZ103", result);
     }
 
@@ -267,16 +252,13 @@ public class CarTests
     public void GenerateRentalId_ShouldHandleMultipleDigits_WhenRentalIdOver100()
     {
         // Mock rentals with IDs ending in 100 and 101
-        var mockHashTable = new Mock<RentaltHashTable<string>>();
-        var rentals = new List<Rental>
-    {
-        new Rental { RentalId = "R100" },
-        new Rental { RentalId = "R101" }
-    };
-        mockHashTable.Setup(h => h.SearchBy("6", "R")).Returns(rentals);
+        var mockHashTable = new RentaltHashTable<string>();
+    
+        mockHashTable.Insert("R100", new Rental { RentalId = "R100" });
+        mockHashTable.Insert("R100", new Rental { RentalId = "R101" });
 
         // Expect the next ID to be "R102"
-        var result = Validator.RentalValidator.GenerateId(mockHashTable.Object);
+        var result = Validator.RentalValidator.GenerateId(mockHashTable);
         Assert.Equal("R102", result);
     }
 
