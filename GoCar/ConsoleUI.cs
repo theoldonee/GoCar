@@ -357,7 +357,6 @@ namespace GoCar
 
         public static string PerformOperation()
         {
-            Console.WriteLine(": \n1: Yes \n2: No");
             // Menu options displayed to the user
             string[] options = {
                 "1. Yes",
@@ -495,7 +494,7 @@ namespace GoCar
         {
             DrawHeader("Client search result");
             DrawTableHead("rental"); // Draws the table header
-            //
+            
             //if rental is a rental object
             if (!(rental is Rental))
             {
