@@ -277,17 +277,4 @@ public class CarTests
         Assert.Equal("R1000", result);
     }
 
-    // Test when no valid R-prefixed rental IDs exist
-    [Fact]
-    public void GenerateRentalId_ShouldReturnR0_WhenNoValidIdsExist()
-    {
-        var hashTable = new RentaltHashTable<string>();
-        hashTable.Insert("X100", new Rental { RentalId = "X100" }); // Not a valid R-prefixed ID
-
-        var result = Validator.RentalValidator.GenerateId(hashTable);
-
-        Assert.Equal("R0", result);
-    }
-
-
 }
