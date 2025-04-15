@@ -29,8 +29,6 @@ internal class Program
         // check's database  check result
         if (databaseCheckResult)
         {
-            
-
             string load = ConsoleUI.LoadDatabaseOrFileMenu();
 
             if (load == "1")
@@ -60,7 +58,7 @@ internal class Program
             choiceArr[0] = ConsoleUI.SelectDatabaseOperation();
 
             choiceArr[1] = ConsoleUI.SelectDatabase();
-        
+            
             Execute(choiceArr);
 
             string choice = ConsoleUI.PerformOperation();

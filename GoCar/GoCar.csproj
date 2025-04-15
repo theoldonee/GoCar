@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Meeting Minutes\**" />
+    <EmbeddedResource Remove="Meeting Minutes\**" />
+    <None Remove="Meeting Minutes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3">
@@ -17,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Meeting Minutes\" />
+    <Folder Include="Documents\Meeting Minutes\" />
   </ItemGroup>
 
 </Project>
