@@ -90,4 +90,25 @@ After running the *Add-Migration InitialMigration* command, run the command:
 Update-Database
 ```
 ### Step five: Run the program.
-With the dataabase updated, you are now ready to run the program. 
+With the dataabase updated, you are now ready to run the program. Clicking the green play button at the top center of your window would start the application.
+
+![image](https://github.com/user-attachments/assets/3d11ed56-e898-4edf-81c8-f5228d8fb734)
+
+# How To Use
+Once the program is running, navigate using the up and down arrow keys and pressing enter to select an option.
+
+## Things To Note
+* Date entries should follow the format dd-mm-yyyy.
+* Phone number entries sould be 8 digits long.
+* Car plate numbers should  follow tthe format lnnn-llnn with *l* representing letters and *n* representing numbers.
+  
+# Limitiations
+* A user cannot go back once they have selected an operation.
+* There are no validatins for entries read when loading from files, so the user would need to ensure the **csv file** selected uses the following order:
+  * carId
+  * make
+  * model
+  * fueltype
+  * type
+  * year
+  * Available
