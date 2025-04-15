@@ -210,9 +210,9 @@ namespace GoCar
                 }
                 else
                 {
-                    Rental rental = rentalList.Last<Rental>();
-                    int rentalNumber = Int32.Parse(rental.RentalId.Remove(0, 1));
-                    id = $"R{rentalNumber+1}";
+                    int[] idArr = rentalList.Select(r => Int32.Parse(r.RentalId.Remove(0, 1))).ToArray();
+                    
+                    id = $"R{idArr.Max()+1}";
                 }
                     return id;
             }
