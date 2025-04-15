@@ -6,8 +6,6 @@ using Microsoft.VisualBasic.FileIO;
 
 internal class Program
 {
-   
-
     // DATA IN DATA STRUCTS (car, rental, client);
     static CarHashTable<string> carHashTable = new CarHashTable<string>();
     static ClientHashTable<string> clientHashTable = new ClientHashTable<string>();
@@ -16,7 +14,6 @@ internal class Program
     //MAIN METHOD
     public static void Main(string[] args)
     {
-
         // Create an instance of the UI, passing in the hash tables
 
         // Start the UI menu loop
@@ -58,7 +55,7 @@ internal class Program
             choiceArr[0] = ConsoleUI.SelectDatabaseOperation();
 
             choiceArr[1] = ConsoleUI.SelectDatabase();
-            
+
             Execute(choiceArr);
 
             string choice = ConsoleUI.PerformOperation();
@@ -67,11 +64,14 @@ internal class Program
             if (choice != "1")
             {
                 execute = false;
-                OperationsManager.Dump();
+                ConsoleUI.DisplayDialog("Saving", "Saving to database", true, false);
+                OperationsManager.Dump(); // dump to database
+
+                ConsoleUI.DisplayDialog("Saved", "Your changes have been saved", true, true);
                 ConsoleUI.Exit();
             }
         }
-        
+
     }
 
     // executes commands based on choices
@@ -108,7 +108,7 @@ internal class Program
                         Console.WriteLine("Cannot add rental. No client in database");
                     }
                 }
-                
+
             }
 
         }
@@ -184,7 +184,7 @@ internal class Program
         using (var contex = new CarRentalContext())
         {
             var cars = contex.Car.ToList();
-            foreach( var car in cars)
+            foreach (var car in cars)
             {
                 carHashTable.Insert(car.CarId, car);
             }
@@ -362,7 +362,7 @@ internal class Program
         // get client's phone number
         Console.WriteLine("\n");
         Console.WriteLine("Enter client's phone number: ");
-        bool invalidPhoneNumber= true;
+        bool invalidPhoneNumber = true;
         int phoneNumber = 0;
 
         // phone number check
@@ -470,20 +470,23 @@ internal class Program
         // check if Id exist
         bool carIsValid = false;
 
-        while(!carIsValid){
+        while (!carIsValid)
+        {
 
-            
+
             var car = carHashTable.Search(carId);
             if (car != null)
             {
                 carIsValid = true;
-            }else{
+            }
+            else
+            {
                 Console.WriteLine("Please enter a car Id that exist within the database: ");
                 carId = GetCarID(false);
                 Console.WriteLine("\n");
             }
         }
-        
+
 
         //// client ID
         Console.WriteLine("Enter client's Id: ");
@@ -497,7 +500,9 @@ internal class Program
             if (client != null)
             {
                 clientIsValid = true;
-            }else{
+            }
+            else
+            {
 
                 Console.WriteLine("Please enter a client Id that exist within the database: ");
                 clientId = Console.ReadLine();
@@ -534,7 +539,7 @@ internal class Program
         {
             carExist = CarExist(carId);
         }
-        
+
 
         // id entry validation check
         while (!idValidation || carExist)
@@ -547,7 +552,7 @@ internal class Program
             {
                 Console.WriteLine("Car plate number invalid, enter valid Car plate number.");
             }
-  
+
             carId = Console.ReadLine().ToUpper();
             idValidation = Validator.CarValidator.ValidateId(carId);
 
@@ -586,7 +591,7 @@ internal class Program
         string carId = Console.ReadLine();
 
         Car car = carHashTable.Search(carId);
-        if(car is Car)
+        if (car is Car)
         {
             carHashTable.Delete(carId);
             OperationsManager.carOperations["delete"].Add(car);
@@ -595,8 +600,8 @@ internal class Program
         {
             ConsoleUI.DisplayDialog("Unsuccessful", $"Could not find car {carId}.", true, true);
         }
-        
-        
+
+
     }
 
     // remove client
@@ -621,10 +626,11 @@ internal class Program
     {
 
         Console.WriteLine("\nEnter rental's Id:");
-        try {
-            
+        try
+        {
+
             string rentalId = Console.ReadLine();
-            Rental  rental = rentalHashTable.Search(rentalId);
+            Rental rental = rentalHashTable.Search(rentalId);
             if (rental is Rental)
             {
                 rentalHashTable.Delete(rentalId);
@@ -638,7 +644,7 @@ internal class Program
         {
             ConsoleUI.DisplayDialog("Unsuccessful", "Entry invalid.", true, true);
         }
-        
+
     }
 
 
@@ -655,12 +661,12 @@ internal class Program
         if (searchBy != "1")
         {
             var carList = carHashTable.SearchBy(value, searchBy);
-            
+
             ConsoleUI.DisplayCars(carList);
         }
         else
         {
-          
+
             Car car = carHashTable.Search(value);
             ConsoleUI.DisplayCar(car);
         }
@@ -707,7 +713,7 @@ internal class Program
     // search for rental
     public static void SearchRental()
     {
-        
+
         string searchBy = ConsoleUI.SearchRental();
 
         Console.WriteLine("\n");
