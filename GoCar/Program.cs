@@ -1,8 +1,5 @@
-﻿using System.Diagnostics;
-using System.Globalization;
+﻿using System.Globalization;
 using GoCar;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic.FileIO;
 
 internal class Program
 {
@@ -51,7 +48,6 @@ internal class Program
         while (execute)
         {
             // get user's choice of database
-
             choiceArr[0] = ConsoleUI.SelectDatabaseOperation();
 
             choiceArr[1] = ConsoleUI.SelectDatabase();
