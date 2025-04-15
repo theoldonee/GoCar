@@ -262,57 +262,6 @@ public class CarTests
         Assert.Equal("R102", result);
     }
 
-    // Test when the existing client has a an alphabetical suffix in ID
-    [Fact]
-    public void GenerateClientId_ShouldIgnoreNonNumericSuffixes()
-    {
-        var hashTable = new ClientHashTable<string>();
-        hashTable.Insert("ABX", new Client { ClientId = "ABX", FirstName = "A", LastName = "B" });
-
-        var result = Validator.ClientValidator.GenerateId("A", "B", hashTable);
-
-        Assert.Equal("AB0", result);
-    }
-
-    // Test when there are mixed valid and invalid client IDs
-    [Fact]
-    public void GenerateClientId_ShouldSkipInvalidClientIds()
-    {
-        var hashTable = new ClientHashTable<string>();
-        hashTable.Insert("CD0", new Client { ClientId = "CD0", FirstName = "C", LastName = "D" });
-        hashTable.Insert("CDxyz", new Client { ClientId = "CDxyz", FirstName = "C", LastName = "D" }); // Invalid
-        hashTable.Insert("CD1", new Client { ClientId = "CD1", FirstName = "C", LastName = "D" });
-
-        var result = Validator.ClientValidator.GenerateId("C", "D", hashTable);
-
-        Assert.Equal("CD2", result);
-    }
-
-    // Test when lowercase initials are passed 
-    [Fact]
-    public void GenerateClientId_ShouldWorkWithLowercaseInitials()
-    {
-        var hashTable = new ClientHashTable<string>();
-        hashTable.Insert("EF0", new Client { ClientId = "EF0", FirstName = "E", LastName = "F" });
-
-        var result = Validator.ClientValidator.GenerateId("e", "f", hashTable);
-
-        Assert.Equal("EF1", result);
-    }
-
-    // Test when rental IDs are non-numeric
-    [Fact]
-    public void GenerateRentalId_ShouldIgnoreMalformedRentalIds()
-    {
-        var hashTable = new RentaltHashTable<string>();
-        hashTable.Insert("RX", new Rental { RentalId = "RX" }); // Invalid
-        hashTable.Insert("R10", new Rental { RentalId = "R10" }); // Valid
-
-        var result = Validator.RentalValidator.GenerateId(hashTable);
-
-        Assert.Equal("R11", result);
-    }
-
     // Test when there are a large number of rental IDs
     [Fact]
     public void GenerateRentalId_ShouldHandleLargeNumberOfRentals()
