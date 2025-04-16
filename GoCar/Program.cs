@@ -584,11 +584,12 @@ internal class Program
     {
         Console.WriteLine("\nEnter car's Id:");
         string carId = Console.ReadLine();
+        bool delete = carHashTable.Delete(carId);
 
-        Car car = carHashTable.Search(carId);
-        if (car is Car)
+        if (delete)
         {
-            carHashTable.Delete(carId);
+            
+            Car car = carHashTable.Search(carId);
             OperationsManager.carOperations["delete"].Add(car);
         }
         else
@@ -604,10 +605,11 @@ internal class Program
     {
         Console.WriteLine("\nEnter client's Id:");
         string clientId = Console.ReadLine();
-        Client client = clientHashTable.Search(clientId);
-        if (client is Client)
+        bool delete = clientHashTable.Delete(clientId);
+
+        if (delete)
         {
-            clientHashTable.Delete(clientId);
+            Client client = clientHashTable.Search(clientId);
             OperationsManager.clientOperations["delete"].Add(client);
         }
         else
@@ -623,12 +625,12 @@ internal class Program
         Console.WriteLine("\nEnter rental's Id:");
         try
         {
-
             string rentalId = Console.ReadLine();
-            Rental rental = rentalHashTable.Search(rentalId);
-            if (rental is Rental)
+            bool delete = rentalHashTable.Delete(rentalId);
+            if (delete)
             {
-                rentalHashTable.Delete(rentalId);
+                Rental rental = rentalHashTable.Search(rentalId);
+                OperationsManager.rentalOperations["delete"].Add(rental);
             }
             else
             {
