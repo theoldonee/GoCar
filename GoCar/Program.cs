@@ -60,10 +60,10 @@ internal class Program
             if (choice != "1")
             {
                 execute = false;
-                ConsoleUI.DisplayDialog("Saving", "Saving to database", true, false);
+                ConsoleUI.DisplayDialog("Saving", "Saving to database", false, false);
                 OperationsManager.Dump(); // dump to database
 
-                ConsoleUI.DisplayDialog("Saved", "Your changes have been saved", true, true);
+                ConsoleUI.DisplayDialog("Saved", "Your changes have been saved", false, true);
                 ConsoleUI.Exit();
             }
         }
@@ -94,14 +94,13 @@ internal class Program
                 }
                 else
                 {
-                    Console.WriteLine("\n");
-                    if (carHashTable.Count != 0)
+                    if (carHashTable.Count == 0)
                     {
-                        Console.WriteLine("Cannot add rental. No car in database");
+                        ConsoleUI.DisplayDialog("Error", "Cannot add rental because car table is empty", true, true);
                     }
                     else
                     {
-                        Console.WriteLine("Cannot add rental. No client in database");
+                        ConsoleUI.DisplayDialog("Error", "Cannot add rental because client table is empty", true, true);
                     }
                 }
 
