@@ -585,12 +585,12 @@ internal class Program
     {
         Console.WriteLine("\nEnter car's Id:");
         string carId = Console.ReadLine();
+
+        Car car = carHashTable.Search(carId);
         bool delete = carHashTable.Delete(carId);
 
         if (delete)
         {
-            
-            Car car = carHashTable.Search(carId);
             OperationsManager.carOperations["delete"].Add(car);
             ConsoleUI.DisplayDialog("Successful", $"Removed car {carId}.", false, true);
         }
@@ -607,11 +607,12 @@ internal class Program
     {
         Console.WriteLine("\nEnter client's Id:");
         string clientId = Console.ReadLine();
+
+        Client client = clientHashTable.Search(clientId);
         bool delete = clientHashTable.Delete(clientId);
 
         if (delete)
         {
-            Client client = clientHashTable.Search(clientId);
             OperationsManager.clientOperations["delete"].Add(client);
             ConsoleUI.DisplayDialog("Successful", $"Removed client {clientId}.", false, true);
         }
@@ -629,10 +630,10 @@ internal class Program
         try
         {
             string rentalId = Console.ReadLine();
+            Rental rental = rentalHashTable.Search(rentalId);
             bool delete = rentalHashTable.Delete(rentalId);
             if (delete)
             {
-                Rental rental = rentalHashTable.Search(rentalId);
                 OperationsManager.rentalOperations["delete"].Add(rental);
                 ConsoleUI.DisplayDialog("Successful", $"Removed rental {rentalId}.", false, true);
             }
