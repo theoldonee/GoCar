@@ -592,6 +592,7 @@ internal class Program
             
             Car car = carHashTable.Search(carId);
             OperationsManager.carOperations["delete"].Add(car);
+            ConsoleUI.DisplayDialog("Successful", $"Removed car {carId}.", false, true);
         }
         else
         {
@@ -612,6 +613,7 @@ internal class Program
         {
             Client client = clientHashTable.Search(clientId);
             OperationsManager.clientOperations["delete"].Add(client);
+            ConsoleUI.DisplayDialog("Successful", $"Removed client {clientId}.", false, true);
         }
         else
         {
@@ -632,6 +634,7 @@ internal class Program
             {
                 Rental rental = rentalHashTable.Search(rentalId);
                 OperationsManager.rentalOperations["delete"].Add(rental);
+                ConsoleUI.DisplayDialog("Successful", $"Removed rental {rentalId}.", false, true);
             }
             else
             {
