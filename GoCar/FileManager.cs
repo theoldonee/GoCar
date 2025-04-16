@@ -15,9 +15,6 @@ namespace GoCar
         static CarHashTable<string> carDbHashTable = new CarHashTable<string>();
         public static bool LoadFile(bool useDefault)
         {
-            //string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
-            //Console.WriteLine(_filePath);
-
             string path;
             //check path to use
             if (useDefault)
@@ -31,7 +28,7 @@ namespace GoCar
 
             StreamReader reader = null;
 
-            //Check if file exist
+            //check if file exist
             //check if file path is a csv
             if (File.Exists(path))
             {
@@ -73,7 +70,7 @@ namespace GoCar
             }
             else
             {
-                Console.WriteLine("File does not exist");
+                ConsoleUI.DisplayDialog("Unsuccessful", "File does not exist", true, true);
                 return false;
             }
 
