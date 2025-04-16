@@ -483,7 +483,8 @@ internal class Program
         }
 
 
-        //// client ID
+        // client ID
+        Console.WriteLine("\n");
         Console.WriteLine("Enter client's Id: ");
         string clientId = Console.ReadLine();
         bool clientIsValid = false;
