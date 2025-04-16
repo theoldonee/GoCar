@@ -33,6 +33,8 @@ namespace GoCar
                     context.Rental.Add(rental);
                 }
 
+                context.SaveChanges();
+
                 // Delete operations
                 foreach (var car in carOperations["delete"])
                 {
@@ -48,7 +50,6 @@ namespace GoCar
                 {
                     context.Rental.Remove(rental);
                 }
-
 
                 context.SaveChanges();
 
